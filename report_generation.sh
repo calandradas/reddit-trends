@@ -1,5 +1,7 @@
 #!/bin/bash
-source /root/reddit-trends/bin/activate
-cd /root/reddit-trends
-python report_generation.py --languages zh --skip-mongodb &
+script_dir=$(dirname "${BASH_SOURCE[0]}")
+
+source "$script_dir/bin/activate"
+
+python "$script_dir/report_generation.py" --languages zh --skip-mongodb &
 
