@@ -32,10 +32,10 @@ reports/
   ├── YYYY/           # 年份目录
   │   ├── MM/         # 月份目录
   │   │   ├── DD/     # 日期目录
-  │   │   │   ├── report_YYYYMMDD_HHMMSS_en.md  # 英文报告
-  │   │   │   └── report_YYYYMMDD_HHMMSS_zh.md  # 中文报告
-  ├── latest_report_en.md  # 最新英文报告的符号链接
-  └── latest_report_zh.md  # 最新中文报告的符号链接
+  │   │   │   ├── report_YYYYMMDD_HHMMSS_industry_en.md  # 英文报告
+  │   │   │   └── report_YYYYMMDD_HHMMSS_industry_zh.md  # 中文报告
+  ├── latest_report_industry_en.md  # 最新英文报告的符号链接
+  └── latest_report_industry_zh.md  # 最新中文报告的符号链接
 ```
 
 ## 安装与设置

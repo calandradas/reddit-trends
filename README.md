@@ -32,10 +32,10 @@ reports/
   ├── YYYY/           # Year directory
   │   ├── MM/         # Month directory
   │   │   ├── DD/     # Day directory
-  │   │   │   ├── report_YYYYMMDD_HHMMSS_en.md  # English report
-  │   │   │   └── report_YYYYMMDD_HHMMSS_zh.md  # Chinese report
-  ├── latest_report_en.md  # Symlink to latest English report
-  └── latest_report_zh.md  # Symlink to latest Chinese report
+  │   │   │   ├── report_YYYYMMDD_HHMMSS_industry_en.md  # English report
+  │   │   │   └── report_YYYYMMDD_HHMMSS_industry_zh.md  # Chinese report
+  ├── latest_report_industry_en.md  # Symlink to latest English report
+  └── latest_report_industry_zh.md  # Symlink to latest Chinese report
 ```
 
 ## Installation and Setup
