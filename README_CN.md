@@ -2,21 +2,19 @@
 
 [English](README.md) | [中文](README_CN.md)
 
+从 liyedanpdx/reddit-ai-trends fork而来, 感谢他的分享。
+本分支增加对OpenAI, xAI Grok, and Google Gemini的支持。具体参考.env.example文件的配置信息。
+
 自动从Reddit AI相关社区生成趋势报告，支持英文和中文双语。通过每日报告，随时了解AI领域的最新发展。
-
-## 最新报告 (2025-09-27)
-
-- [英文报告](reports/latest_report_en.md)
-- [中文报告](reports/latest_report_zh.md)
 
 ## 功能特点
 
 - **实时AI趋势监控**：实时跟踪新兴AI技术、讨论和突破性进展
+- **多个LLM支持**：增加对OpenAI, xAI Grok, and Google Gemini的支持
 - **多社区分析**：收集来自各种AI相关subreddit的数据，提供全面视图
 - **详细趋势分析**：生成深入报告，包括今日焦点、周趋势对比、月度技术演进等
 - **双语支持**：同时生成英文和中文报告
 - **有组织的文件结构**：按年/月/日存储报告，便于访问
-- **自动README更新**：自动更新指向最新报告的链接
 - **Docker部署**：简易容器化部署
 - **MongoDB持久化**：存储所有数据用于历史分析
 
@@ -57,17 +55,30 @@ REDDIT_CLIENT_ID=your_reddit_client_id
 REDDIT_CLIENT_SECRET=your_reddit_client_secret
 REDDIT_USER_AGENT=your_reddit_user_agent
 
-# MongoDB connection
-MONGODB_URI=mongodb://mongodb:27017
-MONGODB_DATABASE=reddit_trends
+#LLM Vendor
+VENDOR=gemini
+#VENDOR=grok
+#VENDOR=openai
 
-# Groq API key
-GROQ_API_KEY=your_groq_api_key
+#gemini api key
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_MODEL=gemini-2.5-flash # You can change to gemini-2.5-flash, gemini-3, etc.
 
-# Report generation settings
-REPORT_GENERATION_TIME=06:00
-REPORT_LANGUAGES=en,zh
+#grok api key
+GROK_API_KEY=your_grok_api_key
+GROK_API_BASE=https://api.grok.com/v1_
+GROK_MODEL=grok-4 # You can change to grok-4, grok-5, etc.
+
+# OpenAI API key
+OPENAI_API_KEY=your_openai_api_key
+OPENAI_MODEL=gpt-4o # You can change to gpt-4.1, gpt-4o, gpt-5-mini, etc.
+
 ```
+
+Reddit API credentials website: [https://www.reddit.com/prefs/apps](https://www.reddit.com/prefs/apps)
+Google gemini API website: [https://aistudio.google.com/app/api-keys](https://aistudio.google.com/app/api-keys)
+xAI grok API website: [https://x.ai/api](https://x.ai/api)
+OpenAI API website: [https://platform.openai.com/](https://platform.openai.com/)
 
 ## 使用方法
 

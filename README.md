@@ -2,21 +2,19 @@
 
 [English](README.md) | [中文](README_CN.md)
 
+Forked from  liyedanpdx/reddit-ai-trends, thanks for his contributions.
+Added support for OpenAI, xAI Grok, and Google Gemini LLM. For details, please view the configuration information in the .env.example file and configure your own key.
+
 Automatically generate trend reports from AI-related Reddit communities, supporting both English and Chinese languages. Stay up-to-date with the latest developments in the AI field through daily reports.
-
-## Latest Reports (2025-09-27)
-
-- [English Report](reports/latest_report_en.md)
-- [Chinese Report](reports/latest_report_zh.md)
 
 ## Features
 
 - **Real-time AI Trend Monitoring**: Track emerging AI technologies, discussions, and breakthroughs as they happen
+- **Mutiple LLMs Support**: Support for OpenAI, xAI Grok, and Google Gemini LLM
 - **Multi-community Analysis**: Collect data from various AI-related subreddits to provide a comprehensive view
 - **Detailed Trend Analysis**: Generate in-depth reports including today's highlights, weekly trend comparisons, monthly technology evolution, and more
 - **Bilingual Support**: Generate reports in both English and Chinese
 - **Organized File Structure**: Store reports in year/month/day folders for easy access
-- **Automatic README Updates**: Automatically update links to the latest reports
 - **Docker Deployment**: Easy containerized deployment
 - **MongoDB Persistence**: Store all data for historical analysis
 
@@ -49,7 +47,7 @@ reports/
 cp .env.example .env
 ```
 
-2. Edit the `.env` file with your API keys and other configurations:
+2. Edit the `.env` file with your API keys and other configurations: choose LLM vendor and configuring the corresponding key
 
 ```
 # Reddit API credentials
@@ -57,17 +55,30 @@ REDDIT_CLIENT_ID=your_reddit_client_id
 REDDIT_CLIENT_SECRET=your_reddit_client_secret
 REDDIT_USER_AGENT=your_reddit_user_agent
 
-# MongoDB connection
-MONGODB_URI=mongodb://mongodb:27017
-MONGODB_DATABASE=reddit_trends
+#LLM Vendor
+VENDOR=gemini
+#VENDOR=grok
+#VENDOR=openai
 
-# Groq API key
-GROQ_API_KEY=your_groq_api_key
+#gemini api key
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_MODEL=gemini-2.5-flash # You can change to gemini-2.5-flash, gemini-3, etc.
 
-# Report generation settings
-REPORT_GENERATION_TIME=06:00
-REPORT_LANGUAGES=en,zh
+#grok api key
+GROK_API_KEY=your_grok_api_key
+GROK_API_BASE=https://api.grok.com/v1_
+GROK_MODEL=grok-4 # You can change to grok-4, grok-5, etc.
+
+# OpenAI API key
+OPENAI_API_KEY=your_openai_api_key
+OPENAI_MODEL=gpt-4o # You can change to gpt-4.1, gpt-4o, gpt-5-mini, etc.
+
 ```
+
+Reddit API credentials website: [https://www.reddit.com/prefs/apps](https://www.reddit.com/prefs/apps)
+Google gemini API website: [https://aistudio.google.com/app/api-keys](https://aistudio.google.com/app/api-keys)
+xAI grok API website: [https://x.ai/api](https://x.ai/api)
+OpenAI API website: [https://platform.openai.com/](https://platform.openai.com/)
 
 ## Usage
 
@@ -96,7 +107,7 @@ pip install -r requirements.txt
 2. Generate a one-time report:
 
 ```bash
-python report_generation.py --languages en zh
+python report_generation.py --languages en zh --skip-mongodb
 ```
 
 3. Set up scheduled report generation:
