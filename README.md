@@ -16,7 +16,7 @@ Stay up-to-date with the latest developments in the AI, Crypto, Biotech field th
 
 - **Real-time Industry Trend Monitoring**: Track emerging industry technologies, discussions, and breakthroughs as they happen
 - **Mutiple LLMs Support**: Support for OpenAI, xAI Grok, and Google Gemini LLM
-- **Multi-industries Analysis, Customizable**: Add support for AI, Biotech, and Cryptopip industry communities, and customize the addition of multiple communities
+- **Multi-industries Analysis, Customizable**: Add support for AI, Biotech, and Crypto industry communities, and customize the addition of multiple communities
 - **Reports Separately**: Generate reports by industry and define multiple planned tasks
 - **Multi-community Analysis**: Collect data from various industry-related subreddits to provide a comprehensive view
 - **Detailed Trend Analysis**: Generate in-depth reports including today's highlights, weekly trend comparisons, monthly technology evolution, and more
