@@ -1,4 +1,4 @@
-# Reddit AI Trend Reports
+# Reddit Industry Trend Reports
 
 [English](README.md) | [中文](README_CN.md)
 
