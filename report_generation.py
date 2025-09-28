@@ -22,7 +22,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from services.reddit_collection.collector import RedditDataCollector
 from services.llm_processing.report_processor import ReportProcessor
 from database.mongodb import MongoDBClient
-from config import REPORT_CONFIG
+from config import REPORT_CONFIG, REDDIT_COMMUNITIES
 
 # Configure logging
 logging.basicConfig(
@@ -213,7 +213,7 @@ def generate_report(languages: List[str] = None, skip_mongodb: bool = False,
         report_processor = ReportProcessor()
          
         # Get subreddits from config
-        subreddits = REPORT_CONFIG.get('subreddits', [])
+        subreddits = REDDIT_COMMUNITIES.get('crypto_communities', [])
         posts_per_subreddit = REPORT_CONFIG.get('posts_per_subreddit', 100)
         
         # Collect data
