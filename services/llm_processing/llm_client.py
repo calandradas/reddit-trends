@@ -687,6 +687,8 @@ class LLMClient:
                     industry_name = "生物科技"
                 case "crypto":
                     industry_name = "数字货币和金融科技"
+                case _:
+                    industry_name = industry.capitalize()
             section_headers = {
                 "report_title": f"# Reddit {industry_name} 趋势报告 - {current_date}",
                 "trending_posts": "## 今日热门帖子",
@@ -734,6 +736,8 @@ class LLMClient:
                     industry_name = "Biotech"
                 case "crypto":
                     industry_name = "Crypto & Fintech"
+                case _:
+                    industry_name = industry.capitalize()
             section_headers = {
                 "report_title": f"# Reddit {industry_name} Trend Report - {current_date}",
                 "trending_posts": "## Today's Trending Posts",
