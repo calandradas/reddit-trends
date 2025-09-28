@@ -625,6 +625,7 @@ class LLMClient:
                        weekly_posts: Optional[List[Dict[str, Any]]] = None, 
                        monthly_posts: Optional[List[Dict[str, Any]]] = None,
                        language: str = "en",
+                       industry: str = "ai",
                        reference_date: Optional[datetime] = None) -> str:
         """
         Generate a report from Reddit posts using the Groq API.
@@ -679,8 +680,15 @@ class LLMClient:
         # Define language-specific content
         if language == "zh":
             # Chinese prompt and headers
+            match industry:
+                case "ai":
+                    industry_name = "AI"
+                case "biotech":
+                    industry_name = "生物科技"
+                case "crypto":
+                    industry_name = "数字货币和金融科技"
             section_headers = {
-                "report_title": f"# Reddit 数字金融 趋势报告 - {current_date}",
+                "report_title": f"# Reddit {industry_name} 趋势报告 - {current_date}",
                 "trending_posts": "## 今日热门帖子",
                 "weekly_posts": "## 本周热门帖子",
                 "monthly_posts": "## 本月热门帖子",
@@ -689,7 +697,7 @@ class LLMClient:
             }
             
             prompt = f"""
-            您是一位专门分析Reddit趋势的数字金融和数字货币的技术分析师。您的任务是分析来自数字金融和数字货币相关subreddit的最新帖子，并为{current_date}生成一份全面的报告。不用提供报告标题，只需专注于内容。
+            您是一位专门分析Reddit趋势的{industry_name}的技术分析师。您的任务是分析来自{industry_name}相关subreddit的最新帖子，并为{current_date}生成一份全面的报告。不用提供报告标题，只需专注于内容。
 
             以下是热门和趋势帖子的表格：
             
@@ -706,21 +714,28 @@ class LLMClient:
             1. **今日焦点**：分析过去24小时内出现的最新趋势和突破性发展。重点关注今天新出现的、与之前周趋势和月趋势不同的新兴话题。引用具体的帖子作为例证，并解释为什么这些新趋势值得关注。这是报告中最重要的部分，应该占据报告的主要篇幅。
             
             2. **周趋势对比**：将今日趋势与过去一周的趋势进行对比分析。哪些趋势持续存在？哪些是新出现的？这些变化反映了社区兴趣的什么变化？
-            
-            3. **月度技术演进**：从更长远的角度，分析当前趋势如何融入或改变了过去一个月的技术发展路线。特别关注那些可能代表数字金融和数字货币领域重大转变的新兴技术或方法。
 
-            4. **技术深度解析**：选择一个特别有趣或重要的今日趋势，提供更详细的技术解释，包括它是什么、为什么重要、以及它与更广泛的数字金融和数字货币生态系统的关系。
-            
+            3. **月度技术演进**：从更长远的角度，分析当前趋势如何融入或改变了过去一个月的技术发展路线。特别关注那些可能代表{industry_name}领域重大转变的新兴技术或方法。
+
+            4. **技术深度解析**：选择一个特别有趣或重要的今日趋势，提供更详细的技术解释，包括它是什么、为什么重要、以及它与更广泛的{industry_name}生态系统的关系。
+
             5. **社区亮点**：分析过去一周内不同社区（subreddit）的热门话题有何不同，各个社区关注的重点是什么，以及这些社区之间的交叉话题。特别关注那些在大型社区之外的小型社区中出现的独特讨论和见解。
 
-            您的分析应该简洁、有见地，并专注于对数字金融和数字货币专业人士有用的可操作信息。避免一般性陈述，而是提供基于帖子数据的具体见解。特别强调今日的新发现和突破，同时将其放在周趋势和月趋势的背景下进行分析。
+            您的分析应该简洁、有见地，并专注于对{industry_name}专业人士有用的可操作信息。避免一般性陈述，而是提供基于帖子数据的具体见解。特别强调今日的新发现和突破，同时将其放在周趋势和月趋势的背景下进行分析。
 
             请用中文回答。
             """
         else:
             # English (default) prompt and headers
+            match industry:
+                case "ai":
+                    industry_name = "AI"
+                case "biotech":
+                    industry_name = "Biotech"
+                case "crypto":
+                    industry_name = "Crypto & Fintech"
             section_headers = {
-                "report_title": f"# Reddit AI Trend Report - {current_date}",
+                "report_title": f"# Reddit {industry_name} Trend Report - {current_date}",
                 "trending_posts": "## Today's Trending Posts",
                 "weekly_posts": "## Weekly Popular Posts",
                 "monthly_posts": "## Monthly Popular Posts",
@@ -729,12 +744,12 @@ class LLMClient:
             }
             
             prompt = f"""
-            You are an AI technology analyst specializing in Reddit trend analysis. Your task is to analyze recent posts from AI-related subreddits and generate a comprehensive report for {current_date}. Do not provide a report title, just focus on the content.
+            You are an {industry_name} technology analyst specializing in Reddit trend analysis. Your task is to analyze recent posts from {industry_name}-related subreddits and generate a comprehensive report for {current_date}. Do not provide a report title, just focus on the content.
 
             Below are the tables of popular and trending posts:
             
             {trending_table}
-            
+
             {weekly_table}
             
             {monthly_table}
@@ -744,17 +759,17 @@ class LLMClient:
             Based on these posts, please provide:
             
             1. **Today's Highlights**: Analyze the latest trends and breakthrough developments that have emerged in the past 24 hours. Focus on new emerging topics that differ from the previous weekly and monthly trends. Reference specific posts as examples and explain why these new trends are worth attention. This is the most important part of the report and should occupy the main portion.
-            
-            2. **Weekly Trend Comparison**: Compare today's trends with those from the past week. Which trends persist? Which ones are newly emerging? What do these changes reflect about shifting interests in the AI community?
-            
-            3. **Monthly Technology Evolution**: From a longer-term perspective, analyze how current trends fit into or change the technological development path of the past month. Pay special attention to emerging technologies or methods that may represent significant shifts in the AI field.
-            
-            4. **Technical Deep Dive**: Select a particularly interesting or important trend from today and provide a more detailed technical explanation, including what it is, why it's important, and its relationship to the broader AI ecosystem.
-            
+
+            2. **Weekly Trend Comparison**: Compare today's trends with those from the past week. Which trends persist? Which ones are newly emerging? What do these changes reflect about shifting interests in the {industry_name} community?
+
+            3. **Monthly Technology Evolution**: From a longer-term perspective, analyze how current trends fit into or change the technological development path of the past month. Pay special attention to emerging technologies or methods that may represent significant shifts in the {industry_name} field.
+
+            4. **Technical Deep Dive**: Select a particularly interesting or important trend from today and provide a more detailed technical explanation, including what it is, why it's important, and its relationship to the broader {industry_name} ecosystem.
+
             5. **Community Highlights**: Analyze how the hot topics from the past week differ across communities (subreddits), what each community is focusing on, and what cross-cutting topics appear across communities. Pay special attention to unique discussions and insights emerging from smaller communities beyond the major ones.
-            
-            Your analysis should be concise, insightful, and focused on actionable information useful to AI professionals. Avoid general statements and instead provide specific insights based on the post data. Particularly emphasize today's new discoveries and breakthroughs, while analyzing them in the context of weekly and monthly trends.
-            
+
+            Your analysis should be concise, insightful, and focused on actionable information useful to {industry_name} professionals. Avoid general statements and instead provide specific insights based on the post data. Particularly emphasize today's new discoveries and breakthroughs, while analyzing them in the context of weekly and monthly trends.
+
             Please respond in English.
             """
         
@@ -784,6 +799,7 @@ class LLMClient:
                                      weekly_posts: Optional[List[Dict[str, Any]]] = None, 
                                      monthly_posts: Optional[List[Dict[str, Any]]] = None,
                                      languages: List[str] = ["en", "zh"],
+                                     industry: str = "ai",
                                      reference_date: Optional[datetime] = None) -> Dict[str, str]:
         """
         Generate reports in multiple languages.
@@ -803,6 +819,6 @@ class LLMClient:
         
         for lang in languages:
             logger.info(f"Generating report in {lang} language")
-            report = self.generate_report(posts, previous_data, weekly_posts, monthly_posts, language=lang, reference_date=reference_date)
+            report = self.generate_report(posts, previous_data, weekly_posts, monthly_posts, language=lang, industry=industry, reference_date=reference_date)
             reports[lang] = report
             

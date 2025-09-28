@@ -37,7 +37,6 @@ REDDIT_COMMUNITIES = {
         "CRISPR"
     ],
 
-
     "crypto_communities": [
         "CryptoCurrency",
         "Bitcoin",
@@ -75,21 +74,7 @@ REPORT_CONFIG = {
     # 支持的语言列表，默认为英文和中文
     "languages": os.getenv("REPORT_LANGUAGES", "en,zh").split(","),
     # 每个subreddit获取的帖子数量
-    "posts_per_subreddit": 30,
-    # 要监控的subreddits列表
-    "subreddits": [
-        "LocalLLaMA",
-        "MachineLearning",
-        "singularity",
-        "LocalLLM",
-        "hackernews",
-        "LangChain",
-        "LLMDevs",
-        "Vectordatabase",
-        "Rag",
-        "ai_agents",
-        "datascience"
-    ]
+    "posts_per_subreddit": 30
 }
 
 # Post categories

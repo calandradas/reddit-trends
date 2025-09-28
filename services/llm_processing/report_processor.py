@@ -34,6 +34,7 @@ class ReportProcessor:
                        weekly_posts: Optional[List[Dict[str, Any]]] = None,
                        monthly_posts: Optional[List[Dict[str, Any]]] = None,
                        language: str = "en",
+                       industry: str = "ai",
                        reference_date: Optional[datetime] = None) -> Dict[str, Any]:
         """
         Generate a report based on Reddit posts.
@@ -58,6 +59,7 @@ class ReportProcessor:
             weekly_posts, 
             monthly_posts,
             language=language,
+            industry=industry,
             reference_date=reference_date
         )
         
@@ -91,6 +93,7 @@ class ReportProcessor:
                                      weekly_posts: Optional[List[Dict[str, Any]]] = None,
                                      monthly_posts: Optional[List[Dict[str, Any]]] = None,
                                      languages: List[str] = ["en", "zh"],
+                                     industry: str = "ai",
                                      save_to_file: bool = True,
                                      reference_date: Optional[datetime] = None) -> Dict[str, Dict[str, Any]]:
         """
@@ -118,17 +121,18 @@ class ReportProcessor:
                 weekly_posts, 
                 monthly_posts, 
                 language=lang,
+                industry=industry,
                 reference_date=reference_date
             )
             reports[lang] = report
             
             # 如果需要保存到文件，则调用save_report_to_file方法
             if save_to_file:
-                self.save_report_to_file(report)
+                self.save_report_to_file(report,industry)
             
         return reports
-    
-    def save_report_to_file(self, report: Dict[str, Any]) -> str:
+
+    def save_report_to_file(self, report: Dict[str, Any], industry: str) -> str:
         """
         Save a report to a file.
         
@@ -151,7 +155,7 @@ class ReportProcessor:
         os.makedirs(report_dir, exist_ok=True)
         
         # Create the report filename with language code
-        filename = f"report_{timestamp.strftime('%Y%m%d_%H%M%S')}_{language}.md"
+        filename = f"report_{timestamp.strftime('%Y%m%d_%H%M%S')}_{industry}_{language}.md"
         filepath = os.path.join(report_dir, filename)
         
         # Save the report content to the file
@@ -161,7 +165,7 @@ class ReportProcessor:
         logger.info(f"Report saved to file: {filepath}")
         
         # Also save metadata
-        metadata_filename = f"report_{timestamp.strftime('%Y%m%d_%H%M%S')}_{language}_metadata.json"
+        metadata_filename = f"report_{timestamp.strftime('%Y%m%d_%H%M%S')}_{industry}_{language}_metadata.json"
         metadata_filepath = os.path.join(report_dir, metadata_filename)
         
         # Create metadata object (excluding large content fields)

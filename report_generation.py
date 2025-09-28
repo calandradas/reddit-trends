@@ -176,7 +176,7 @@ def update_chinese_readme(report_paths: Dict[str, str], date_str: str) -> None:
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write(readme_content)
 
-def generate_report(languages: List[str] = None, skip_mongodb: bool = False,
+def generate_report(industry: str = "ai", languages: List[str] = None, skip_mongodb: bool = False,
                    reference_date: Optional[datetime] = None, 
                    hours: int = 24,
                    save_to_db: bool = True,
@@ -213,12 +213,12 @@ def generate_report(languages: List[str] = None, skip_mongodb: bool = False,
         report_processor = ReportProcessor()
          
         # Get subreddits from config
-        subreddits = REDDIT_COMMUNITIES.get('crypto_communities', [])
+        subreddits = REDDIT_COMMUNITIES.get(f"{industry}_communities")
         posts_per_subreddit = REPORT_CONFIG.get('posts_per_subreddit', 100)
         
         # Collect data
-        logger.info(f"Collecting data from subreddits: {subreddits}")
-        
+        logger.info(f"Collecting data from {industry} subreddits: {subreddits}")
+
         # 计算时间范围 - 使用参考日期
         end_time = current_time
         start_time_range = end_time - timedelta(hours=hours)
@@ -264,6 +264,7 @@ def generate_report(languages: List[str] = None, skip_mongodb: bool = False,
             weekly_posts, 
             monthly_posts,
             languages,
+            industry,
             save_to_file=save_to_file
         )
       
@@ -276,21 +277,20 @@ def generate_report(languages: List[str] = None, skip_mongodb: bool = False,
         
         for lang, report in reports.items():
             # Create filename
-            filename = f"report_{timestamp}_{lang}.md"
+            filename = f"report_{timestamp}_{industry}_{lang}.md"
             filepath = os.path.join(report_dir, filename)
             
             # Save report to file
             if save_to_file:
                 with open(filepath, "w", encoding="utf-8") as f:
                     f.write(report["content"])
-            
-                # Create symlink for latest report
-                latest_path = os.path.join("reports", f"latest_report_{lang}.md")
-                if os.path.exists(latest_path):
-                    if os.path.islink(latest_path):
-                        os.unlink(latest_path)
-                    else:
-                        os.remove(latest_path)
+            # Create symlink for latest report
+            latest_path = os.path.join("reports", f"latest_report_{industry}_{lang}.md")
+            if os.path.exists(latest_path):
+                if os.path.islink(latest_path):
+                    os.unlink(latest_path)
+                else:
+                    os.remove(latest_path)
             
                 # Create relative path for symlink
                 rel_path = os.path.relpath(filepath, os.path.dirname(latest_path))
@@ -364,11 +364,12 @@ def main():
     """
     主函数，处理命令行参数并运行报告生成
     """
-    parser = argparse.ArgumentParser(description='生成Reddit AI趋势报告')
+    parser = argparse.ArgumentParser(description='生成Reddit 趋势报告')
     parser.add_argument('--languages', nargs='+', default=['en'], 
                         help='要生成报告的语言代码列表，例如：en zh')
     parser.add_argument('--skip-mongodb', action='store_true',
                         help='跳过保存报告到MongoDB')
+    parser.add_argument("--industry", nargs="*", default="ai", help="Generate industry-specific reports, e.g., ai, biotech, crypto")
     args = parser.parse_args()
     
     # 设置日志
@@ -376,6 +377,7 @@ def main():
     
     # 获取配置的语言列表
     languages = args.languages
+    industry = args.industry
     
     try:
         # 初始化服务
@@ -384,8 +386,8 @@ def main():
         
         # 收集数据
         logger.info("开始收集数据...")
-        subreddits = REPORT_CONFIG.get('subreddits', [])
-        
+
+        subreddits = REDDIT_COMMUNITIES.get(f"{industry}_communities")
         # 收集帖子数据
         posts_per_subreddit = REPORT_CONFIG.get('posts_per_subreddit', 10)
         
@@ -414,7 +416,8 @@ def main():
                 posts, 
                 weekly_popular_posts, 
                 monthly_popular_posts,
-                language=lang
+                language=lang,
+                industry=industry
             )
             
             # 保存报告到文件
@@ -428,8 +431,8 @@ def main():
             
             report_dir = os.path.join("reports", year_dir, month_dir, day_dir)
             os.makedirs(report_dir, exist_ok=True)
-            
-            report_filename = f"report_{timestamp}_{lang}.md"
+
+            report_filename = f"report_{timestamp}_{industry}_{lang}.md"
             report_path = os.path.join(report_dir, report_filename)
             
             with open(report_path, "w", encoding="utf-8") as f:
@@ -438,7 +441,7 @@ def main():
             logger.info(f"报告已保存到: {report_path}")
             
             # 创建最新报告的符号链接
-            latest_report_path = os.path.join("reports", f"latest_report_{lang}.md")
+            latest_report_path = os.path.join("reports", f"latest_report_{industry}_{lang}.md")
             if os.path.exists(latest_report_path):
                     if os.path.islink(latest_report_path):
                         os.unlink(latest_report_path)
@@ -484,11 +487,13 @@ if __name__ == "__main__":
     parser.add_argument("--interval", type=int, default=24, help="Interval in hours between report generation runs")
     parser.add_argument("--languages", nargs="+", default=None, help="Languages to generate reports for (e.g., en zh)")
     parser.add_argument("--skip-mongodb", action="store_true", help="Skip saving reports to MongoDB")
+    parser.add_argument("--industry", nargs="*", default="ai", help="Generate industry-specific reports, e.g., ai, biotech, crypto")
+
     args = parser.parse_args()
     
     #main()
     if args.languages:
      # Run once with specified languages
-         generate_report(args.languages, skip_mongodb=args.skip_mongodb)
+         generate_report(args.industry, args.languages, skip_mongodb=args.skip_mongodb)
     #else:
         # Schedule with default languages from config
