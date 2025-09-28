@@ -369,7 +369,7 @@ def main():
                         help='要生成报告的语言代码列表，例如：en zh')
     parser.add_argument('--skip-mongodb', action='store_true',
                         help='跳过保存报告到MongoDB')
-    parser.add_argument("--industry", nargs="*", default="ai", help="Generate industry-specific reports, e.g., ai, biotech, crypto")
+    parser.add_argument("--industry", default="ai", help="Generate industry-specific reports, e.g., ai, biotech, crypto")
     args = parser.parse_args()
     
     # 设置日志
@@ -487,7 +487,7 @@ if __name__ == "__main__":
     parser.add_argument("--interval", type=int, default=24, help="Interval in hours between report generation runs")
     parser.add_argument("--languages", nargs="+", default=None, help="Languages to generate reports for (e.g., en zh)")
     parser.add_argument("--skip-mongodb", action="store_true", help="Skip saving reports to MongoDB")
-    parser.add_argument("--industry", nargs="*", default="ai", help="Generate industry-specific reports, e.g., ai, biotech, crypto")
+    parser.add_argument("--industry", default="ai", help="Generate industry-specific reports, e.g., ai, biotech, crypto")
 
     args = parser.parse_args()
     
