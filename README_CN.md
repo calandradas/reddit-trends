@@ -3,6 +3,7 @@
 [English](README.md) | [中文](README_CN.md)
 
 从 liyedanpdx/reddit-ai-trends fork而来, 感谢他的分享。
+
 本分支增加对OpenAI, xAI Grok, and Google Gemini的支持。具体参考.env.example文件的配置信息。
 
 自动从Reddit AI相关社区生成趋势报告，支持英文和中文双语。通过每日报告，随时了解AI领域的最新发展。
@@ -76,8 +77,11 @@ OPENAI_MODEL=gpt-4o # You can change to gpt-4.1, gpt-4o, gpt-5-mini, etc.
 ```
 
 Reddit API credentials website: [https://www.reddit.com/prefs/apps](https://www.reddit.com/prefs/apps)
+
 Google gemini API website: [https://aistudio.google.com/app/api-keys](https://aistudio.google.com/app/api-keys)
+
 xAI grok API website: [https://x.ai/api](https://x.ai/api)
+
 OpenAI API website: [https://platform.openai.com/](https://platform.openai.com/)
 
 ## 使用方法

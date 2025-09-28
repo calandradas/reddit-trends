@@ -3,6 +3,7 @@
 [English](README.md) | [中文](README_CN.md)
 
 Forked from  liyedanpdx/reddit-ai-trends, thanks for his contributions.
+
 Added support for OpenAI, xAI Grok, and Google Gemini LLM. For details, please view the configuration information in the .env.example file and configure your own key.
 
 Automatically generate trend reports from AI-related Reddit communities, supporting both English and Chinese languages. Stay up-to-date with the latest developments in the AI field through daily reports.
@@ -76,8 +77,11 @@ OPENAI_MODEL=gpt-4o # You can change to gpt-4.1, gpt-4o, gpt-5-mini, etc.
 ```
 
 Reddit API credentials website: [https://www.reddit.com/prefs/apps](https://www.reddit.com/prefs/apps)
+
 Google gemini API website: [https://aistudio.google.com/app/api-keys](https://aistudio.google.com/app/api-keys)
+
 xAI grok API website: [https://x.ai/api](https://x.ai/api)
+
 OpenAI API website: [https://platform.openai.com/](https://platform.openai.com/)
 
 ## Usage
