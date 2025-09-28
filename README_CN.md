@@ -6,13 +6,15 @@
 
 本分支增加对OpenAI, xAI Grok, and Google Gemini的支持。具体参考.env.example文件的配置信息。
 
-自动从Reddit AI相关社区生成趋势报告，支持英文和中文双语。通过每日报告，随时了解AI领域的最新发展。
+自动从Reddit AI, Crypto, Biotech相关社区生成趋势报告，支持英文和中文双语。通过每日报告，随时了解AI, Crypto, Biotech领域的最新发展。
 
 ## 功能特点
 
-- **实时AI趋势监控**：实时跟踪新兴AI技术、讨论和突破性进展
+- **实时趋势监控**：实时跟踪新兴产业技术、讨论和突破性进展
 - **多个LLM支持**：增加对OpenAI, xAI Grok, and Google Gemini的支持
-- **多社区分析**：收集来自各种AI相关subreddit的数据，提供全面视图
+- **多产业分析，自定义**：增加对AI、Biotech、Cryptp产业社区的支持，可自定义添加多个产业
+- **分别生成产业报告**: 按产业分别生产报告，可定义多个计划任务
+- **多社区分析**：收集来自各种相关产业subreddit的数据，提供全面视图
 - **详细趋势分析**：生成深入报告，包括今日焦点、周趋势对比、月度技术演进等
 - **双语支持**：同时生成英文和中文报告
 - **有组织的文件结构**：按年/月/日存储报告，便于访问
@@ -115,7 +117,7 @@ pip install -r requirements.txt
 2. 生成一次性报告：
 
 ```bash
-python report_generation.py --languages en zh --skip-mongodb
+python report_generation.py --languages en zh --skip-mongodb --industry ai
 ```
 
 3. 设置定时生成报告：
@@ -143,15 +145,35 @@ git push -u origin main
 
 您可以在`config.py`文件中修改以下配置：
 
-- 要监控的subreddit列表
+- 要监控的subreddit列表，可添加多个产业
 - 每个subreddit要获取的帖子数量
 - 报告生成时间
 - 支持的语言
 - LLM模型参数
 
-## AI趋势监控
+## 添加新的产业社区方法
 
-该系统旨在通过以下方式让您了解AI领域的最新发展：
+- 编辑`config.py`文件中的`REDDIT_COMMUNITIES`参数内容
+- 在`REDDIT_COMMUNITIES`开头添加要监测的产业社区，例如
+
+```py
+    "biotech_communities": [
+        "Biotech",
+        "Bioinformatics",
+        "medicine",
+        "biology"
+    ],
+```
+
+在运行脚本时，添加`--industry`相对的参数即可，注意参数名与添加的产业社区前缀必须保持一致
+
+```bash
+python report_generation.py --languages en zh --skip-mongodb --industry biotech
+```
+
+## 多产业趋势监控
+
+该系统旨在通过以下方式让您了解相关产业领域的最新发展：
 
 - 实时跟踪新兴技术和突破性进展
 - 识别不同AI社区的热门话题
@@ -159,7 +181,7 @@ git push -u origin main
 - 突出小型社区中可能被忽视的独特讨论
 - 对特别有趣或重要的趋势提供技术深度分析
 
-每日报告为您提供AI世界正在发生的事情的全面视图，帮助您保持领先地位并在它们出现时识别重要发展。
+每日报告为您提供多个产业世界正在发生的事情的全面视图，帮助您保持领先地位并在它们出现时识别重要发展。
 
 ## 故障排除
 

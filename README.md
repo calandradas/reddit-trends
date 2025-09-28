@@ -6,13 +6,15 @@ Forked from  liyedanpdx/reddit-ai-trends, thanks for his contributions.
 
 Added support for OpenAI, xAI Grok, and Google Gemini LLM. For details, please view the configuration information in the .env.example file and configure your own key.
 
-Automatically generate trend reports from AI-related Reddit communities, supporting both English and Chinese languages. Stay up-to-date with the latest developments in the AI field through daily reports.
+Automatically generate trend reports from AI, Crypto, Biotech-related Reddit communities, supporting both English and Chinese languages. Stay up-to-date with the latest developments in the AI, Crypto, Biotech field through daily reports.
 
 ## Features
 
-- **Real-time AI Trend Monitoring**: Track emerging AI technologies, discussions, and breakthroughs as they happen
+- **Real-time Industry Trend Monitoring**: Track emerging industry technologies, discussions, and breakthroughs as they happen
 - **Mutiple LLMs Support**: Support for OpenAI, xAI Grok, and Google Gemini LLM
-- **Multi-community Analysis**: Collect data from various AI-related subreddits to provide a comprehensive view
+- **Multi-industries Analysis, Customizable**: Add support for AI, Biotech, and Cryptopip industry communities, and customize the addition of multiple communities
+- **Reports Separately**: Generate reports by industry and define multiple planned tasks
+- **Multi-community Analysis**: Collect data from various industry-related subreddits to provide a comprehensive view
 - **Detailed Trend Analysis**: Generate in-depth reports including today's highlights, weekly trend comparisons, monthly technology evolution, and more
 - **Bilingual Support**: Generate reports in both English and Chinese
 - **Organized File Structure**: Store reports in year/month/day folders for easy access
@@ -114,7 +116,7 @@ pip install -r requirements.txt
 2. Generate a one-time report:
 
 ```bash
-python report_generation.py --languages en zh --skip-mongodb
+python report_generation.py --languages en zh --skip-mongodb --industry ai
 ```
 
 3. Set up scheduled report generation:
@@ -148,17 +150,37 @@ You can modify the following configurations in the `config.py` file:
 - Supported languages
 - LLM model parameters
 
-## AI Trend Monitoring
+## How to add a new industry community
 
-This system is designed to keep you informed about the latest developments in the AI field by:
+- Edit the `REDDIT_COMMUNITIES` parameter in the `config.py` file
+- Add the industry community you want to monitor at the beginning of `REDDIT_COMMUNITIES`, for example
+
+```py
+    "biotech_communities": [
+        "Biotech",
+        "Bioinformatics",
+        "medicine",
+        "biology"
+    ],
+```
+
+When running the script, add the `--industry` parameter. Note that the parameter name must match the prefix of the added industry community.
+
+```bash
+python report_generation.py --languages ​​en zh --skip-mongodb --industry biotech
+```
+
+## Multi-Industries Trend Monitoring
+
+This system is designed to keep you informed about the latest developments in the multi-indtustries field by:
 
 - Tracking emerging technologies and breakthroughs in real-time
-- Identifying trending topics across different AI communities
+- Identifying trending topics across different industry communities
 - Comparing current trends with historical data to spot emerging patterns
 - Highlighting unique discussions from smaller communities that might be overlooked
 - Providing technical deep dives into particularly interesting or important trends
 
-The daily reports give you a comprehensive view of what's happening in the AI world, helping you stay ahead of the curve and identify important developments as they emerge.
+The daily reports give you a comprehensive view of what's happening in the industry world, helping you stay ahead of the curve and identify important developments as they emerge.
 
 ## Troubleshooting
 
