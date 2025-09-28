@@ -20,7 +20,6 @@ from typing import List, Dict, Any, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from services.reddit_collection.collector import RedditDataCollector
-from services.llm_processing.groq_client import GroqClient
 from services.llm_processing.report_processor import ReportProcessor
 from database.mongodb import MongoDBClient
 from config import REPORT_CONFIG
@@ -212,8 +211,7 @@ def generate_report(languages: List[str] = None, skip_mongodb: bool = False,
         # Initialize services
         reddit_collector = RedditDataCollector()
         report_processor = ReportProcessor()
-        mongodb_client = MongoDBClient()
-        
+         
         # Get subreddits from config
         subreddits = REPORT_CONFIG.get('subreddits', [])
         posts_per_subreddit = REPORT_CONFIG.get('posts_per_subreddit', 100)
@@ -257,18 +255,18 @@ def generate_report(languages: List[str] = None, skip_mongodb: bool = False,
         monthly_posts = reddit_collector.get_monthly_popular_posts(subreddits)
         
         # Get previous report data for comparison
-        previous_report = mongodb_client.get_latest_report()
+        #previous_report = mongodb_client.get_latest_report()
         
         # Generate reports in multiple languages
         reports = report_processor.generate_multilingual_reports(
             filtered_posts, 
-            previous_report, 
+            None, 
             weekly_posts, 
             monthly_posts,
             languages,
             save_to_file=save_to_file
         )
-        
+      
         # Create directory structure - 使用参考日期
         report_dir = create_report_directory_structure(reference_date=current_time)
         
@@ -284,7 +282,7 @@ def generate_report(languages: List[str] = None, skip_mongodb: bool = False,
             # Save report to file
             if save_to_file:
                 with open(filepath, "w", encoding="utf-8") as f:
-                    f.write(report)
+                    f.write(report["content"])
             
                 # Create symlink for latest report
                 latest_path = os.path.join("reports", f"latest_report_{lang}.md")
@@ -308,11 +306,12 @@ def generate_report(languages: List[str] = None, skip_mongodb: bool = False,
             logger.info(f"Saved {lang} report to {filepath}")
         
         # Update README with links to latest reports
-        if save_to_file:
-            update_readme_with_latest_report(report_paths)
+        #if save_to_file:
+        #    update_readme_with_latest_report(report_paths)
         
         # Save report to MongoDB
         if save_to_db and not skip_mongodb:
+            mongodb_client = MongoDBClient()
             mongodb_client.save_report(reports, filtered_posts, weekly_posts, monthly_posts)
             logger.info("Saved report to MongoDB")
         
@@ -373,7 +372,7 @@ def main():
     args = parser.parse_args()
     
     # 设置日志
-    setup_logging()
+    #setup_logging()
     
     # 获取配置的语言列表
     languages = args.languages
@@ -409,6 +408,7 @@ def main():
         
         # 生成报告
         logger.info(f"开始生成报告，语言: {languages}...")
+        #report_paths = {}
         for lang in languages:
             report = report_processor.generate_report(
                 posts, 
@@ -433,26 +433,30 @@ def main():
             report_path = os.path.join(report_dir, report_filename)
             
             with open(report_path, "w", encoding="utf-8") as f:
-                f.write(report)
+                f.write(report["content"])
             
             logger.info(f"报告已保存到: {report_path}")
             
             # 创建最新报告的符号链接
             latest_report_path = os.path.join("reports", f"latest_report_{lang}.md")
-            
-            # 在Windows上，需要特殊处理符号链接
             if os.path.exists(latest_report_path):
-                os.remove(latest_report_path)
+                    if os.path.islink(latest_report_path):
+                        os.unlink(latest_report_path)
+                    else:
+                        os.remove(latest_report_path)
             
             # 创建符号链接（在Windows上可能需要管理员权限）
+            rel_path = os.path.relpath(report_path, os.path.dirname(latest_report_path))
             try:
-                os.symlink(report_path, latest_report_path)
+                os.symlink(rel_path, latest_report_path)
                 logger.info(f"已创建最新报告的符号链接: {latest_report_path}")
             except OSError as e:
                 # 如果无法创建符号链接，则复制文件
                 logger.warning(f"无法创建符号链接，将复制文件: {e}")
                 shutil.copy2(report_path, latest_report_path)
                 logger.info(f"已复制最新报告到: {latest_report_path}")
+            
+            #report_paths[lang] = report_path
             
             # 保存到MongoDB（如果未指定跳过）
             if not args.skip_mongodb:
@@ -467,7 +471,7 @@ def main():
                 logger.info("已跳过保存报告到MongoDB")
         
         # 更新README文件
-        update_readme_with_latest_report()
+        #update_readme_with_latest_report(report_paths)
         
         logger.info("报告生成完成")
         return True
@@ -482,8 +486,9 @@ if __name__ == "__main__":
     parser.add_argument("--skip-mongodb", action="store_true", help="Skip saving reports to MongoDB")
     args = parser.parse_args()
     
-    # if args.languages:
-    #     # Run once with specified languages
-    #     generate_report(args.languages, skip_mongodb=args.skip_mongodb)
-    # else:
-    #     # Schedule with default languages from config
+    #main()
+    if args.languages:
+     # Run once with specified languages
+         generate_report(args.languages, skip_mongodb=args.skip_mongodb)
+    #else:
+        # Schedule with default languages from config

@@ -30,9 +30,8 @@ REDDIT_COMMUNITIES = {
 
 # LLM configuration
 LLM_CONFIG = {
-    "model": "deepseek-r1-distill-llama-70b",
     "temperature": 0.4,
-    "max_tokens": 4000
+    "max_tokens": 12000
 }
 
 # Report generation configuration
