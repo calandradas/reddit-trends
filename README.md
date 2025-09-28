@@ -129,9 +129,9 @@ python report_generation.py --languages en zh --skip-mongodb --industry ai
 crontab -e
 
 # m h  dom mon dow   command
-0 7 * * * /root/reddit-trends/report_generation.sh ai
-0 8 * * * /root/reddit-trends/report_generation.sh crypto
-0 9 * * * /root/reddit-trends/report_generation.sh biotech
+0 7 * * * /path/to/reddit-trends/report_generation.sh ai
+0 8 * * * /path/to/reddit-trends/report_generation.sh crypto
+0 9 * * * /path/to/reddit-trends/report_generation.sh biotech
 ```
 
 ## Creating a GitHub Repository
