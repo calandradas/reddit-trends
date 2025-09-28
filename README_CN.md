@@ -48,7 +48,7 @@ reports/
 cp .env.example .env
 ```
 
-2. 编辑`.env`文件，填入您的API密钥和其他配置：
+2. 编辑`.env`文件，填入您的API密钥和其他配置：选择LLM Vendor,并配置相应的key
 
 ```
 # Reddit API credentials
