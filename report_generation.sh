@@ -5,5 +5,5 @@ cd "$script_dir"
 
 source ./bin/activate
 
-python report_generation.py --languages zh --skip-mongodb &
+python report_generation.py --languages zh --skip-mongodb --industry $1 &
 
