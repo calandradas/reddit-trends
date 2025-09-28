@@ -38,7 +38,7 @@ reports/
 
 - Docker和Docker Compose
 - Reddit API凭证
-- Groq API密钥
+- LLM API key, OpenAI | Google Gemini | xAI Grok 密钥
 
 ### 环境变量设置
 

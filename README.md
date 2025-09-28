@@ -38,7 +38,7 @@ reports/
 
 - Docker and Docker Compose
 - Reddit API credentials
-- Groq API key
+- LLM API key, OpenAI | Google Gemini | xAI Grok
 
 ### Environment Variables Setup
 
