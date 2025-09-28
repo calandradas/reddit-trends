@@ -292,15 +292,15 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
                 else:
                     os.remove(latest_path)
             
-                # Create relative path for symlink
-                rel_path = os.path.relpath(filepath, os.path.dirname(latest_path))
-                try:
-                    os.symlink(rel_path, latest_path)
-                    logger.info(f"Created symlink from {rel_path} to {latest_path}")
-                except Exception as e:
-                    # On Windows, symlinks might not work without admin privileges
-                    logger.warning(f"Could not create symlink: {e}. Copying file instead.")
-                    shutil.copy2(filepath, latest_path)
+            # Create relative path for symlink
+            rel_path = os.path.relpath(filepath, os.path.dirname(latest_path))
+            try:
+                os.symlink(rel_path, latest_path)
+                logger.info(f"Created symlink from {rel_path} to {latest_path}")
+            except Exception as e:
+                # On Windows, symlinks might not work without admin privileges
+                logger.warning(f"Could not create symlink: {e}. Copying file instead.")
+                shutil.copy2(filepath, latest_path)
             
             report_paths[lang] = filepath
             logger.info(f"Saved {lang} report to {filepath}")
