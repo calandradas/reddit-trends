@@ -126,7 +126,12 @@ python report_generation.py --languages en zh --skip-mongodb --industry ai
 3. Set up scheduled report generation:
 
 ```bash
-python report_generation.py --interval 24
+crontab -e
+
+# m h  dom mon dow   command
+0 7 * * * /root/reddit-trends/report_generation.sh ai
+0 8 * * * /root/reddit-trends/report_generation.sh crypto
+0 9 * * * /root/reddit-trends/report_generation.sh biotech
 ```
 
 ## Creating a GitHub Repository
