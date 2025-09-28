@@ -6,7 +6,9 @@ Forked from  liyedanpdx/reddit-ai-trends, thanks for his contributions.
 
 Added support for OpenAI, xAI Grok, and Google Gemini LLM. For details, please view the configuration information in the .env.example file and configure your own key.
 
-Automatically generate trend reports from AI, Crypto, Biotech-related Reddit communities, supporting both English and Chinese languages. 
+Automatically generate trend reports from AI, Crypto, Biotech related Reddit communities. Or DIY your concerned industry communities.
+
+Supporting both English and Chinese languages.
 
 Stay up-to-date with the latest developments in the AI, Crypto, Biotech field through daily reports.
 
