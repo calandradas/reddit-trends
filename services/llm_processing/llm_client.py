@@ -689,7 +689,7 @@ class LLMClient:
             }
             
             prompt = f"""
-            您是一位专门分析Reddit趋势的AI技术分析师。您的任务是分析来自AI相关subreddit的最新帖子，并为{current_date}生成一份全面的报告。
+            您是一位专门分析Reddit趋势的AI技术分析师。您的任务是分析来自AI相关subreddit的最新帖子，并为{current_date}生成一份全面的报告。不用提供报告标题，只需专注于内容。
 
             以下是热门和趋势帖子的表格：
             
@@ -729,7 +729,7 @@ class LLMClient:
             }
             
             prompt = f"""
-            You are an AI technology analyst specializing in Reddit trend analysis. Your task is to analyze recent posts from AI-related subreddits and generate a comprehensive report for {current_date}.
+            You are an AI technology analyst specializing in Reddit trend analysis. Your task is to analyze recent posts from AI-related subreddits and generate a comprehensive report for {current_date}. Do not provide a report title, just focus on the content.
 
             Below are the tables of popular and trending posts:
             
