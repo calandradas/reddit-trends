@@ -764,6 +764,8 @@ class LLMClient:
             
             # Add header and tables
             full_report = f"{section_headers['report_title']}\n\n"
+            full_report += f"{section_headers['trend_analysis']}\n\n"
+            full_report += report + "\n\n"
             full_report += f"{section_headers['trending_posts']}\n\n"
             full_report += trending_table.replace("## Trending Posts - Last 24 Hours\n\n", "") + "\n\n"
             full_report += f"{section_headers['weekly_posts']}\n\n"
@@ -772,9 +774,7 @@ class LLMClient:
             full_report += monthly_table.replace("## Monthly Popular Posts\n\n", "") + "\n\n"
             full_report += f"{section_headers['community_posts']}\n\n"
             full_report += community_tables.replace("## Top Posts by Community\n\n", "") + "\n\n"
-            full_report += f"{section_headers['trend_analysis']}\n\n"
-            full_report += report
-            
+
             return full_report
         except Exception as e:
             logger.error(f"Error generating report: {e}")
