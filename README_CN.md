@@ -48,7 +48,7 @@ reports/
 cp .env.example .env
 ```
 
-2. 编辑`.env`文件，填入您的API密钥和其他配置：选择LLM Vendor,并配置相应的key
+2. 编辑`.env`文件，填入您的API密钥和其他配置：选择LLM Vendor, 并配置相应的key
 
 ```
 # Reddit API credentials
@@ -105,6 +105,9 @@ docker-compose logs -f app
 1. 安装依赖：
 
 ```bash
+python3 -m venv reddit-trends
+cd reddit-trends
+source ./bin/activate
 pip install -r requirements.txt
 ```
 

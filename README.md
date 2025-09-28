@@ -105,6 +105,9 @@ docker-compose logs -f app
 1. Install dependencies:
 
 ```bash
+python3 -m venv reddit-trends
+cd reddit-trends
+source ./bin/activate
 pip install -r requirements.txt
 ```
 
