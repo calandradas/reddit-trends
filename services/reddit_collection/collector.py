@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
 from services.reddit_collection.community_fetch import RedditCommunityFetcher
 from services.reddit_collection.post_detail_fetch import RedditPostDetailFetcher
 from database.mongodb import MongoDBClient
-from config import REDDIT_COMMUNITIES, EXCLUDED_CATEGORIES
+from config import REDDIT_COMMUNITIES, BIOTECH_REDDIT_COMMUNITIES, CRYPTO_REDDIT_COMMUNITIES, EXCLUDED_CATEGORIES
 
 # Configure logging
 logging.basicConfig(
@@ -111,7 +111,7 @@ class RedditDataCollector:
         all_trending_posts = []
         
         # Collect posts from each subreddit
-        for subreddit_name in REDDIT_COMMUNITIES:
+        for subreddit_name in CRYPTO_REDDIT_COMMUNITIES:
             # Get trending posts
             posts = self.community_fetcher.get_trending_posts(
                 subreddit_name=subreddit_name,
@@ -180,7 +180,7 @@ class RedditDataCollector:
         
         # 使用默认subreddits（如果未提供）
         if not subreddits:
-            subreddits = REDDIT_COMMUNITIES
+            subreddits = CRYPTO_REDDIT_COMMUNITIES
         
         all_posts = []
         for subreddit in subreddits:
@@ -215,7 +215,7 @@ class RedditDataCollector:
         
         # 使用默认subreddits（如果未提供）
         if not subreddits:
-            subreddits = REDDIT_COMMUNITIES
+            subreddits = CRYPTO_REDDIT_COMMUNITIES
         
         all_posts = []
         for subreddit in subreddits:
@@ -272,7 +272,7 @@ class RedditDataCollector:
         all_posts = []
         
         # Process high priority communities
-        for subreddit, limit in REDDIT_COMMUNITIES.get("high_priority", {}).items():
+        for subreddit, limit in CRYPTO_REDDIT_COMMUNITIES.get("high_priority", {}).items():
             try:
                 community_data = self.collect_community_data(subreddit)
                 posts = self.post_detail_fetcher.fetch_post_details(
@@ -284,7 +284,7 @@ class RedditDataCollector:
                 logger.error(f"Error collecting data from r/{subreddit}: {e}")
         
         # Process medium priority communities
-        for subreddit, limit in REDDIT_COMMUNITIES.get("medium_priority", {}).items():
+        for subreddit, limit in CRYPTO_REDDIT_COMMUNITIES.get("medium_priority", {}).items():
             try:
                 community_data = self.collect_community_data(subreddit)
                 posts = self.post_detail_fetcher.fetch_post_details(

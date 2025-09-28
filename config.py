@@ -28,6 +28,46 @@ REDDIT_COMMUNITIES = {
     }
 }
 
+CRYPTO_REDDIT_COMMUNITIES = {
+    # High priority communities (fetch top 30 posts)
+    "high_priority": {
+        "CryptoCurrency": 30,
+        "Bitcoin": 30,
+        "ethereum": 30
+    },
+    # Medium priority communities (fetch top 10 posts)
+    "medium_priority": {
+        "fintech": 10,
+        "DeFi": 10,
+        "CryptoMarkets": 10,
+        "personalfinance": 10,
+        "investing": 10,
+        "Altcoin": 10,
+        "CryptoTechnology": 10,
+        "finance": 10
+    }
+}
+
+BIOTECH_REDDIT_COMMUNITIES = {
+    # High priority communities (fetch top 30 posts)
+    "high_priority": {
+        "Biotech": 30,
+        "Bioinformatics": 30,
+        "medicine": 30
+    },
+    # Medium priority communities (fetch top 10 posts)
+    "medium_priority": {
+        "biology": 10,
+        "genetics": 10,
+        "neuroscience": 10,
+        "Pharmacology": 10,
+        "HealthInformatics": 10,
+        "MedTech": 10,
+        "science": 10,
+        "CRISPR": 10
+    }
+}
+
 # LLM configuration
 LLM_CONFIG = {
     "temperature": 0.4,
