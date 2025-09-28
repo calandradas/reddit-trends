@@ -6,7 +6,9 @@
 
 本分支增加对OpenAI, xAI Grok, and Google Gemini的支持。具体参考.env.example文件的配置信息。
 
-自动从Reddit AI, Crypto, Biotech相关社区生成趋势报告，支持英文和中文双语。通过每日报告，随时了解AI, Crypto, Biotech领域的最新发展。
+自动从Reddit AI, Crypto, Biotech相关社区生成趋势报告，支持英文和中文双语。
+
+通过每日报告，随时了解AI, Crypto, Biotech领域的最新发展。
 
 ## 功能特点
 
