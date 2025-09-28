@@ -108,13 +108,14 @@ docker-compose logs -f app
 python3 -m venv reddit-trends
 cd reddit-trends
 source ./bin/activate
+pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 pip install -r requirements.txt
 ```
 
 2. 生成一次性报告：
 
 ```bash
-python report_generation.py --languages en zh
+python report_generation.py --languages en zh --skip-mongodb
 ```
 
 3. 设置定时生成报告：
