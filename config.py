@@ -85,8 +85,8 @@ LLM_CONFIG = {
 # Report generation configuration
 REPORT_CONFIG = {
     "frequency_hours": 24,  # 更新为每24小时一次
-    "report_title_format": "Reddit AI Report - {date}",
-    "report_title_format_zh": "Reddit AI 趋势报告 - {date}",
+    "report_title_format": "Reddit Trends Report - {date}",
+    "report_title_format_zh": "Reddit 趋势报告 - {date}",
     "report_directory": "reports",
     "database_name": "reddit-report",
     "collections": {
@@ -122,14 +122,14 @@ EXCLUDED_CATEGORIES = [cat.strip() for cat in EXCLUDED_CATEGORIES if cat.strip()
 
 # GitHub configuration
 GITHUB_CONFIG = {
-    "repo_name": "reddit-ai-report",
+    "repo_name": "reddit-trends-report",
     "branch": "main",
     "commit_message_format": "Update report for {date}"
 }
 
 # Docker configuration
 DOCKER_CONFIG = {
-    "image_name": "reddit-ai-report",
-    "container_name": "reddit-ai-report-container",
+    "image_name": "reddit-trends-report",
+    "container_name": "reddit-trends-report-container",
     "port": 8080
 } 

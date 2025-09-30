@@ -5,5 +5,5 @@ cd "$script_dir"
 
 source ./bin/activate
 
-python report_generation.py --languages zh --skip-mongodb --push-telegrambot --industry $1 &
+python report_generation.py --languages zh --skip-mongodb --push-telegrambot --push-to-github --industry $1 &
 
