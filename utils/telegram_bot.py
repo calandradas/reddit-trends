@@ -1,7 +1,6 @@
 import asyncio
 import os
 from dotenv import load_dotenv
-from datetime import datetime
 from telegram import Bot
 from telegram.helpers import escape_markdown
 import logging
