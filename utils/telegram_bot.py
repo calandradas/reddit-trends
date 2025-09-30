@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from datetime import datetime
 from telegram import Bot
+from telegram.utils.helpers import escape_markdown
 import logging
 # Load environment variables
 load_dotenv()
@@ -24,7 +25,7 @@ class TelegramBot:
     async def send_daily_report(self, report):
         """Send daily report to the chat."""
         try:
-            messages = self._split_message(self._escape_markdown(report))
+            messages = self._split_message(escape_markdown(report))
             for i, msg in enumerate(messages, 1):
                 await self.bot.send_message(
                     chat_id=self.chat_id,

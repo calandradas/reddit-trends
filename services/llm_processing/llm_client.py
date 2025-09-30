@@ -33,6 +33,10 @@ class LLMClient:
         """Initialize the LLM API client using credentials from environment variables."""
         self.vendor = os.getenv('VENDOR', 'gemini')  # Default to 'gemini' if not set
         match self.vendor:
+            case 'groq':
+                self.api_key = os.getenv('GROQ_API_KEY')
+                self.client = groq.Client(api_key=self.api_key)
+                self.model = os.getenv('GROQ_MODEL', "deepseek-r1-distill-llama-70b")
             case 'grok':
                 self.api_key = os.getenv('GROK_API_KEY')
                 self.api_base = os.getenv('GROK_API_BASE')
@@ -59,7 +63,7 @@ class LLMClient:
                      temperature: Optional[float] = None, 
                      max_tokens: Optional[int] = None) -> str:
         """
-        Generate text using the Groq API.
+        Generate text using the vendor API.
         
         Args:
             prompt: The prompt to send to the model
@@ -77,7 +81,7 @@ class LLMClient:
         
         try:
             match self.vendor:
-                case 'grok' | 'openai':
+                case 'groq' | 'grok' | 'openai':
                 # Call the grok & chatgpt API
                     response = self.client.chat.completions.create(              
                         model=self.model,
@@ -89,7 +93,7 @@ class LLMClient:
                         max_tokens=tokens
                     ) 
                                 
-                    # Extract the generated text groq & chatgpt api
+                    # Extract the generated text groq, grok & chatgpt api
                     generated_text = response.choices[0].message.content
                 case 'gemini':  
                     # call gemini api
@@ -641,7 +645,7 @@ class LLMClient:
         Returns:
             Generated report as a string
         """
-        logger.info(f"Generating report from {len(posts)} posts using Groq API in {language} language")
+        logger.info(f"Generating report from {len(posts)} posts using {self.vendor} API in {language} language")
         
         # Use reference date or current date
         report_date = reference_date if reference_date is not None else datetime.now()
