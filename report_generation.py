@@ -320,8 +320,10 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
         # 添加 GitHub 推送支持
         if push_to_github:
             try:
-                from utils.github_integration import commit_and_push_report
-                commit_and_push_report(report_paths)
+                from utils.github_integration import GitHubIntegration
+                github_integration = GitHubIntegration()
+                for lang, report_path in report_paths.items():
+                    github_integration.commit_and_push_report(report_path)
                 logger.info("Pushed report to GitHub")
             except ImportError:
                 logger.warning("GitHub utils not found. Skipping GitHub push.")

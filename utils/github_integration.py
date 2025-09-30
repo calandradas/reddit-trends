@@ -58,7 +58,7 @@ class GitHubIntegration:
             if relative_path.startswith('..'):
                 logger.error(f"Report file {report_path} is not within the repository {self.repo_path}")
                 return False
-            
+
             # Add the file to the index
             repo.git.add(report_path)
             
