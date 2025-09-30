@@ -25,7 +25,7 @@ class TelegramBot:
     async def send_daily_report(self, report):
         """Send daily report to the chat."""
         try:
-            messages = self._split_message(escape_markdown(report))
+            messages = self._split_message(escape_markdown(report, version=2))
             for i, msg in enumerate(messages, 1):
                 await self.bot.send_message(
                     chat_id=self.chat_id,
@@ -36,13 +36,6 @@ class TelegramBot:
                 await asyncio.sleep(1)  # Sleep to avoid hitting rate limits (20 messages per minute)
         except Exception as e:
             logger.error(f"Error sending to telegram report: {e}")
-    
-    def _escape_markdown(self, text: str) -> str:
-        """Escape reserved MarkdownV2 characters in the report."""
-        reserved_chars = ['_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!']
-        for char in reserved_chars:
-            text = text.replace(char, f'\\{char}')
-        return text
 
     def _split_message(self, text: str) -> list[str]:
         """Split a message into chunks under MAX_MESSAGE_LENGTH, preserving lines."""
