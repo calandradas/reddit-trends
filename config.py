@@ -20,6 +20,8 @@ REDDIT_COMMUNITIES = {
         "Vectordatabase",
         "Rag",
         "ai_agents",
+        "embedded",
+        "technology",
         "datascience"
     ],
 
@@ -42,16 +44,35 @@ REDDIT_COMMUNITIES = {
         "Bitcoin",
         "ethereum",
         "fintech",
-        "FintechStartups",
         "financialtechnology",
         "DeFi",
-        "Banking",
         "CryptoMarkets",
         "personalfinance",
         "investing",
         "Altcoin",
         "CryptoTechnology",
-        "finance"
+        "finance",
+        "FinancialPlanning",
+        "WallStreetBets",
+        "stocks",
+        "options",
+        "Economics",
+        "dividends"
+    ],
+
+    "geopolitical_communities": [
+        "geopolitics",
+        "worldnews",
+        "internationalpolitics",
+        "Economics",
+        "PoliticalDiscussion",
+        "ForeignAffairs",
+        "IRstudies",
+        "globalpolitics",
+        "AskEconomics",
+        "finance",
+        "investing",
+        "worldevents"
     ]
 }
 

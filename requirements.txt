@@ -12,3 +12,5 @@ pytz==2023.3
 requests==2.31.0
 openai>=1.40.0
 google-genai>=0.16.0 
+python-telegram-bot==20.4 
+

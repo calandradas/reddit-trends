@@ -11,6 +11,7 @@ import logging
 import argparse
 import schedule
 import time
+import asyncio
 from datetime import datetime, timedelta
 import shutil
 from pathlib import Path
@@ -181,7 +182,8 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
                    hours: int = 24,
                    save_to_db: bool = True,
                    save_to_file: bool = True,
-                   push_to_github: bool = False) -> Dict[str, str]:
+                   push_to_github: bool = False,
+                   push_telegrambot: bool = False) -> Dict[str, str]:
     """
     Generate a report on trending posts from Reddit AI communities.
     
@@ -318,13 +320,26 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
         # 添加 GitHub 推送支持
         if push_to_github:
             try:
-                from utils.github_utils import push_report_to_github
-                push_report_to_github(report_paths)
+                from utils.github_integration import commit_and_push_report
+                commit_and_push_report(report_paths)
                 logger.info("Pushed report to GitHub")
             except ImportError:
                 logger.warning("GitHub utils not found. Skipping GitHub push.")
             except Exception as e:
                 logger.error(f"Error pushing to GitHub: {e}")
+
+        # Telegram sending report
+        if push_telegrambot:
+            try:
+                from utils.telegram_bot import TelegramBot
+                telegram_bot = TelegramBot()
+                for lang, report in reports.items():
+                    asyncio.run(telegram_bot.send_daily_report(report["content"]))
+                logger.info("Sent reports via Telegram")
+            except ImportError:
+                logger.warning("Telegram bot utils not found. Skipping Telegram sending.")
+            except Exception as e:
+                logger.error(f"Error sending reports via Telegram: {e}")
         
         end_time = time.time()
         logger.info(f"Report generation completed in {end_time - start_time:.2f} seconds")
@@ -487,6 +502,8 @@ if __name__ == "__main__":
     parser.add_argument("--interval", type=int, default=24, help="Interval in hours between report generation runs")
     parser.add_argument("--languages", nargs="+", default=None, help="Languages to generate reports for (e.g., en zh)")
     parser.add_argument("--skip-mongodb", action="store_true", help="Skip saving reports to MongoDB")
+    parser.add_argument("--push-to-github", action="store_false", help="Enable pushing reports to GitHub")
+    parser.add_argument("--push-telegrambot", action="store_false", help="Enable sending reports via Telegram bot")
     parser.add_argument("--industry", default="ai", help="Generate industry-specific reports, e.g., ai, biotech, crypto")
 
     args = parser.parse_args()
@@ -494,6 +511,6 @@ if __name__ == "__main__":
     #main()
     if args.languages:
      # Run once with specified languages
-         generate_report(args.industry, args.languages, skip_mongodb=args.skip_mongodb)
+         generate_report(args.industry, args.languages, skip_mongodb=args.skip_mongodb, push_telegrambot=args.push_telegrambot, push_to_github=args.push_to_github)
     #else:
         # Schedule with default languages from config
