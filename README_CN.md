@@ -13,7 +13,7 @@
 
 通过每日报告，随时了解AI, Crypto, Biotech领域的最新发展。
 
-## 完成功能特点
+## 完整功能特点
 
 - **实时趋势监控**：实时跟踪新兴产业技术、讨论和突破性进展
 - **多个LLM支持**：增加对OpenAI, xAI Grok, and Google Gemini的支持
