@@ -4,15 +4,16 @@
 
 从 liyedanpdx/reddit-ai-trends fork而来, 感谢他的分享。
 
-本分支增加对OpenAI, xAI Grok, and Google Gemini的支持。具体参考.env.example文件的配置信息。
+## 本分支新增如下功能
 
-自动从Reddit AI, Crypto, Biotech相关社区生成趋势报告，支持英文和中文双语。
-
-自定义你所关心的产业社区，并生成报告。
+- 对OpenAI, xAI Grok, and Google Gemini的支持。具体参考.env.example文件的配置信息。
+- 自动从Reddit AI, Crypto, Biotech相关社区生成趋势报告，支持英文和中文双语。
+- 自定义你所关心的产业社区，并生成报告。
+- 多渠道发布报告，目前包括发布到文件目录、telegram bot、github。
 
 通过每日报告，随时了解AI, Crypto, Biotech领域的最新发展。
 
-## 功能特点
+## 完成功能特点
 
 - **实时趋势监控**：实时跟踪新兴产业技术、讨论和突破性进展
 - **多个LLM支持**：增加对OpenAI, xAI Grok, and Google Gemini的支持
@@ -22,6 +23,7 @@
 - **详细趋势分析**：生成深入报告，包括今日焦点、周趋势对比、月度技术演进等
 - **双语支持**：同时生成英文和中文报告
 - **有组织的文件结构**：按年/月/日存储报告，便于访问
+- **支持多渠道发布报告**：报告目前可以发布到指定文件目录、telegram bot或者github上
 - **Docker部署**：简易容器化部署
 - **MongoDB持久化**：存储所有数据用于历史分析
 
@@ -178,7 +180,7 @@ git push -u origin main
 在运行脚本时，添加`--industry`相对的参数即可，注意参数名与添加的产业社区前缀必须保持一致
 
 ```bash
-python report_generation.py --languages en zh --skip-mongodb --industry biotech
+python report_generation.py --languages en zh --skip-mongodb --push-telegrambot --industry biotech
 ```
 
 ## 多产业趋势监控

@@ -4,15 +4,16 @@
 
 Forked from  liyedanpdx/reddit-ai-trends, thanks for his contributions.
 
-Added support for OpenAI, xAI Grok, and Google Gemini LLM. For details, please view the configuration information in the .env.example file and configure your own key.
+## This branch adds the following features
 
-Automatically generate trend reports from AI, Crypto, Biotech related Reddit communities. Or DIY your concerned industry communities.
-
-Supporting both English and Chinese languages.
+- Support for OpenAI, xAI Grok, and Google Gemini. For detailed configuration information, refer to the .env.example file.
+- Automatically generate trend reports from Reddit AI, Crypto, and Biotech communities, supporting both English and Chinese.
+- Customize the industry communities you're interested in and generate reports.
+- Publish reports through multiple channels, currently including to a file directory, Telegram bot, and GitHub.
 
 Stay up-to-date with the latest developments in the AI, Crypto, Biotech field through daily reports.
 
-## Features
+## Full Features
 
 - **Real-time Industry Trend Monitoring**: Track emerging industry technologies, discussions, and breakthroughs as they happen
 - **Mutiple LLMs Support**: Support for OpenAI, xAI Grok, and Google Gemini LLM
@@ -22,6 +23,7 @@ Stay up-to-date with the latest developments in the AI, Crypto, Biotech field th
 - **Detailed Trend Analysis**: Generate in-depth reports including today's highlights, weekly trend comparisons, monthly technology evolution, and more
 - **Bilingual Support**: Generate reports in both English and Chinese
 - **Organized File Structure**: Store reports in year/month/day folders for easy access
+- **Multiple channels for publishing reports**: Reports can currently be published to a specified file directory, Telegram bot, or GitHub
 - **Docker Deployment**: Easy containerized deployment
 - **MongoDB Persistence**: Store all data for historical analysis
 
@@ -120,7 +122,7 @@ pip install -r requirements.txt
 2. Generate a one-time report:
 
 ```bash
-python report_generation.py --languages en zh --skip-mongodb --industry ai
+python report_generation.py --languages en zh --skip-mongodb --push-telegrambot --industry ai
 ```
 
 3. Set up scheduled report generation:
