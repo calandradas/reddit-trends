@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from datetime import datetime
 from telegram import Bot
-from telegram.utils.helpers import escape_markdown
+from telegram.helpers import escape_markdown
 import logging
 # Load environment variables
 load_dotenv()
