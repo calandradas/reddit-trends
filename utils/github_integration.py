@@ -38,7 +38,7 @@ class GitHubIntegration:
         else:
             logger.info(f"Git repository found at {self.repo_path}")
     
-    def commit_and_push_report(self, report_path: str, report_metadata: Dict[str, Any]) -> bool:
+    def commit_and_push_report(self, report_path: str) -> bool:
         """
         Commit and push a report to GitHub.
         
@@ -68,12 +68,7 @@ class GitHubIntegration:
                 repo.git.add(metadata_path)
             
             # Create the commit message
-            timestamp = report_metadata.get('timestamp', datetime.utcnow())
-            if isinstance(timestamp, str):
-                try:
-                    timestamp = datetime.fromisoformat(timestamp)
-                except ValueError:
-                    timestamp = datetime.utcnow()
+            timestamp = datetime.now()
             
             commit_message = GITHUB_CONFIG['commit_message_format'].format(
                 date=timestamp.strftime('%Y-%m-%d %H:%M UTC')
