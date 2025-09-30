@@ -502,8 +502,8 @@ if __name__ == "__main__":
     parser.add_argument("--interval", type=int, default=24, help="Interval in hours between report generation runs")
     parser.add_argument("--languages", nargs="+", default=None, help="Languages to generate reports for (e.g., en zh)")
     parser.add_argument("--skip-mongodb", action="store_true", help="Skip saving reports to MongoDB")
-    parser.add_argument("--push-to-github", action="store_false", help="Enable pushing reports to GitHub")
-    parser.add_argument("--push-telegrambot", action="store_false", help="Enable sending reports via Telegram bot")
+    parser.add_argument("--push-to-github", action="store_true", help="Enable pushing reports to GitHub")
+    parser.add_argument("--push-telegrambot", action="store_true", help="Enable sending reports via Telegram bot")
     parser.add_argument("--industry", default="ai", help="Generate industry-specific reports, e.g., ai, biotech, crypto")
 
     args = parser.parse_args()
