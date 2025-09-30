@@ -124,7 +124,7 @@ EXCLUDED_CATEGORIES = [cat.strip() for cat in EXCLUDED_CATEGORIES if cat.strip()
 GITHUB_CONFIG = {
     "repo_name": "reddit-trends",
     "branch": "main",
-    "commit_message_format": "Update report for {date}"
+    "commit_message_format": "Update reports for {date}"
 }
 
 # Docker configuration

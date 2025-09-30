@@ -324,6 +324,7 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
                 github_integration = GitHubIntegration()
                 for lang, report_path in report_paths.items():
                     github_integration.commit_and_push_report(report_path)
+                github_integration.commit_and_push_report(latest_path = os.path.join("reports", f"latest_report_{industry}_{lang}.md"))
                 logger.info("Pushed report to GitHub")
             except ImportError:
                 logger.warning("GitHub utils not found. Skipping GitHub push.")
