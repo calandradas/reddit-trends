@@ -298,7 +298,7 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
             rel_path = os.path.relpath(filepath, os.path.dirname(latest_path))
             try:
                 #os.symlink(rel_path, latest_path)
-                os.copy_file_range(filepath, latest_path)
+                shutil.copy2(filepath, latest_path)
                 logger.info(f"Created symlink from {rel_path} to {latest_path}")
             except Exception as e:
                 # On Windows, symlinks might not work without admin privileges
