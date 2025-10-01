@@ -68,7 +68,7 @@ class GitHubIntegration:
                 repo.git.add(metadata_path)
             
             # Create the commit message
-            timestamp = datetime.now()
+            timestamp = datetime.utcnow()
             
             commit_message = GITHUB_CONFIG['commit_message_format'].format(
                 date=timestamp.strftime('%Y-%m-%d %H:%M UTC')
