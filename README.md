@@ -122,7 +122,7 @@ pip install -r requirements.txt
 2. Generate a one-time report:
 
 ```bash
-python report_generation.py --languages en zh --skip-mongodb --push-telegrambot --industry ai
+python report_generation.py --languages en zh --skip-mongodb --push-to-github --push-telegrambot --industry ai
 ```
 
 3. Set up scheduled report generation:
@@ -178,7 +178,7 @@ You can modify the following configurations in the `config.py` file:
 When running the script, add the `--industry` parameter. Note that the parameter name must match the prefix of the added industry community.
 
 ```bash
-python report_generation.py --languages ​​en zh --skip-mongodb --industry biotech
+python report_generation.py --languages en zh --skip-mongodb --push-to-github --push-telegrambot --industry biotech
 ```
 
 ## Multi-Industries Trend Monitoring

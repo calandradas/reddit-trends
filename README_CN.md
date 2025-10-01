@@ -123,7 +123,7 @@ pip install -r requirements.txt
 2. 生成一次性报告：
 
 ```bash
-python report_generation.py --languages en zh --skip-mongodb --industry ai
+python report_generation.py --languages en zh --skip-mongodb --push-to-github --push-telegrambot --industry ai
 ```
 
 3. 设置定时生成报告：
@@ -180,7 +180,7 @@ git push -u origin main
 在运行脚本时，添加`--industry`相对的参数即可，注意参数名与添加的产业社区前缀必须保持一致
 
 ```bash
-python report_generation.py --languages en zh --skip-mongodb --push-telegrambot --industry biotech
+python report_generation.py --languages en zh --skip-mongodb --push-to-github --push-telegrambot --industry biotech
 ```
 
 ## 多产业趋势监控
