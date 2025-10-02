@@ -1,209 +1,216 @@
-# Reddit AI 趋势报告 - 2025-10-02
+# Reddit AI 趋势报告 - 2025-10-03
 
 ## 趋势分析
 
-以下是2025年10月2日的Reddit AI趋势分析报告：
+## 今日焦点
 
-1.  **今日焦点**
+过去24小时内，Reddit上的AI相关讨论呈现出几个值得关注的新趋势和突破性发展，与此前一周或一月的宏观话题有所不同，更侧重于AI技术的实际落地、成本效益以及基础计算能力的突破。
 
-    过去24小时内，AI领域出现了几个值得关注的新兴趋势和突破性发展，与之前的周/月趋势有所不同，显示出社区兴趣的即时转变和技术进步的加速。
+1.  **企业级本地大模型（LLM）的崛起与实践：** 最引人注目的是IBM的“Granite 4.0 Language Models”在r/LocalLLaMA社区的发布（得分476，评论190）。这标志着像IBM这样的传统企业级技术巨头开始积极参与并贡献于开源本地LLM生态系统。这不仅仅是一个新模型的发布，更是对本地AI部署可行性和重要性的企业级背书，预示着AI应用可能从纯粹的云端服务向混合或完全本地化部署发展，以满足数据隐私、安全和成本控制的需求。
+2.  **本地LLM部署的成本与价值讨论：** 紧随其后的是r/LocalLLaMA社区中关于“那些在本地LLM设置上花费了1万美元以上的人，你们后悔吗？”的讨论（得分310，评论299）。这个帖子直接触及了本地LLM部署的核心痛点——高昂的初始硬件投入。社区对这一话题的热烈讨论表明，在技术进步的同时，用户和开发者对本地AI解决方案的实际成本效益和投资回报率有着强烈的关注和考量。这反映了市场从追求“能用”到追求“好用且划算”的转变。
+3.  **AI计算基础的突破性进展：** r/singularity社区中关于“哈佛研究人员开发出首个持续运行的量子计算机”的帖子（得分276，评论29）虽然并非直接关于AI模型，但其“持续运行的计算能力”对于未来AI，特别是通用人工智能（AGI）和复杂模拟的实现具有颠覆性意义。这种基础计算能力的突破，预示着AI领域可能在底层硬件层面迎来重大变革，从而解锁当前AI模型无法实现的新能力。
+4.  **对开放模型迭代的持续期待：** r/LocalLLaMA社区中“谷歌已经很久没有发布新的Gemma模型了”的讨论（得分230，评论77）表明，社区对主要科技公司持续贡献高质量、开放源代码AI模型有着强烈的期待。这反映了开放模型在推动AI创新和普及方面的重要性，以及社区对模型迭代速度和质量的关注。
 
-    *   **生成式视频的突破性进展**：r/singularity社区的热门帖子“Unlocked consistency for sora 2”（得分569，评论66）标志着文本到视频生成技术的一个重大飞跃。Sora 2在视频一致性方面的突破，解决了以往生成式视频中常见的物体变形、场景不连贯等核心问题。这不仅仅是一个技术优化，更是向生成更真实、更具叙事性的AI视频迈出的关键一步，预示着AI在内容创作领域将拥有更强大的能力，并可能对媒体、娱乐和教育行业产生深远影响。
-    *   **本地大型语言模型（LLM）的快速迭代**：r/LocalLLaMA社区的“GLM-4.6-GGUF is out!”（得分800，评论144）表明，开源和本地运行的LLM生态系统正以惊人的速度发展。GLM-4.6-GGUF的发布，意味着用户可以在消费级硬件上获得更强大、更高效的语言模型，进一步推动了AI的民主化和去中心化。这与之前更多关注AI经济泡沫或通用AI影响的趋势不同，它聚焦于具体的、可操作的AI工具的进步。
-    *   **AI与政治和信息控制的直接冲突**：r/technology社区的两篇高分帖子“Google is blocking AI searches for the president and deme...” （得分31581，评论1494）和“The AI slop drops right from the top, as the White House...” （得分13523，评论326）揭示了AI在政治和信息领域日益增长的争议。Google对AI搜索结果的审查以及白宫被指控生成“AI slop”（低质量AI内容），将AI伦理和偏见问题从理论讨论推向了具体的政治行动和信息控制层面。这反映了社区对AI被用于操纵信息、影响政治进程的深切担忧，是AI技术成熟后必然面对的现实挑战。
-    *   **AI Agent概念的深度反思**：r/AI_Agents社区的“Stop Building Workflows and Calling Them Agents”（得分76，评论26）表明，AI代理（Agent）领域正在从早期的炒作和实验阶段，转向对核心概念和实际能力的更严谨审视。这种内部的自我批判对于确保AI代理技术能够真正实现其潜力，而不是停留在简单的自动化脚本层面至关重要。
+这些今日焦点共同描绘了一个AI领域正在从宏观概念走向具体实践、从云端走向本地、从软件模型走向硬件基础的演进图景。IBM的参与验证了本地AI的商业价值，而社区对成本和新模型的讨论则反映了其在落地过程中面临的挑战与机遇。
 
-    这些今日焦点共同描绘了一幅AI领域既有技术突破、又有现实挑战，且社区内部正在进行深刻反思的图景。
+## 周趋势对比
 
-2.  **周趋势对比**
+将今日趋势与过去一周的趋势进行对比，可以发现一些持续存在的宏观话题，以及今日新出现的、更具实践性的微观焦点。
 
-    与过去24小时的趋势相比，过去一周的Reddit趋势显示出一些持续性主题，同时也突显了今日新出现的焦点。
+*   **持续存在的趋势：**
+    *   **AI的社会与政治影响：** 过去一周，r/technology社区中关于“谷歌屏蔽总统和民主党AI搜索”、“白宫的AI糟粕”等帖子（周趋势第4、15位）得分极高，显示出社区对AI在信息审查、政治偏见和公共话语权方面影响的持续关注。这种对AI伦理和社会治理的担忧一直占据着热门讨论。
+    *   **AI泡沫论：** “AI泡沫是支撑美国经济的唯一因素”、“每个人都在想AI泡沫何时会破裂”等帖子（周趋势第14、20位）表明，关于AI行业估值过高、可能存在泡沫的经济担忧持续存在，是社区普遍关注的宏观经济话题。
+*   **新出现的趋势：**
+    *   **本地LLM的商业化与实用性：** 今日趋势中，IBM Granite 4.0的发布和对本地LLM设置成本的讨论，是过去一周中不曾出现的具体实践性话题。这标志着社区的兴趣从泛泛的“AI影响”转向了“如何部署和管理AI”的实际操作层面。这种转变反映了AI技术正在从研究阶段进入更广泛的商业和个人应用阶段，人们开始关注其落地细节。
+    *   **底层计算能力的突破：** 哈佛研究的“持续运行的计算”是全新的话题，它将AI的讨论引向了更深层次的物理和计算科学基础，而非仅仅停留在软件和模型层面。这表明社区对AI未来发展的驱动力有了更全面的理解，认识到硬件和计算架构的创新同样关键。
 
-    *   **持续存在的AI经济与泡沫担忧**：一周内，r/technology社区有多篇关于“AI泡沫”和AI对经济影响的帖子，如“The AI bubble is the only thing keeping the US economy to...”和“Everyone's wondering if, and when, the AI bubble will po...”。这表明社区对AI技术带来的经济波动和投资前景的关注是持续的。
-    *   **AI监管与伦理讨论的深化**：一周前有关于“Regulating AI hastens the Antichrist”的哲学性讨论，而今日的“Google is blocking AI searches...”和“The AI slop drops...”则将这种讨论具体化为对政府和科技巨头在AI内容和信息控制方面的实际行动的关注。这反映了社区兴趣从宏观的监管必要性转向微观的、具体的AI应用伦理问题。
-    *   **隐私和政府监控的常态化关注**：一周内，“Ted Cruz blocks bill that would extend privacy protection...”和“ICE to Buy Tool that Tracks Locations...”等帖子持续高分，显示出对隐私侵犯和政府监控的担忧是长期且普遍的。AI技术在这些领域的应用，无疑加剧了这种担忧。
-    *   **新出现的具体技术突破**：本周趋势中，关于Sora 2一致性解锁和GLM-4.6-GGUF发布的帖子是新的亮点，它们代表了具体的、可感知的AI技术进步，而不仅仅是关于AI的宏观影响或争议。这表明社区对AI技术本身的进步和实际应用价值的兴趣正在增强。
+这些变化反映了社区兴趣从宏观的社会、经济影响，向微观的AI技术实现、部署挑战和基础科学突破的转变，显示出AI领域正在走向成熟和深耕。
 
-    总体而言，社区兴趣从对AI的广泛社会经济影响的讨论，逐渐转向对AI技术具体突破的兴奋，以及对AI在政治、信息控制等敏感领域所带来即时挑战的担忧。
+## 月度技术演进
 
-3.  **月度技术演进**
+从更长远的角度看，当前趋势如何融入或改变了过去一个月的技术发展路线，特别关注那些可能代表AI领域重大转变的新兴技术或方法。
 
-    从更长远的角度看，当前趋势融入并改变了过去一个月的AI技术发展路线，呈现出从宏观影响到具体技术与伦理挑战的演进。
+*   **从宏观影响到具体解决方案：** 过去一个月，Reddit上的AI讨论涵盖了广泛的社会影响，如“AI对就业市场的影响”（月趋势第18位）、“谷歌屏蔽AI搜索”（月趋势第15位）以及“哈佛数学家刘军离开美国赴中国”（月趋势第20位）等人才流动问题。这些话题主要集中在AI的社会、经济和地缘政治影响上。
+*   **本地/边缘AI的战略性崛起：** 今日IBM Granite 4.0的出现，代表了AI技术演进中的一个重要转变：从主要关注云端AI服务和大型模型，转向更加重视本地化、企业级和数据主权友好的AI解决方案。这不仅是对隐私和安全担忧的回应，也为那些无法或不愿将敏感数据上传云端的行业提供了新的选择。这种趋势可能预示着未来AI部署将更加多样化，形成云边协同、混合部署的生态。
+*   **对开放与定制化AI的需求增长：** 社区对Google Gemma新模型的期待，以及对本地LLM设置的深入讨论，表明市场对开放源代码、可定制化和易于本地部署的AI模型有着强烈需求。这与过去一个月中更多关注大型专有模型或云服务的趋势有所不同，反映出用户希望对AI拥有更大的控制权和灵活性。
+*   **计算基础的深层探索：** 哈佛研究的计算突破，虽然在月度趋势中没有直接对应，但它代表了AI领域在更深层次上对计算范式革新的追求。这可能预示着未来AI的发展将不仅仅依赖于算法和数据，更将受益于量子计算、神经形态计算等新型计算架构的成熟。
 
-    *   **早期关注点：人才流失与就业市场影响**：一个月前，Reddit上关于AI的讨论集中在AI对就业市场的冲击（“The Job Market Is Hell: Young people are using ChatGPT to...”），以及AI领域的人才竞争和地缘政治影响（“Top Harvard mathematician Liu Jun leaves US for China”）。这些帖子反映了AI早期对社会结构和国际竞争力的宏观影响。
-    *   **中期关注点：AI经济泡沫与企业策略**：月中，关于AI泡沫的讨论持续升温，同时也有关于AI可能颠覆传统软件公司（“Morgan Stanley warns AI could sink...”）的商业分析。
-    *   **当前演进：技术成熟与即时伦理/政治挑战**：进入10月，AI技术本身取得了显著进步，如Sora 2在视频生成一致性上的突破，以及本地LLM（GLM-4.6-GGUF）的快速迭代。这些具体的技术成就，使得AI不再仅仅是讨论其潜在影响，而是开始直接面对其在信息传播、政治操纵和内容真实性方面的即时伦理和政治挑战。白宫被指控使用“AI slop”和Google审查AI搜索结果的事件，标志着AI已经从一个未来的技术概念，演变为一个深刻影响当下社会和政治格局的现实力量。这种演进表明AI领域正从“可能性”阶段走向“现实影响”阶段，技术进步与社会责任的交织变得更加紧密和复杂。
+总的来说，过去一个月的AI技术演进路线正在从关注AI的广泛影响，逐渐转向探索其在本地化、定制化和基础计算层面的具体实现路径，标志着AI技术正在从概念验证走向大规模实用部署的关键阶段。
 
-4.  **技术深度解析**
+## 技术深度解析
 
-    选择“Unlocked consistency for sora 2”作为深度解析的趋势。
+选择今日最有趣的趋势——**IBM Granite 4.0 Language Models及其在本地LLM生态中的意义**进行深度解析。
 
-    *   **它是什么**：Sora 2是一个先进的文本到视频生成AI模型。其“一致性解锁”指的是模型在生成视频时，能够显著提高视频内容的视觉和时间连贯性。这意味着：
-        *   **物体持久性**：视频中的物体能够保持其身份、外观和物理属性，不会随意变形或消失。
-        *   **空间连贯性**：场景中的物体和环境在不同帧之间保持合理的空间关系和几何结构。
-        *   **时间连贯性**：动作和事件的发生符合物理规律和叙事逻辑，运动流畅自然，不会出现突兀的跳跃或不合理的行为。
-        *   **风格统一性**：整个视频的视觉风格、光照和美学保持一致。
-    *   **为什么重要**：
-        *   **突破生成式AI瓶颈**：缺乏一致性是早期文本到视频模型的主要限制，导致生成的视频往往显得不真实、不稳定。Sora 2的突破解决了这一核心难题，使其生成的视频质量大幅提升，更接近真实世界的视觉体验。
-        *   **赋能创意产业**：对于电影制作、动画、广告和游戏开发等创意领域，Sora 2能够显著降低生成高质量视觉内容的门槛和成本，加速创意实现过程。
-        *   **推动通用AI发展**：在r/singularity社区看来，实现高度一致性意味着模型对物理世界、时间流逝和因果关系有了更深层次的理解，这是迈向通用人工智能（AGI）的重要一步。
-    *   **与更广泛AI生态系统的关系**：
-        *   **生成式AI前沿**：Sora 2的进展巩固了生成式AI作为当前AI领域最活跃前沿之一的地位，特别是多模态生成（文本到视频）的能力。
-        *   **模型架构创新**：这一突破很可能得益于Transformer架构、扩散模型以及新型时空推理机制的结合与优化。
-        *   **计算资源需求**：训练和运行此类高性能模型需要巨大的计算资源，这进一步凸显了AI硬件（如GPU）和云计算的重要性。
-        *   **伦理与社会影响**：高度逼真的AI生成视频也加剧了对深度伪造、虚假信息传播和内容真实性验证的担忧，促使AI伦理、溯源技术和检测工具的研发变得更加紧迫。
+*   **它是什么：** IBM Granite 4.0 Language Models是IBM推出的一系列基础大语言模型，旨在为企业级应用提供可靠、安全且高性能的AI能力。这些模型通常经过优化，适用于企业内部数据，并强调数据隐私和合规性。在r/LocalLLaMA社区中被提及，意味着IBM正在将这些模型或其优化版本推向本地部署场景，允许用户在自己的硬件上运行，而非完全依赖IBM的云服务。这可能包括模型的量化（quantization）、剪枝（pruning）或其他优化技术，使其能够在消费级或企业级本地硬件上高效运行。
+*   **为什么重要：**
+    1.  **企业级信任与合规性：** IBM作为老牌企业级技术提供商，其模型的发布为本地LLM市场带来了高度的信任和合规性保证。对于金融、医疗、政府等对数据安全和隐私有严格要求的行业，能够在本地运行由可信供应商提供的AI模型是至关重要的。
+    2.  **数据主权与隐私保护：** 本地部署的核心优势在于数据不出域。企业可以将敏感数据保留在自己的防火墙内进行处理，从而避免了将数据传输到第三方云服务可能带来的风险，满足了GDPR、CCPA等严格的数据隐私法规要求。
+    3.  **成本优化与性能控制：** 尽管初始硬件投入可能较高（如r/LocalLLaMA中讨论的1万美元），但长期来看，本地运行可以避免按使用量计费的云服务成本，尤其是在高频次或大规模推理场景下。同时，企业可以完全控制模型的运行环境和性能，根据自身需求进行优化。
+    4.  **推动本地AI生态成熟：** IBM的参与将吸引更多企业和开发者关注本地LLM，加速相关工具、框架和硬件解决方案的发展，从而推动整个本地AI生态系统的成熟。
+*   **它与更广泛的AI生态系统的关系：**
+    *   **混合AI架构的兴起：** IBM Granite 4.0的本地化部署能力，将促进混合AI架构的普及。企业可以根据任务的敏感性和计算需求，灵活选择在云端或本地运行AI模型，实现资源的最优配置。
+    *   **AI民主化的新路径：** 虽然本地部署有门槛，但它为那些无法负担巨额云费用的中小企业或个人提供了利用先进AI能力的新途径，有助于AI技术的进一步民主化。
+    *   **硬件与软件的协同创新：** 本地LLM的兴起将刺激对更高效、更经济的AI推理硬件（如NPU、GPU）的需求，并推动软件层面在模型量化、编译器优化等方面的创新，形成硬件与软件协同发展的良性循环。
+    *   **竞争格局的多元化：** 传统云服务提供商之外，更多专注于本地部署和边缘计算的AI解决方案提供商将涌现，使得AI市场竞争更加多元化。
 
-5.  **社区亮点**
+## 社区亮点
 
-    过去一周内，不同社区对AI的关注点各具特色，但也存在交叉话题。
+分析过去一周内不同社区的热门话题，可以发现各个社区关注的重点以及它们之间的交叉话题，尤其是一些小型社区的独特见解。
 
-    *   **r/technology (技术综合)**：作为最大的科技社区，r/technology是AI社会影响的晴雨表。其焦点在于AI与政治、隐私、商业的交叉点。今日热门帖子如“Google blocking AI searches”和“White House AI slop”反映了对AI在信息控制和政府行为中作用的强烈关注。社区还持续关注AI的经济影响和隐私保护（如Ted Cruz阻止隐私法案的帖子）。
-    *   **r/singularity (奇点理论)**：这个社区专注于AI的未来潜力和长远影响，对任何预示着通用人工智能或超智能的突破都表现出极大的热情。“Unlocked consistency for sora 2”是他们关注的焦点，因为它代表了AI对现实世界更深层次的理解。讨论也围绕AI的未来发展路径和潜在风险（如“How bad is this going to age”）。
-    *   **r/LocalLLaMA & r/LocalLLM (本地LLM)**：这两个社区是AI去中心化和开源运动的核心。它们对具体的模型发布（如“GLM-4.6-GGUF is out!”）和本地运行LLM的实践经验（如“Ok, I’m good. I can move on from Claude now.”）表现出浓厚兴趣。这些社区推动了AI技术的普及和可访问性，强调用户对AI的控制权。
-    *   **r/AI_Agents (AI代理)**：这是一个相对专业的社区，专注于AI代理的设计、实现和理论。其热门帖子“Stop Building Workflows and Calling Them Agents”揭示了社区内部对AI代理概念的严谨性要求，旨在区分真正的智能代理与简单的自动化脚本，这对于该领域的健康发展至关重要。
-    *   **r/datascience (数据科学)**：该社区更多关注数据科学的职业发展、项目实践和技术细节，如“How to make the most out free time at a big tech company?”。虽然不直接讨论AI前沿，但其对数据处理和分析的关注是AI发展的基础。
-    *   **r/embedded (嵌入式系统)**：此社区关注硬件和底层编程，如“Planning to create a ~12 hour free course on bit-manipula...”和“So little talk about NXP MCX family Mcus”。虽然与AI直接关联较少，但嵌入式AI是未来AI应用的重要方向。
+*   **r/technology：** 依然是Reddit上最广泛、得分最高的科技新闻集散地。其热门帖子（如“联邦机构利用官方网站指责民主党人”、“三星冰箱将开始显示广告”）通常涵盖政治、商业、隐私和消费者科技等宏观话题，而非深度的AI技术。AI话题在此社区更多地以其社会影响（如AI审查、AI泡沫）的形式出现，而非技术细节。
+*   **r/LocalLLaMA：** 这个社区是本地LLM爱好者的核心阵地。其热门话题（IBM Granite 4.0、本地LLM设置成本讨论、对Google Gemma的期待）清晰地表明了社区对新模型发布、实际部署成本效益以及主要厂商在开源本地LLM领域贡献的高度关注。这是一个非常务实和动手能力强的社区。
+*   **r/singularity：** 专注于长期AI发展和人类未来。哈佛研究的“持续运行的计算”是其典型的热门话题，反映了社区对基础科学突破和可能导致通用人工智能（AGI）或超人类智能的计算能力演进的兴趣。
+*   **r/MachineLearning & r/datascience：** 这两个社区更侧重于AI/ML/数据科学的职业发展、研究实践和技术应用。例如，“作为ML研究员可以贡献的开源项目”、“LLM是否是找工作的必需品？”以及“奇怪的就业市场”等讨论，显示了社区成员对职业路径、技能需求和行业趋势的强烈关注。
+*   **r/Rag：** 作为一个相对小众但专业的社区，r/Rag展示了对检索增强生成（RAG）技术的深度钻研。其热门帖子如“分块策略比嵌入模型更能决定效果”和“我可视化了嵌入在潜在空间中行走”等，提供了关于RAG系统优化、技术细节和实践教程的独特见解，这在大型社区中很难找到。这表明专业社区在特定技术领域能提供更深入、更具操作性的讨论。
+*   **r/LLMDevs：** 社区中“自改进AI代理近期不会出现”的帖子，提供了一个开发者视角的冷静思考。在AI炒作盛行的背景下，这种对前沿概念的务实和批判性讨论，对于保持技术发展的清醒头脑至关重要。
 
-    **社区交叉话题**：
-    *   **AI伦理与社会影响**：r/technology从政治和隐私角度探讨，r/singularity则从长远影响和潜在风险角度思考。
-    *   **生成式AI**：r/singularity庆祝技术突破，而r/technology则关注其在信息传播和内容真实性方面的挑战。
-    *   **AI的未来**：r/singularity是主要阵地，但r/technology的AI经济泡沫讨论也反映了对AI未来发展路径的担忧。
+**社区交叉话题：**
+“AI泡沫”和“AI对就业市场的影响”是跨社区的共同关注点，在r/technology、r/MachineLearning和r/datascience中都有体现，这反映了AI的宏观经济和职业影响是普遍的担忧。同时，r/LocalLLaMA中关于本地LLM的讨论，也与r/technology中对隐私和数据主权的关注间接相关。
 
-    **小型社区的独特见解**：
-    *   **r/AI_Agents**的内部辩论提供了一个关键的、自下而上的视角，探讨AI代理的真正定义和实现标准。这种对概念的严谨性要求，对于避免技术炒作和确保长期进步至关重要，是大型社区中难以深入探讨的。
-    *   **r/LocalLLaMA**和**r/LocalLLM**的讨论则提供了关于开源模型性能、部署细节和用户体验的即时反馈和深度见解。这些社区是AI技术普及和创新活力的重要来源，其对具体模型版本的热情和对本地化解决方案的偏好，反映了AI开发者和爱好者群体对技术自主性和可控性的强烈需求。
+**小型社区的独特见解：**
+r/Rag和r/LLMDevs等小型社区提供了大型社区难以提供的深度和专业性。r/Rag关于分块策略的讨论，揭示了RAG系统性能优化的关键细节，对于实际部署LLM的工程师而言极具价值。r/LLMDevs对“自改进AI代理”的冷静分析，则为AI领域的热点概念提供了宝贵的现实检验。这些见解往往是AI技术从理论走向实践过程中不可或缺的。
 
 ## 今日热门帖子
 
 | Title | Community | Score | Comments | Category | Posted |
 |-------|-----------|-------|----------|----------|--------|
-| [Ted Cruz blocks bill that would extend privacy protection...](https://www.reddit.com/comments/1nuucse) | [r/technology](https://www.reddit.com/r/technology) | 50866 | 1079 | Privacy | 2025-10-01 08:47 UTC |
-| [Google is blocking AI searches for the president and deme...](https://www.reddit.com/comments/1nv8mg3) | [r/technology](https://www.reddit.com/r/technology) | 31581 | 1494 | Artificial Intelligence | 2025-10-01 21:45 UTC |
-| [The AI slop drops right from the top, as the White House ...](https://www.reddit.com/comments/1nv5q62) | [r/technology](https://www.reddit.com/r/technology) | 13523 | 326 | Politics | 2025-10-01 19:34 UTC |
-| [“I’m Canceling My Subscription”: Xbox Players Call to “Bo...](https://www.reddit.com/comments/1nvdd1a) | [r/technology](https://www.reddit.com/r/technology) | 7503 | 523 | Business | 2025-10-02 00:43 UTC |
-| [ICE to Buy Tool that Tracks Locations of Hundreds of Mill...](https://www.reddit.com/comments/1nuxcyj) | [r/technology](https://www.reddit.com/r/technology) | 6814 | 343 | Privacy | 2025-10-01 11:11 UTC |
-| [GLM-4.6-GGUF is out!](https://www.reddit.com/comments/1nv53rb) | [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA) | 800 | 144 | News | 2025-10-01 19:00 UTC |
-| [Unlocked consistency for sora 2](https://www.reddit.com/comments/1nvb12o) | [r/singularity](https://www.reddit.com/r/singularity) | 569 | 66 | Video | 2025-10-01 23:17 UTC |
-| [How bad is this going to age](https://www.reddit.com/comments/1nvg9s1) | [r/singularity](https://www.reddit.com/r/singularity) | 439 | 257 | AI | 2025-10-02 02:28 UTC |
-| [Either they have access to many games and record human pl...](https://www.reddit.com/comments/1nuvb4o) | [r/singularity](https://www.reddit.com/r/singularity) | 387 | 85 | Discussion | 2025-10-01 09:32 UTC |
-| [Planning to create a ~12 hour free course on bit-manipula...](https://www.reddit.com/comments/1nv719g) | [r/embedded](https://www.reddit.com/r/embedded) | 196 | 42 | General | 2025-10-01 20:37 UTC |
+| [Federal Agencies Use Official Websites to Blame Democrats...](https://www.reddit.com/comments/1nvvnbz) | [r/technology](https://www.reddit.com/r/technology) | 19961 | 651 | Business | 2025-10-02 13:49 UTC |
+| [Government workers say their out-of-office replies were f...](https://www.reddit.com/comments/1nwfce5) | [r/technology](https://www.reddit.com/r/technology) | 18170 | 499 | Privacy | 2025-10-03 04:40 UTC |
+| [Samsung confirms its $1,800+ fridges will start showing y...](https://www.reddit.com/comments/1nvrsye) | [r/technology](https://www.reddit.com/r/technology) | 16968 | 2366 | Robotics/Automation | 2025-10-02 10:23 UTC |
+| [ABC/Disney Gets Rewarded For Kissing the President\'s Ass...](https://www.reddit.com/comments/1nw3czh) | [r/technology](https://www.reddit.com/r/technology) | 7199 | 215 | Networking/Telecom | 2025-10-02 21:10 UTC |
+| [Granite 4.0 Language Models - a ibm-granite Collection](https://www.reddit.com/comments/1nw2wd6) | [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA) | 476 | 190 | New Model | 2025-10-02 20:51 UTC |
+| [Those who spent $10k+ on a local LLM setup, do you regret...](https://www.reddit.com/comments/1nvpw0y) | [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA) | 310 | 299 | Discussion | 2025-10-02 08:54 UTC |
+| [Harvard Researchers Develop First Ever Continuously Opera...](https://www.reddit.com/comments/1nvxmls) | [r/singularity](https://www.reddit.com/r/singularity) | 276 | 29 | Compute | 2025-10-02 15:52 UTC |
+| [It\'s been a long time since Google released a new Gemma ...](https://www.reddit.com/comments/1nw5kkc) | [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA) | 230 | 77 | Discussion | 2025-10-02 22:37 UTC |
+| [\[D\] Open source projects to contribute to as an ML rese...](https://www.reddit.com/comments/1nvvdvl) | [r/MachineLearning](https://www.reddit.com/r/MachineLearning) | 83 | 34 | Discussion | 2025-10-02 13:34 UTC |
+| [How to quiet quit while doing an aggressive job search?](https://www.reddit.com/comments/1nw5uyp) | [r/datascience](https://www.reddit.com/r/datascience) | 65 | 26 | Career | US | 2025-10-02 22:48 UTC |
 
 
 ## 本周热门帖子
 
 | # | Title | Community | Score | Comments | Category | Posted |
 |---|-------|-----------|-------|----------|----------|--------|
-| 1 | [Disney reportedly lost 1.7 million paid subscribers in th...](https://www.reddit.com/comments/1nttcqd) | [r/technology](https://www.reddit.com/r/technology) | 82486 | 3279 | Business | 2025-09-30 04:38 UTC |
-| 2 | [White House Makes It Very Clear They’re Going To Turn Tik...](https://www.reddit.com/comments/1nuewpn) | [r/technology](https://www.reddit.com/r/technology) | 52318 | 2749 | Social Media | 2025-09-30 22:36 UTC |
-| 3 | [Ted Cruz blocks bill that would extend privacy protection...](https://www.reddit.com/comments/1nuucse) | [r/technology](https://www.reddit.com/r/technology) | 50873 | 1079 | Privacy | 2025-10-01 08:47 UTC |
-| 4 | [Alex Jones and Nick Fuentes taken off YouTube hours after...](https://www.reddit.com/comments/1nqkw5r) | [r/technology](https://www.reddit.com/r/technology) | 44458 | 1321 | Social Media | 2025-09-26 06:39 UTC |
-| 5 | [Trump says TikTok should be tweaked to become “100% MAGA”](https://www.reddit.com/comments/1nr811e) | [r/technology](https://www.reddit.com/r/technology) | 42129 | 3228 | Social Media | 2025-09-27 01:49 UTC |
-| 6 | [Google is blocking AI searches for the president and deme...](https://www.reddit.com/comments/1nv8mg3) | [r/technology](https://www.reddit.com/r/technology) | 31592 | 1494 | Artificial Intelligence | 2025-10-01 21:45 UTC |
-| 7 | [Cracker Barrel Outrage Was Almost Certainly Driven by Bot...](https://www.reddit.com/comments/1nram0p) | [r/technology](https://www.reddit.com/r/technology) | 29054 | 1104 | Social Media | 2025-09-27 03:30 UTC |
-| 8 | [Sinclair gets nothing it asked for, puts Jimmy Kimmel bac...](https://www.reddit.com/comments/1nrdor7) | [r/technology](https://www.reddit.com/r/technology) | 23466 | 433 | Networking/Telecom | 2025-09-27 05:34 UTC |
-| 9 | [Leading computer science professor says \'everybody\' is ...](https://www.reddit.com/comments/1nt14fs) | [r/technology](https://www.reddit.com/r/technology) | 22561 | 1544 | Business | 2025-09-29 06:06 UTC |
-| 10 | [Regulating AI hastens the Antichrist, says Palantir’s Pet...](https://www.reddit.com/comments/1nqebg2) | [r/technology](https://www.reddit.com/r/technology) | 17817 | 1787 | Artificial Intelligence | 2025-09-26 02:19 UTC |
-| 11 | [Morgan Stanley warns AI could sink 42-year-old software g...](https://www.reddit.com/comments/1nrypvu) | [r/technology](https://www.reddit.com/r/technology) | 16677 | 2134 | Business | 2025-09-27 23:54 UTC |
-| 12 | [The AI bubble is the only thing keeping the US economy to...](https://www.reddit.com/comments/1nqydkg) | [r/technology](https://www.reddit.com/r/technology) | 16221 | 1457 | Artificial Intelligence | 2025-09-26 19:03 UTC |
-| 13 | [Hey, Nintendo: You Cool With ICE Using Your Pokémon IP To...](https://www.reddit.com/comments/1nq3y6q) | [r/technology](https://www.reddit.com/r/technology) | 16044 | 628 | Business | 2025-09-25 19:14 UTC |
-| 14 | [Disney Hit With Legal Salvo From Shareholders Over Jimmy ...](https://www.reddit.com/comments/1npvdho) | [r/technology](https://www.reddit.com/r/technology) | 15068 | 439 | Business | 2025-09-25 10:37 UTC |
-| 15 | [Reddit Mods Sued by YouTuber Ethan Klein Fight Efforts to...](https://www.reddit.com/comments/1ntrdg0) | [r/technology](https://www.reddit.com/r/technology) | 15024 | 1575 | Privacy | 2025-09-30 03:23 UTC |
-| 16 | [Reports: EA set to be sold to private investors for up to...](https://www.reddit.com/comments/1ns6ub1) | [r/technology](https://www.reddit.com/r/technology) | 14312 | 1271 | Business | 2025-09-28 05:27 UTC |
-| 17 | [The AI slop drops right from the top, as the White House ...](https://www.reddit.com/comments/1nv5q62) | [r/technology](https://www.reddit.com/r/technology) | 13518 | 326 | Politics | 2025-10-01 19:34 UTC |
-| 18 | [Everyone\'s wondering if, and when, the AI bubble will po...](https://www.reddit.com/comments/1nst3em) | [r/technology](https://www.reddit.com/r/technology) | 11636 | 1397 | Artificial Intelligence | 2025-09-29 00:45 UTC |
-| 19 | [Samsung Galaxy Ring swells and crushes user\'s finger, ca...](https://www.reddit.com/comments/1nua1po) | [r/technology](https://www.reddit.com/r/technology) | 11584 | 633 | Hardware | 2025-09-30 18:57 UTC |
-| 20 | [Some groups that advertise with Nexstar and Sinclair are ...](https://www.reddit.com/comments/1nruz07) | [r/technology](https://www.reddit.com/r/technology) | 11545 | 136 | Politics | 2025-09-27 21:15 UTC |
+| 1 | [Disney reportedly lost 1.7 million paid subscribers in th...](https://www.reddit.com/comments/1nttcqd) | [r/technology](https://www.reddit.com/r/technology) | 84169 | 3300 | Business | 2025-09-30 04:38 UTC |
+| 2 | [White House Makes It Very Clear They’re Going To Turn Tik...](https://www.reddit.com/comments/1nuewpn) | [r/technology](https://www.reddit.com/r/technology) | 53071 | 2789 | Social Media | 2025-09-30 22:36 UTC |
+| 3 | [Ted Cruz blocks bill that would extend privacy protection...](https://www.reddit.com/comments/1nuucse) | [r/technology](https://www.reddit.com/r/technology) | 52993 | 1097 | Privacy | 2025-10-01 08:47 UTC |
+| 4 | [Google is blocking AI searches for the president and deme...](https://www.reddit.com/comments/1nv8mg3) | [r/technology](https://www.reddit.com/r/technology) | 45687 | 1866 | Artificial Intelligence | 2025-10-01 21:45 UTC |
+| 5 | [Trump says TikTok should be tweaked to become “100% MAGA”](https://www.reddit.com/comments/1nr811e) | [r/technology](https://www.reddit.com/r/technology) | 42135 | 3226 | Social Media | 2025-09-27 01:49 UTC |
+| 6 | [Cracker Barrel Outrage Was Almost Certainly Driven by Bot...](https://www.reddit.com/comments/1nram0p) | [r/technology](https://www.reddit.com/r/technology) | 29074 | 1106 | Social Media | 2025-09-27 03:30 UTC |
+| 7 | [“I’m Canceling My Subscription”: Xbox Players Call to “Bo...](https://www.reddit.com/comments/1nvdd1a) | [r/technology](https://www.reddit.com/r/technology) | 25505 | 1533 | Business | 2025-10-02 00:43 UTC |
+| 8 | [Sinclair gets nothing it asked for, puts Jimmy Kimmel bac...](https://www.reddit.com/comments/1nrdor7) | [r/technology](https://www.reddit.com/r/technology) | 23489 | 434 | Networking/Telecom | 2025-09-27 05:34 UTC |
+| 9 | [Leading computer science professor says \'everybody\' is ...](https://www.reddit.com/comments/1nt14fs) | [r/technology](https://www.reddit.com/r/technology) | 22682 | 1542 | Business | 2025-09-29 06:06 UTC |
+| 10 | [Federal Agencies Use Official Websites to Blame Democrats...](https://www.reddit.com/comments/1nvvnbz) | [r/technology](https://www.reddit.com/r/technology) | 19964 | 651 | Business | 2025-10-02 13:49 UTC |
+| 11 | [Government workers say their out-of-office replies were f...](https://www.reddit.com/comments/1nwfce5) | [r/technology](https://www.reddit.com/r/technology) | 18222 | 500 | Privacy | 2025-10-03 04:40 UTC |
+| 12 | [Samsung confirms its $1,800+ fridges will start showing y...](https://www.reddit.com/comments/1nvrsye) | [r/technology](https://www.reddit.com/r/technology) | 16974 | 2366 | Robotics/Automation | 2025-10-02 10:23 UTC |
+| 13 | [Morgan Stanley warns AI could sink 42-year-old software g...](https://www.reddit.com/comments/1nrypvu) | [r/technology](https://www.reddit.com/r/technology) | 16678 | 2131 | Business | 2025-09-27 23:54 UTC |
+| 14 | [The AI bubble is the only thing keeping the US economy to...](https://www.reddit.com/comments/1nqydkg) | [r/technology](https://www.reddit.com/r/technology) | 16233 | 1457 | Artificial Intelligence | 2025-09-26 19:03 UTC |
+| 15 | [The AI slop drops right from the top, as the White House ...](https://www.reddit.com/comments/1nv5q62) | [r/technology](https://www.reddit.com/r/technology) | 15342 | 344 | Politics | 2025-10-01 19:34 UTC |
+| 16 | [Reddit Mods Sued by YouTuber Ethan Klein Fight Efforts to...](https://www.reddit.com/comments/1ntrdg0) | [r/technology](https://www.reddit.com/r/technology) | 15122 | 1574 | Privacy | 2025-09-30 03:23 UTC |
+| 17 | [Reports: EA set to be sold to private investors for up to...](https://www.reddit.com/comments/1ns6ub1) | [r/technology](https://www.reddit.com/r/technology) | 14323 | 1271 | Business | 2025-09-28 05:27 UTC |
+| 18 | [Google Accused of Blocking Searches About Donald Trump, 7...](https://www.reddit.com/comments/1nvkrxq) | [r/technology](https://www.reddit.com/r/technology) | 14270 | 252 | Net Neutrality | 2025-10-02 05:14 UTC |
+| 19 | [Samsung Galaxy Ring swells and crushes user\'s finger, ca...](https://www.reddit.com/comments/1nua1po) | [r/technology](https://www.reddit.com/r/technology) | 11693 | 635 | Hardware | 2025-09-30 18:57 UTC |
+| 20 | [Everyone\'s wondering if, and when, the AI bubble will po...](https://www.reddit.com/comments/1nst3em) | [r/technology](https://www.reddit.com/r/technology) | 11684 | 1402 | Artificial Intelligence | 2025-09-29 00:45 UTC |
 
 
 ## 本月热门帖子
 
 | # | Title | Community | Score | Comments | Category | Posted |
 |---|-------|-----------|-------|----------|----------|--------|
-| 1 | [DOJ Deletes Study Showing Domestic Terrorists Are Most Of...](https://www.reddit.com/comments/1nimpmu) | [r/technology](https://www.reddit.com/r/technology) | 117761 | 2706 | Society | 2025-09-17 00:44 UTC |
-| 2 | [Disney+ cancellation page crashes as customers rush to qu...](https://www.reddit.com/comments/1nlju03) | [r/technology](https://www.reddit.com/r/technology) | 99007 | 3367 | Business | 2025-09-20 08:15 UTC |
-| 3 | [Yes, Jimmy Kimmel’s suspension was government censorship.](https://www.reddit.com/comments/1nkl8b0) | [r/technology](https://www.reddit.com/r/technology) | 97083 | 3138 | Politics | 2025-09-19 05:39 UTC |
-| 4 | [Disney Plus Subscribers Quit in Droves Over Jimmy Kimmel Axe](https://www.reddit.com/comments/1nlaz9k) | [r/technology](https://www.reddit.com/r/technology) | 82570 | 5231 | Networking/Telecom | 2025-09-20 02:10 UTC |
-| 5 | [Disney reportedly lost 1.7 million paid subscribers in th...](https://www.reddit.com/comments/1nttcqd) | [r/technology](https://www.reddit.com/r/technology) | 82487 | 3279 | Business | 2025-09-30 04:38 UTC |
-| 6 | [Meta’s Zuckerberg caught in revealing hot mic moment with...](https://www.reddit.com/comments/1n9xfyc) | [r/technology](https://www.reddit.com/r/technology) | 67723 | 2356 | Business | 2025-09-06 19:42 UTC |
-| 7 | [Jimmy Kimmel’s suspension sparks congressional investigat...](https://www.reddit.com/comments/1nkd0s1) | [r/technology](https://www.reddit.com/r/technology) | 55312 | 1411 | Networking/Telecom | 2025-09-19 00:28 UTC |
-| 8 | [Lawyer named Mark Zuckerberg sues Meta after repeated acc...](https://www.reddit.com/comments/1n8dat1) | [r/technology](https://www.reddit.com/r/technology) | 54194 | 742 | Business | 2025-09-04 23:27 UTC |
-| 9 | [ABC says ‘Jimmy Kimmel Live!’ racked up 6.3 million viewe...](https://www.reddit.com/comments/1npqg9i) | [r/technology](https://www.reddit.com/r/technology) | 53467 | 1649 | Society | 2025-09-25 06:45 UTC |
-| 10 | [White House Makes It Very Clear They’re Going To Turn Tik...](https://www.reddit.com/comments/1nuewpn) | [r/technology](https://www.reddit.com/r/technology) | 52321 | 2749 | Social Media | 2025-09-30 22:36 UTC |
-| 11 | [Calls Mount to Boycott Disney With $3.8 Billion Lost Over...](https://www.reddit.com/comments/1nm9w1q) | [r/technology](https://www.reddit.com/r/technology) | 51104 | 1935 | Business | 2025-09-21 05:19 UTC |
-| 12 | [Epstein Prison Video Blows Up Bondi’s ‘Missing Minute’ Ex...](https://www.reddit.com/comments/1n7cc2a) | [r/technology](https://www.reddit.com/r/technology) | 51045 | 1310 | Society | 2025-09-03 19:34 UTC |
-| 13 | [Ted Cruz blocks bill that would extend privacy protection...](https://www.reddit.com/comments/1nuucse) | [r/technology](https://www.reddit.com/r/technology) | 50881 | 1080 | Privacy | 2025-10-01 08:47 UTC |
-| 14 | [Kimmel Says Effort to \'Cancel\' Him \'Backfired Bigly\':...](https://www.reddit.com/comments/1npcq4k) | [r/technology](https://www.reddit.com/r/technology) | 46005 | 535 | Politics | 2025-09-24 21:52 UTC |
-| 15 | [Alex Jones and Nick Fuentes taken off YouTube hours after...](https://www.reddit.com/comments/1nqkw5r) | [r/technology](https://www.reddit.com/r/technology) | 44453 | 1321 | Social Media | 2025-09-26 06:39 UTC |
-| 16 | [Trump says TikTok should be tweaked to become “100% MAGA”](https://www.reddit.com/comments/1nr811e) | [r/technology](https://www.reddit.com/r/technology) | 42131 | 3228 | Social Media | 2025-09-27 01:49 UTC |
-| 17 | [The Job Market Is Hell: Young people are using ChatGPT to...](https://www.reddit.com/comments/1nbrilo) | [r/technology](https://www.reddit.com/r/technology) | 42041 | 1935 | Artificial Intelligence | 2025-09-08 23:55 UTC |
-| 18 | [Nintendo Alerted After DHS Uses Pokémon to Promote ICE Raids](https://www.reddit.com/comments/1nofdhu) | [r/technology](https://www.reddit.com/r/technology) | 41497 | 1206 | Politics | 2025-09-23 19:57 UTC |
-| 19 | [Top Harvard mathematician Liu Jun leaves US for China](https://www.reddit.com/comments/1nb87bl) | [r/technology](https://www.reddit.com/r/technology) | 41353 | 1856 | Machine Learning | 2025-09-08 07:27 UTC |
-| 20 | [The WSJ carelessly spread anti-trans misinformation](https://www.reddit.com/comments/1nfghxi) | [r/technology](https://www.reddit.com/r/technology) | 40930 | 963 | Social Media | 2025-09-13 06:10 UTC |
+| 1 | [DOJ Deletes Study Showing Domestic Terrorists Are Most Of...](https://www.reddit.com/comments/1nimpmu) | [r/technology](https://www.reddit.com/r/technology) | 117765 | 2707 | Society | 2025-09-17 00:44 UTC |
+| 2 | [Disney+ cancellation page crashes as customers rush to qu...](https://www.reddit.com/comments/1nlju03) | [r/technology](https://www.reddit.com/r/technology) | 99004 | 3366 | Business | 2025-09-20 08:15 UTC |
+| 3 | [Yes, Jimmy Kimmel’s suspension was government censorship.](https://www.reddit.com/comments/1nkl8b0) | [r/technology](https://www.reddit.com/r/technology) | 97080 | 3139 | Politics | 2025-09-19 05:39 UTC |
+| 4 | [Disney reportedly lost 1.7 million paid subscribers in th...](https://www.reddit.com/comments/1nttcqd) | [r/technology](https://www.reddit.com/r/technology) | 84164 | 3300 | Business | 2025-09-30 04:38 UTC |
+| 5 | [Disney Plus Subscribers Quit in Droves Over Jimmy Kimmel Axe](https://www.reddit.com/comments/1nlaz9k) | [r/technology](https://www.reddit.com/r/technology) | 82573 | 5230 | Networking/Telecom | 2025-09-20 02:10 UTC |
+| 6 | [Meta’s Zuckerberg caught in revealing hot mic moment with...](https://www.reddit.com/comments/1n9xfyc) | [r/technology](https://www.reddit.com/r/technology) | 67720 | 2355 | Business | 2025-09-06 19:42 UTC |
+| 7 | [Jimmy Kimmel’s suspension sparks congressional investigat...](https://www.reddit.com/comments/1nkd0s1) | [r/technology](https://www.reddit.com/r/technology) | 55314 | 1411 | Networking/Telecom | 2025-09-19 00:28 UTC |
+| 8 | [Lawyer named Mark Zuckerberg sues Meta after repeated acc...](https://www.reddit.com/comments/1n8dat1) | [r/technology](https://www.reddit.com/r/technology) | 54198 | 742 | Business | 2025-09-04 23:27 UTC |
+| 9 | [ABC says ‘Jimmy Kimmel Live!’ racked up 6.3 million viewe...](https://www.reddit.com/comments/1npqg9i) | [r/technology](https://www.reddit.com/r/technology) | 53460 | 1646 | Society | 2025-09-25 06:45 UTC |
+| 10 | [White House Makes It Very Clear They’re Going To Turn Tik...](https://www.reddit.com/comments/1nuewpn) | [r/technology](https://www.reddit.com/r/technology) | 53071 | 2789 | Social Media | 2025-09-30 22:36 UTC |
+| 11 | [Ted Cruz blocks bill that would extend privacy protection...](https://www.reddit.com/comments/1nuucse) | [r/technology](https://www.reddit.com/r/technology) | 52991 | 1097 | Privacy | 2025-10-01 08:47 UTC |
+| 12 | [Calls Mount to Boycott Disney With $3.8 Billion Lost Over...](https://www.reddit.com/comments/1nm9w1q) | [r/technology](https://www.reddit.com/r/technology) | 51101 | 1935 | Business | 2025-09-21 05:19 UTC |
+| 13 | [Epstein Prison Video Blows Up Bondi’s ‘Missing Minute’ Ex...](https://www.reddit.com/comments/1n7cc2a) | [r/technology](https://www.reddit.com/r/technology) | 51044 | 1310 | Society | 2025-09-03 19:34 UTC |
+| 14 | [Kimmel Says Effort to \'Cancel\' Him \'Backfired Bigly\':...](https://www.reddit.com/comments/1npcq4k) | [r/technology](https://www.reddit.com/r/technology) | 46009 | 531 | Politics | 2025-09-24 21:52 UTC |
+| 15 | [Google is blocking AI searches for the president and deme...](https://www.reddit.com/comments/1nv8mg3) | [r/technology](https://www.reddit.com/r/technology) | 45691 | 1866 | Artificial Intelligence | 2025-10-01 21:45 UTC |
+| 16 | [Alex Jones and Nick Fuentes taken off YouTube hours after...](https://www.reddit.com/comments/1nqkw5r) | [r/technology](https://www.reddit.com/r/technology) | 44465 | 1326 | Social Media | 2025-09-26 06:39 UTC |
+| 17 | [Trump says TikTok should be tweaked to become “100% MAGA”](https://www.reddit.com/comments/1nr811e) | [r/technology](https://www.reddit.com/r/technology) | 42132 | 3226 | Social Media | 2025-09-27 01:49 UTC |
+| 18 | [The Job Market Is Hell: Young people are using ChatGPT to...](https://www.reddit.com/comments/1nbrilo) | [r/technology](https://www.reddit.com/r/technology) | 42046 | 1933 | Artificial Intelligence | 2025-09-08 23:55 UTC |
+| 19 | [Nintendo Alerted After DHS Uses Pokémon to Promote ICE Raids](https://www.reddit.com/comments/1nofdhu) | [r/technology](https://www.reddit.com/r/technology) | 41492 | 1206 | Politics | 2025-09-23 19:57 UTC |
+| 20 | [Top Harvard mathematician Liu Jun leaves US for China](https://www.reddit.com/comments/1nb87bl) | [r/technology](https://www.reddit.com/r/technology) | 41350 | 1859 | Machine Learning | 2025-09-08 07:27 UTC |
 
 
 ## 各社区本周热门帖子
 
-### r/AI_Agents
+### r/LLMDevs
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [Stop Building Workflows and Calling Them Agents](https://www.reddit.com/comments/1nv1znn) | 76 | 26 | Discussion | 2025-10-01 15:40 UTC |
+| [Self-improving AI agents aren\'t happening anytime soon](https://www.reddit.com/comments/1nw3y3c) | 33 | 20 | Discussion | 2025-10-02 21:34 UTC |
 
 
 ### r/LocalLLM
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [Ok, I’m good.&nbsp;I can move on from Claude now.](https://www.reddit.com/comments/1nux64f) | 52 | 42 | Discussion | 2025-10-01 11:02 UTC |
+| [Who wants me to run a test on this?](https://www.reddit.com/comments/1nw9742) | 15 | 29 | Discussion | 2025-10-03 00:53 UTC |
+| [Can anyone recommend open-source AI models for video anal...](https://www.reddit.com/comments/1nvt4yc) | 9 | 17 | Question | 2025-10-02 11:29 UTC |
 
 
 ### r/LocalLLaMA
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [GLM-4.6-GGUF is out!](https://www.reddit.com/comments/1nv53rb) | 800 | 144 | News | 2025-10-01 19:00 UTC |
+| [Granite 4.0 Language Models - a ibm-granite Collection](https://www.reddit.com/comments/1nw2wd6) | 476 | 190 | New Model | 2025-10-02 20:51 UTC |
+| [Those who spent $10k+ on a local LLM setup, do you regret...](https://www.reddit.com/comments/1nvpw0y) | 310 | 299 | Discussion | 2025-10-02 08:54 UTC |
+| [It\'s been a long time since Google released a new Gemma ...](https://www.reddit.com/comments/1nw5kkc) | 230 | 77 | Discussion | 2025-10-02 22:37 UTC |
+
+
+### r/MachineLearning
+
+| Title | Score | Comments | Category | Posted |
+|-------|-------|----------|----------|--------|
+| [\[D\] Open source projects to contribute to as an ML rese...](https://www.reddit.com/comments/1nvvdvl) | 83 | 34 | Discussion | 2025-10-02 13:34 UTC |
+| [\[D\] The job market is weird](https://www.reddit.com/comments/1nvwkdt) | 33 | 12 | Discussion | 2025-10-02 14:46 UTC |
+| [\[D\] How much should researchers (especially in ML domai...](https://www.reddit.com/comments/1nwaunk) | 17 | 32 | Discussion | 2025-10-03 01:53 UTC |
 
 
 ### r/Rag
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [New to RAG](https://www.reddit.com/comments/1nux5de) | 23 | 13 | Discussion | 2025-10-01 11:00 UTC |
+| [Why Chunking Strategy Decides More Than Your Embedding Model](https://www.reddit.com/comments/1nvzl1b) | 35 | 12 | Discussion | 2025-10-02 17:58 UTC |
+| [I visualized embeddings walking across the latent space a...](https://www.reddit.com/comments/1nwdmes) | 21 | 11 | Tutorial | 2025-10-03 03:36 UTC |
 
 
 ### r/datascience
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [How to make the most out free time at a big tech company?](https://www.reddit.com/comments/1nv4wdg) | 78 | 22 | Projects | 2025-10-01 18:49 UTC |
-| [For data scientists in insurance and banking, how many da...](https://www.reddit.com/comments/1nv0lfh) | 33 | 13 | Discussion | 2025-10-01 14:10 UTC |
+| [How to quiet quit while doing an aggressive job search?](https://www.reddit.com/comments/1nw5uyp) | 65 | 26 | Career | US | 2025-10-02 22:48 UTC |
+| [Are LLMs necessary to get a job?](https://www.reddit.com/comments/1nwh00i) | 16 | 20 | Career | US | 2025-10-03 05:43 UTC |
 
 
 ### r/embedded
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [Planning to create a ~12 hour free course on bit-manipula...](https://www.reddit.com/comments/1nv719g) | 196 | 42 | General | 2025-10-01 20:37 UTC |
-| [So little talk about NXP MCX family Mcus](https://www.reddit.com/comments/1nv6z3v) | 29 | 24 | General | 2025-10-01 20:34 UTC |
-| [How often does your work place change desktop/laptop?](https://www.reddit.com/comments/1nv2ta1) | 15 | 36 | General | 2025-10-01 16:36 UTC |
+| [PCAN View on TI dev kit](https://www.reddit.com/comments/1nw7pm2) | 22 | 15 | General | 2025-10-02 23:57 UTC |
+| [How to handle multiple I2C devices on ESP32 (FreeRTOS)?](https://www.reddit.com/comments/1nvwq8q) | 19 | 25 | General | 2025-10-02 14:56 UTC |
 
 
 ### r/singularity
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [Unlocked consistency for sora 2](https://www.reddit.com/comments/1nvb12o) | 569 | 66 | Video | 2025-10-01 23:17 UTC |
-| [How bad is this going to age](https://www.reddit.com/comments/1nvg9s1) | 439 | 257 | AI | 2025-10-02 02:28 UTC |
-| [Either they have access to many games and record human pl...](https://www.reddit.com/comments/1nuvb4o) | 387 | 85 | Discussion | 2025-10-01 09:32 UTC |
+| [Harvard Researchers Develop First Ever Continuously Opera...](https://www.reddit.com/comments/1nvxmls) | 276 | 29 | Compute | 2025-10-02 15:52 UTC |
 
 
 ### r/technology
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [Ted Cruz blocks bill that would extend privacy protection...](https://www.reddit.com/comments/1nuucse) | 50866 | 1079 | Privacy | 2025-10-01 08:47 UTC |
-| [Google is blocking AI searches for the president and deme...](https://www.reddit.com/comments/1nv8mg3) | 31581 | 1494 | Artificial Intelligence | 2025-10-01 21:45 UTC |
-| [The AI slop drops right from the top, as the White House ...](https://www.reddit.com/comments/1nv5q62) | 13523 | 326 | Politics | 2025-10-01 19:34 UTC |
+| [Federal Agencies Use Official Websites to Blame Democrats...](https://www.reddit.com/comments/1nvvnbz) | 19961 | 651 | Business | 2025-10-02 13:49 UTC |
+| [Government workers say their out-of-office replies were f...](https://www.reddit.com/comments/1nwfce5) | 18170 | 499 | Privacy | 2025-10-03 04:40 UTC |
+| [Samsung confirms its $1,800+ fridges will start showing y...](https://www.reddit.com/comments/1nvrsye) | 16968 | 2366 | Robotics/Automation | 2025-10-02 10:23 UTC |
 
 
 
