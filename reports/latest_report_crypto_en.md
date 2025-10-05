@@ -1,133 +1,128 @@
-# Reddit Crypto & Fintech Trend Report - 2025-10-04
+# Reddit Crypto & Fintech Trend Report - 2025-10-05
 
 ## Trend Analysis
 
 ### Today's Highlights
 
-The most striking development in the past 24 hours is the surge in bullish sentiment across speculative trading and the crypto market, particularly Bitcoin. On `r/wallstreetbets`, multiple posts celebrating significant individual gains are trending, such as "[Today is a great day](https://www.reddit.com/comments/1nx2ldg)" (21503 score) and "[$18k->$500k in a year](https://www.reddit.com/comments/1nx3d1u)" (1857 score), alongside a "YOLO" post "[Im having best day of my life!](https://www.reddit.com/comments/1nx0zem)". This indicates a period of high profitability and euphoria for a segment of retail traders.
+The past 24 hours reveal several critical shifts and emerging narratives within the Crypto & Fintech landscape, diverging from broader weekly and monthly patterns. A significant breakthrough is the **Bitcoin supply shock narrative**, driven by the post "BITCOIN ON EXCHANGES HITS LOWEST LEVEL IN 6 YEARS" from r/Bitcoin (Score: 535). This metric-driven insight suggests a strong holding sentiment and potential for price appreciation due to reduced sell-side pressure, a more specific and actionable indicator than general Bitcoin discussions.
 
-Concurrently, `r/Bitcoin` shows intense excitement with posts like "[Whaaaaaa?????!!!!!](https://www.reddit.com/comments/1nx3vni)" (1189 score) and "[I love Uptober](https://www.reddit.com/comments/1nx45jp)". This suggests a significant, rapid positive price movement for Bitcoin, likely fueled by recent market dynamics. This immediate, almost euphoric reaction in both speculative stocks and Bitcoin is a breakthrough, potentially driven by macro-economic factors.
+Concurrently, a strong **altcoin underperformance sentiment** has emerged with the highly debated post "If This Is the Bull Market, Then Altcoins Are Finished" from r/CryptoCurrency (Score: 499, 477 comments). This indicates a growing divergence in market perception, where Bitcoin is seen as the primary driver of any bull market, potentially leaving altcoins behind. This sentiment is a critical new development for portfolio allocation strategies.
 
-Adding context, `r/Economics` features "[The US dollar is predicted to depreciate another 10 perce...](https://www.reddit.com/comments/1nwo3tf)" (6259 score), which could be a key catalyst. A weakening dollar often drives investors towards alternative assets, including cryptocurrencies and speculative stocks, as a hedge or for higher returns. This confluence of individual trading success, Bitcoin's rally, and dollar depreciation predictions marks a notable shift towards risk-on sentiment and a potential flight from fiat.
+Another notable, albeit smaller, emerging topic is **CBDC skepticism and discussion**, highlighted by "Would you trust and use a Digital Euro if the EU launches..." in r/CryptoTechnology (Score: 7). This marks an early but important community engagement with concrete Central Bank Digital Currency proposals, signaling a nascent but crucial area of Fintech development and user acceptance challenges.
 
-Separately, a significant pain point in traditional finance emerged on `r/personalfinance` with "[Citibank denied my credit card fraud claim of $1400.&nbsp...](https://www.reddit.com/comments/1nwloxa)" (1578 score). While not a crypto/fintech breakthrough, it highlights persistent consumer protection issues within legacy banking, which could indirectly fuel interest in decentralized or more transparent fintech solutions over time.
+Finally, **heightened security concerns in traditional finance**, specifically regarding digital assets, are prominent with the "NYT: How Stocks Can Be Quietly Stolen From Your I.R.A." post in r/personalfinance (Score: 522). While not directly crypto, this underscores a broader user anxiety about digital asset custody and security, a challenge that Fintech solutions, including those in crypto, must address. This is a new, specific security vector gaining attention.
 
 ### Weekly Trend Comparison
 
-Comparing today's trends with the past week reveals both persistence and new intensity. The celebration of "Gain" posts on `r/wallstreetbets` is a consistent weekly theme, with "[Today is a great day](https://www.reddit.com/comments/1nx2ldg)" appearing in both daily trending and weekly popular lists. Other weekly top posts like "[Haven't checked my account for a year...](https://www.reddit.com/comments/1nw5hxk)" and "[From $200k to $2M in under 2 months 🚀💎🙌](https://www.reddit.com/comments/1ntrkvb)" reinforce the sustained interest in high-return trading.
+Comparing today's trends with the past week reveals both persistent themes and newly emerging dynamics. The **macroeconomic concerns** around the US dollar's depreciation and government shutdown (e.g., "The U.S. dollar fell about 11% against other currenc..." in r/stocks, Score: 5740) persist, influencing overall market sentiment. Similarly, `r/wallstreetbets` continues its focus on **retail trading gains and losses**, with posts like "$18k->$500k in a year" (Score: 4338) demonstrating the ongoing speculative interest.
 
-Discussions around the US dollar and broader economic health also persist from the weekly view, with "[The US dollar is predicted to depreciate another 10 perce...](https://www.reddit.com/comments/1nwo3tf)" and "[Dollar falls on U.S.&nbsp;government shutdown...](https://www.reddit.com/comments/1nvaoc5)" being prominent.
-
-The newly emerging aspect is the *intensity* of the Bitcoin rally, as evidenced by the highly emotional "Whaaaaaa?????!!!!!" post. While `r/Bitcoin` had general discussions like "[Why Bitcoin?](https://www.reddit.com/comments/1ntj1ts)" and "[Finally an actual indicator](https://www.reddit.com/comments/1nwji3w)" in the weekly top, today's posts suggest a more immediate, perhaps price-driven, surge. This shift reflects a heightened, immediate bullish sentiment in the crypto space, possibly accelerating due to the persistent macro-economic concerns about the dollar.
+However, the **Bitcoin supply shock** and **altcoin underperformance debate** are newly pronounced trends. While weekly posts in `r/Bitcoin` discussed general indicators or "Why Bitcoin?", today's data presents a concrete, actionable metric (lowest exchange supply) and a strong, divisive sentiment regarding altcoins. The **CBDC discussion** is also a fresh, specific technological topic that wasn't prominent in the weekly popular posts, which leaned more towards general crypto memes or historical reflections. The specific focus on **IRA stock theft** represents a new, acute security concern, contrasting with broader economic news from the past week. These shifts indicate a move towards more granular, data-driven analysis and specific technological/security challenges within the Crypto & Fintech communities.
 
 ### Monthly Technology Evolution
 
-From a monthly perspective, the current trends fit into a broader narrative of market volatility and a search for value/returns amidst economic uncertainty. `r/wallstreetbets` maintains its long-standing focus on speculative trading, memes, and celebrating extreme outcomes, as seen in monthly top posts like "[$10,000 of Intel bought 25 years ago is worth $10,000 today.](https://www.reddit.com/comments/1nkoh64)" and various "Meme" posts. The "Gain" posts today and this week are a continuous reflection of this culture.
+From a monthly perspective, the current trends reflect a maturing, albeit still volatile, Crypto & Fintech landscape. The consistent presence of **macroeconomic instability** and **retail trading speculation** (e.g., "$10,000 of Intel bought 25 years ago is worth $10,000 today." in r/wallstreetbets, Score: 48799) remains a foundational backdrop.
 
-Macroeconomic discussions, particularly around the US economy and government actions, have been a consistent monthly theme on `r/Economics` (e.g., "[Farmer says ‘we’re in a very dire situation’](https://www.reddit.com/comments/1ndgocx)", "[Trump news at a glance: more than 100,000 federal workers...](https://www.reddit.com/comments/1nt87qz)"). The current discussions on dollar depreciation and economic strength are direct continuations.
+However, the emergence of the **Bitcoin supply shock narrative** and the **altcoin divergence debate** signifies an evolution in crypto market analysis. Monthly trends often featured broader crypto memes or general price discussions; now, the community is engaging with more sophisticated market structure analysis, moving beyond simple price action to underlying supply mechanics and inter-asset performance. The nascent **CBDC discussion** in r/CryptoTechnology is a crucial technological shift. While the past month saw general economic news, the specific engagement with state-backed digital currencies indicates a progression towards evaluating the practical implications and user acceptance of new monetary technologies. This represents a significant shift towards institutional digital assets and their potential impact on the broader financial system, moving beyond purely decentralized crypto discussions. The heightened focus on **digital asset security**, even in traditional IRA contexts, also points to an evolving technological path where robust, secure custody solutions are becoming paramount across all forms of digital wealth.
 
-While no explicit *new technologies* are trending at the top of the monthly charts, the intensified bullish sentiment around Bitcoin today, against a backdrop of persistent dollar weakness, signifies an evolving role for digital assets. It reinforces the narrative of Bitcoin as a potential hedge against traditional financial instability, a concept that has been gaining traction over the past month as economic news remains uncertain. The weekly post "[Would you solve a captcha in 2010 for $600K today?](https://www.reddit.com/comments/1nwdap3)" from `r/CryptoCurrency` also subtly highlights the long-term value proposition of early crypto adoption, a theme that resonates with current market movements.
+### Technical Deep Dive: Bitcoin on Exchanges Hits Lowest Level in 6 Years
 
-### Technical Deep Dive
+The trend "BITCOIN ON EXCHANGES HITS LOWEST LEVEL IN 6 YEARS" is a particularly important development for the Crypto & Fintech ecosystem.
 
-A particularly interesting and important trend from today is the **renewed bullish momentum in Bitcoin, potentially driven by US dollar depreciation**.
+**What it is:** This metric tracks the total amount of Bitcoin (BTC) held in the wallets of centralized cryptocurrency exchanges. When this figure decreases, it means that a net amount of BTC is being withdrawn from exchanges and typically moved into self-custody (e.g., hardware wallets, software wallets controlled by the user) or into decentralized finance (DeFi) protocols.
 
-**What it is**: Reddit communities like `r/Bitcoin` are experiencing a significant surge in positive sentiment, indicated by posts like "[Whaaaaaa?????!!!!!](https://www.reddit.com/comments/1nx3vni)" and "[I love Uptober](https://www.reddit.com/comments/1nx45jp)". This suggests a sharp upward price movement for Bitcoin. This rally is occurring concurrently with discussions on `r/Economics` predicting a further 10% depreciation of the US dollar.
+**Why it's important:**
+1.  **Supply Shock Potential:** A reduction in exchange supply implies fewer BTC are readily available for immediate sale on open markets. If demand remains constant or increases, this tightening of supply can lead to significant upward price pressure, creating a "supply shock" scenario. It suggests that holders are opting for long-term storage rather than short-term trading.
+2.  **Investor Conviction:** Moving assets off exchanges often indicates strong conviction in Bitcoin's long-term value. Investors are willing to take on the responsibility and risk of self-custody, signaling a belief that the asset will appreciate significantly over time, making it worth the effort of securing it themselves.
+3.  **Reduced Market Liquidity:** Lower exchange balances can lead to reduced market liquidity. This means that larger buy or sell orders can have a more pronounced impact on price, potentially leading to increased volatility.
 
-**Why it's important**:
-1.  **Inflation Hedge Narrative**: A depreciating fiat currency strengthens Bitcoin's narrative as a digital store of value and a hedge against inflation. Investors, both retail and institutional, often seek alternative assets when confidence in traditional currencies wanes.
-2.  **Capital Flight**: If the dollar's depreciation is significant and sustained, it could trigger capital flight from traditional assets into perceived safe havens or high-growth alternatives, with Bitcoin being a primary beneficiary due to its decentralized nature and limited supply.
-3.  **Market Sentiment Indicator**: The strong, almost euphoric, sentiment on `r/Bitcoin` is a key indicator of retail investor interest and can precede further price momentum. It suggests increasing confidence in Bitcoin's short-term performance.
-
-**Relationship to the broader Crypto & Fintech ecosystem**:
-*   **Ecosystem Uplift**: A strong Bitcoin rally typically acts as a tide that lifts all boats in the crypto market, potentially driving capital into altcoins and other decentralized finance (DeFi) protocols.
-*   **Fintech Integration**: Increased interest and adoption of Bitcoin can accelerate its integration into mainstream fintech services. This includes crypto-enabled payment solutions, investment platforms offering Bitcoin, and broader institutional acceptance.
-*   **Regulatory Implications**: Significant price movements and increased public attention often draw the eye of regulators. This could lead to intensified discussions around crypto regulation, stablecoin frameworks, and consumer protection within the digital asset space. The correlation between macro-economic instability and crypto rallies also highlights the need for robust regulatory frameworks that can adapt to capital shifts.
+**Relationship to the Broader Crypto & Fintech Ecosystem:**
+*   **Decentralization Ethos:** This trend directly reinforces the core ethos of decentralization in crypto. Users are choosing to exercise true ownership and control over their assets, rather than relying on centralized intermediaries (exchanges). This has implications for the development of user-friendly self-custody solutions within Fintech.
+*   **Custody Solutions Innovation:** The demand for secure off-exchange storage drives innovation in hardware wallets, multi-signature solutions, and other non-custodial Fintech products. These tools are crucial for enabling users to manage their digital wealth securely.
+*   **Regulatory Landscape:** As more assets move off centralized exchanges, regulators face challenges in monitoring and enforcing compliance. This could lead to new regulatory discussions around self-custody, DeFi, and the "unhosted wallet" phenomenon, impacting how Fintech companies interact with these assets.
+*   **Institutional Adoption:** While often driven by retail, institutional investors also utilize off-exchange custody for large holdings, often through regulated custodians. This trend, therefore, also reflects the maturing infrastructure for institutional participation in the crypto market.
 
 ### Community Highlights
 
-Reddit communities display distinct focuses while sharing overarching themes:
+The hot topics from the past week reveal distinct focuses across different communities, alongside some cross-cutting themes.
 
-*   **`r/wallstreetbets`**: This community remains centered on high-risk, high-reward speculative trading. Today's top posts are overwhelmingly "Gain" reports (e.g., "[Today is a great day](https://www.reddit.com/comments/1nx2ldg)", "[$18k->$500k in a year](https://www.reddit.com/comments/1nx3d1u)") and "YOLO" plays, reflecting a culture that celebrates extreme individual trading outcomes, often with a meme-driven or hyperbolic tone.
-*   **`r/Bitcoin`**: The community is currently experiencing intense, immediate bullish excitement, as seen in "[Whaaaaaa?????!!!!!](https://www.reddit.com/comments/1nx3vni)" and "[I love Uptober](https://www.reddit.com/comments/1nx45jp)". Their focus is almost entirely on Bitcoin's price action and positive market sentiment.
-*   **`r/CryptoCurrency`**: This subreddit offers a more varied perspective on the crypto space, often with humor. Posts like "[Crypto bros can be so delusional](https://www.reddit.com/comments/1nwx073)" and "[Bitcoiners while US government shuts down](https://www.reddit.com/comments/1nwznvy)" blend market commentary with cultural critique and memes, highlighting both the enthusiasm and skepticism within the broader crypto community.
-*   **`r/Economics`**: This community consistently focuses on macro-economic trends and their implications. Key discussions today include US dollar depreciation ("[The US dollar is predicted to depreciate another 10 perce...](https://www.reddit.com/comments/1nwo3tf)") and the overall health of the economy ("[The economy is just getting stronger...](https://www.reddit.com/comments/1nwt8f2)"). These discussions provide critical context for investment decisions across all asset classes.
-*   **`r/personalfinance`**: This community is highly practical, addressing real-world financial challenges. The top post, "[Citibank denied my credit card fraud claim of $1400.&nbsp...](https://www.reddit.com/comments/1nwloxa)", highlights consumer pain points with traditional financial institutions, underscoring the demand for reliable and transparent financial services.
-*   **`r/investing`**: More analytical, this community focuses on strategic market outlooks, discussing potential downturn triggers ("[What do you think will trigger the next big market downturn?](https://www.reddit.com/comments/1nwu3mp)") and profit-taking strategies at current highs.
+*   **`r/Bitcoin`** is deeply focused on fundamental market mechanics and long-term value propositions. The "BITCOIN ON EXCHANGES HITS LOWEST LEVEL IN 6 YEARS" post highlights a community driven by on-chain metrics and supply-side analysis. Weekly posts like "Why Bitcoin?" and "Finally an actual indicator" further underscore this emphasis on core principles and technical validation.
+*   **`r/CryptoCurrency`** exhibits a broader, more speculative, and sentiment-driven discussion. The highly commented "If This Is the Bull Market, Then Altcoins Are Finished" post shows a community grappling with market narratives and altcoin performance. Its interest in "Putin's senior advisor says the US intends to migrate de..." also points to a focus on geopolitical factors influencing crypto.
+*   **`r/CryptoTechnology`** stands out for its engagement with the underlying technological and policy implications of digital assets. The "Would you trust and use a Digital Euro if the EU launches..." post, despite its lower score, is a unique and important discussion about the practical adoption and trust in emerging state-backed digital currencies, a topic less explored in the larger crypto subreddits.
+*   **`r/personalfinance`** and **`r/FinancialPlanning`** are squarely focused on practical, user-centric financial management. Topics range from security concerns ("How Stocks Can Be Quietly Stolen From Your I.R.A."), credit management ("Credit score is 764, never opened credit card line"), and life planning (529 plans, midlife layoffs, estate planning). These communities highlight the real-world financial challenges that Fintech solutions aim to address.
+*   **`r/investing`** and **`r/dividends`** cater to traditional investment strategies and portfolio management. Discussions like "If investing into snp500 is common advice..." and "4% Rule vs Dividends" reflect a focus on established investment principles, though they occasionally intersect with broader market sentiment that impacts crypto.
 
-**Cross-cutting topics**: The **US dollar's performance and broader economic health** are significant cross-cutting themes, appearing in `r/Economics`, `r/stocks` (e.g., "[The U.S.&nbsp;dollar fell about 11%...](https://www.reddit.com/comments/1nxbr66)"), and implicitly influencing the bullish sentiment in `r/Bitcoin`. **Market gains and losses** are central to `r/wallstreetbets` but also manifest as positive sentiment in `r/Bitcoin` and strategic considerations in `r/investing`.
-
-**Unique discussions from smaller communities**:
-*   **`r/dividends`**: Focuses on long-term, passive income strategies, a stark contrast to the short-term speculative nature of `r/wallstreetbets`. Posts like "[From $0 → $1.47 → reinvested and unstoppable](https://www.reddit.com/comments/1nwww7a)" emphasize steady growth and financial independence.
-*   **`r/altcoin`**: Shows niche interest in specific projects with utility, such as "[$VOOZ is new, but the video chat platform is not!](https://www.reddit.com/comments/1nx6wmz)". This indicates a focus on underlying technology and real-world applications beyond just price speculation.
-*   **`r/fintech`**: A general inquiry like "[Would this be useful](https://www.reddit.com/comments/1nwo18d)" suggests discussions around product development and innovation, reflecting a community engaged in identifying and solving problems within the financial technology space.
+**Cross-Cutting Topics:**
+*   **Market Sentiment and Speculation:** While `r/wallstreetbets` expresses this through high-risk options trading and "gain porn," `r/CryptoCurrency` and `r/Bitcoin` reflect it through discussions on bull markets, altcoin performance, and supply dynamics.
+*   **Security and Custody:** Explicitly addressed in `r/personalfinance` with the IRA theft post, and implicitly in `r/Bitcoin` as users move assets off exchanges for self-custody. This is a universal concern across all forms of digital wealth.
+*   **Macroeconomic Influence:** `r/Economics` and `r/stocks` discuss the US dollar's performance and government shutdowns, which are recognized as significant factors impacting both traditional and crypto markets.
+*   **Future of Money:** `r/CryptoTechnology` (CBDCs) and `r/CryptoCurrency` (de-dollarization) both touch upon the evolving nature of global currencies and their potential digital transformations.
 
 ## Today's Trending Posts
 
 | Title | Community | Score | Comments | Category | Posted |
 |-------|-----------|-------|----------|----------|--------|
-| [Today is a great day](https://www.reddit.com/comments/1nx2ldg) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 21503 | 739 | Gain | 2025-10-03 23:40 UTC |
-| [The US dollar is predicted to depreciate another 10 perce...](https://www.reddit.com/comments/1nwo3tf) | [r/Economics](https://www.reddit.com/r/Economics) | 6259 | 316 | Blog | 2025-10-03 11:08 UTC |
-| [$18k->$500k in a year](https://www.reddit.com/comments/1nx3d1u) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 1857 | 215 | Gain | 2025-10-04 00:09 UTC |
-| [Citibank denied my credit card fraud claim of $1400.&nbsp...](https://www.reddit.com/comments/1nwloxa) | [r/personalfinance](https://www.reddit.com/r/personalfinance) | 1578 | 260 | Credit | 2025-10-03 09:09 UTC |
-| [The economy is just getting stronger, not weaker, and ‘we...](https://www.reddit.com/comments/1nwt8f2) | [r/Economics](https://www.reddit.com/r/Economics) | 1323 | 332 | News | 2025-10-03 16:12 UTC |
-| [Whaaaaaa?????!!!!!](https://www.reddit.com/comments/1nx3vni) | [r/Bitcoin](https://www.reddit.com/r/Bitcoin) | 1189 | 232 | General | 2025-10-04 00:27 UTC |
-| [Some dude YOLO’d the wrong button on TD, tanked it $1, th...](https://www.reddit.com/comments/1nwzs1e) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 1058 | 100 | Discussion | 2025-10-03 21:52 UTC |
-| [Im having best day of my life!](https://www.reddit.com/comments/1nx0zem) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 1011 | 153 | YOLO | 2025-10-03 22:39 UTC |
-| [US hiring plans hit lowest since 2009 as year-to-date job...](https://www.reddit.com/comments/1nwlzsw) | [r/stocks](https://www.reddit.com/r/stocks) | 939 | 137 | Broad market news | 2025-10-03 09:24 UTC |
-| [From $0 → $1.47 → reinvested and unstoppable](https://www.reddit.com/comments/1nwww7a) | [r/dividends](https://www.reddit.com/r/dividends) | 920 | 61 | Other | 2025-10-03 19:47 UTC |
+| [Reddit (RDDT) - Everyone’s Missing What Actually Happened](https://www.reddit.com/comments/1nxidln) | [r/stocks](https://www.reddit.com/r/stocks) | 708 | 205 | Company Discussion | 2025-10-04 10:34 UTC |
+| [google is the berkshire of tech](https://www.reddit.com/comments/1nxmr8k) | [r/stocks](https://www.reddit.com/r/stocks) | 633 | 84 | Company Discussion | 2025-10-04 14:36 UTC |
+| [BITCOIN ON EXCHANGES HITS LOWEST LEVEL IN 6 YEARS](https://www.reddit.com/comments/1nxp9ei) | [r/Bitcoin](https://www.reddit.com/r/Bitcoin) | 535 | 43 | General | 2025-10-04 17:14 UTC |
+| [NYT: How Stocks Can Be Quietly Stolen From Your I.R.A.](https://www.reddit.com/comments/1nxlx68) | [r/personalfinance](https://www.reddit.com/r/personalfinance) | 522 | 43 | Other | 2025-10-04 13:47 UTC |
+| [If This Is the Bull Market, Then Altcoins Are Finished](https://www.reddit.com/comments/1nxnlcb) | [r/CryptoCurrency](https://www.reddit.com/r/CryptoCurrency) | 499 | 477 | PERSPECTIVE | 2025-10-04 15:28 UTC |
+| [With an average purchase price of $ 66,384.56 per Bitcoin...](https://www.reddit.com/comments/1nxhs6z) | [r/CryptoCurrency](https://www.reddit.com/r/CryptoCurrency) | 453 | 56 | METRICS | 2025-10-04 10:04 UTC |
+| [Putin\'s senior advisor says the US intends to migrate de...](https://www.reddit.com/comments/1nxhkcy) | [r/CryptoCurrency](https://www.reddit.com/r/CryptoCurrency) | 276 | 65 | POLITICS | 2025-10-04 09:53 UTC |
+| [Credit score is 764, never opened credit card line](https://www.reddit.com/comments/1nxh4h2) | [r/personalfinance](https://www.reddit.com/r/personalfinance) | 268 | 34 | Credit | 2025-10-04 09:31 UTC |
+| [How does a fresh 18 year old who doesn’t pay any bills sh...](https://www.reddit.com/comments/1nxuhbd) | [r/personalfinance](https://www.reddit.com/r/personalfinance) | 217 | 149 | General | 2025-10-04 21:48 UTC |
+| [Beware of Universal Life Insurance!](https://www.reddit.com/comments/1nxvzw4) | [r/personalfinance](https://www.reddit.com/r/personalfinance) | 188 | 44 | Insurance | 2025-10-04 22:49 UTC |
 
 
 ## Weekly Popular Posts
 
 | # | Title | Community | Score | Comments | Category | Posted |
 |---|-------|-----------|-------|----------|----------|--------|
-| 1 | [Time to delete the app](https://www.reddit.com/comments/1nwad5c) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 32478 | 1249 | Meme | 2025-10-03 01:35 UTC |
-| 2 | [Today is a great day](https://www.reddit.com/comments/1nx2ldg) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 21513 | 739 | Gain | 2025-10-03 23:40 UTC |
-| 3 | [Trump news at a glance: more than 100,000 federal workers...](https://www.reddit.com/comments/1nt87qz) | [r/Economics](https://www.reddit.com/r/Economics) | 9518 | 268 | General | 2025-09-29 11:53 UTC |
-| 4 | [Reddit stock falls for second day as references to its co...](https://www.reddit.com/comments/1nve3s6) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 8570 | 742 | News | 2025-10-02 01:10 UTC |
-| 5 | [The rich are getting so rich they have their own wealth gap](https://www.reddit.com/comments/1nvdaf8) | [r/Economics](https://www.reddit.com/r/Economics) | 6412 | 417 | Research Summary | 2025-10-02 00:40 UTC |
-| 6 | [The US dollar is predicted to depreciate another 10 perce...](https://www.reddit.com/comments/1nwo3tf) | [r/Economics](https://www.reddit.com/r/Economics) | 6249 | 316 | Blog | 2025-10-03 11:08 UTC |
-| 7 | [Work-life balance continues to decline in the US, placing...](https://www.reddit.com/comments/1nw38wo) | [r/Economics](https://www.reddit.com/r/Economics) | 5731 | 252 | News | 2025-10-02 21:05 UTC |
-| 8 | [Haven\'t checked my account for a year...](https://www.reddit.com/comments/1nw5hxk) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 4913 | 322 | Gain | 2025-10-02 22:35 UTC |
-| 9 | [Dollar falls on U.S.&nbsp;government shutdown, now on pac...](https://www.reddit.com/comments/1nvaoc5) | [r/Economics](https://www.reddit.com/r/Economics) | 4438 | 100 | News | 2025-10-01 23:04 UTC |
-| 10 | [From $200k to $2M in under 2 months 🚀💎🙌](https://www.reddit.com/comments/1ntrkvb) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 4176 | 519 | Gain | 2025-09-30 03:31 UTC |
-| 11 | [1900% MU Gain for $1M](https://www.reddit.com/comments/1nw1unm) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 4176 | 374 | Gain | 2025-10-02 20:02 UTC |
-| 12 | [Bessent Text Leak: Message Suggests Argentina Bailout Is ...](https://www.reddit.com/comments/1nu4szc) | [r/Economics](https://www.reddit.com/r/Economics) | 3661 | 149 | News | 2025-09-30 13:24 UTC |
-| 13 | [The angel and the devil on your shoulder](https://www.reddit.com/comments/1nrlqxq) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 3616 | 85 | Meme | 2025-09-27 12:10 UTC |
-| 14 | [Would you solve a captcha in 2010 for $600K today?](https://www.reddit.com/comments/1nwdap3) | [r/CryptoCurrency](https://www.reddit.com/r/CryptoCurrency) | 3382 | 166 | LEGACY | 2025-10-03 03:24 UTC |
-| 15 | [Why Bitcoin?](https://www.reddit.com/comments/1ntj1ts) | [r/Bitcoin](https://www.reddit.com/r/Bitcoin) | 2941 | 143 | General | 2025-09-29 22:10 UTC |
-| 16 | [It\'s been a honor trading with ya\'all](https://www.reddit.com/comments/1nu17xc) | [r/CryptoCurrency](https://www.reddit.com/r/CryptoCurrency) | 2756 | 99 | MEME | 2025-09-30 10:18 UTC |
-| 17 | [Finally an actual indicator](https://www.reddit.com/comments/1nwji3w) | [r/Bitcoin](https://www.reddit.com/r/Bitcoin) | 2546 | 95 | General | 2025-10-03 07:28 UTC |
-| 18 | [120k](https://www.reddit.com/comments/1nw7xqg) | [r/Bitcoin](https://www.reddit.com/r/Bitcoin) | 2514 | 52 | General | 2025-10-03 00:05 UTC |
-| 19 | [Hit Half a Million 🚀](https://www.reddit.com/comments/1nwhui3) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 2407 | 230 | Gain | 2025-10-03 06:16 UTC |
-| 20 | [The oldest stock in my portfolio](https://www.reddit.com/comments/1nt43iv) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 2394 | 151 | Gain | 2025-09-29 08:24 UTC |
+| 1 | [Time to delete the app](https://www.reddit.com/comments/1nwad5c) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 33727 | 1306 | Meme | 2025-10-03 01:35 UTC |
+| 2 | [Trump news at a glance: more than 100,000 federal workers...](https://www.reddit.com/comments/1nt87qz) | [r/Economics](https://www.reddit.com/r/Economics) | 9563 | 269 | General | 2025-09-29 11:53 UTC |
+| 3 | [Reddit stock falls for second day as references to its co...](https://www.reddit.com/comments/1nve3s6) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 8614 | 745 | News | 2025-10-02 01:10 UTC |
+| 4 | [The US dollar is predicted to depreciate another 10 perce...](https://www.reddit.com/comments/1nwo3tf) | [r/Economics](https://www.reddit.com/r/Economics) | 7348 | 316 | Blog | 2025-10-03 11:08 UTC |
+| 5 | [The rich are getting so rich they have their own wealth gap](https://www.reddit.com/comments/1nvdaf8) | [r/Economics](https://www.reddit.com/r/Economics) | 6561 | 417 | Research Summary | 2025-10-02 00:40 UTC |
+| 6 | [Work-life balance continues to decline in the US, placing...](https://www.reddit.com/comments/1nw38wo) | [r/Economics](https://www.reddit.com/r/Economics) | 5897 | 253 | News | 2025-10-02 21:05 UTC |
+| 7 | [The U.S.&nbsp;dollar fell about 11% against other currenc...](https://www.reddit.com/comments/1nxbr66) | [r/stocks](https://www.reddit.com/r/stocks) | 5740 | 355 | General | 2025-10-04 05:28 UTC |
+| 8 | [Haven\'t checked my account for a year...](https://www.reddit.com/comments/1nw5hxk) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 5177 | 352 | Gain | 2025-10-02 22:35 UTC |
+| 9 | [Dollar falls on U.S.&nbsp;government shutdown, now on pac...](https://www.reddit.com/comments/1nvaoc5) | [r/Economics](https://www.reddit.com/r/Economics) | 4510 | 101 | News | 2025-10-01 23:04 UTC |
+| 10 | [1900% MU Gain for $1M](https://www.reddit.com/comments/1nw1unm) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 4357 | 388 | Gain | 2025-10-02 20:02 UTC |
+| 11 | [$18k->$500k in a year](https://www.reddit.com/comments/1nx3d1u) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 4338 | 384 | Gain | 2025-10-04 00:09 UTC |
+| 12 | [From $200k to $2M in under 2 months 🚀💎🙌](https://www.reddit.com/comments/1ntrkvb) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 4208 | 519 | Gain | 2025-09-30 03:31 UTC |
+| 13 | [Would you solve a captcha in 2010 for $600K today?](https://www.reddit.com/comments/1nwdap3) | [r/CryptoCurrency](https://www.reddit.com/r/CryptoCurrency) | 3768 | 184 | LEGACY | 2025-10-03 03:24 UTC |
+| 14 | [As Microsoft lays off thousands and jacks up Game Pass pr...](https://www.reddit.com/comments/1nxrxvy) | [r/Economics](https://www.reddit.com/r/Economics) | 3754 | 106 | General | 2025-10-04 19:52 UTC |
+| 15 | [Bessent Text Leak: Message Suggests Argentina Bailout Is ...](https://www.reddit.com/comments/1nu4szc) | [r/Economics](https://www.reddit.com/r/Economics) | 3687 | 149 | News | 2025-09-30 13:24 UTC |
+| 16 | [Why Bitcoin?](https://www.reddit.com/comments/1ntj1ts) | [r/Bitcoin](https://www.reddit.com/r/Bitcoin) | 2958 | 143 | General | 2025-09-29 22:10 UTC |
+| 17 | [Hit Half a Million 🚀](https://www.reddit.com/comments/1nwhui3) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 2849 | 246 | Gain | 2025-10-03 06:16 UTC |
+| 18 | [It\'s been a honor trading with ya\'all](https://www.reddit.com/comments/1nu17xc) | [r/CryptoCurrency](https://www.reddit.com/r/CryptoCurrency) | 2785 | 99 | MEME | 2025-09-30 10:18 UTC |
+| 19 | [Finally an actual indicator](https://www.reddit.com/comments/1nwji3w) | [r/Bitcoin](https://www.reddit.com/r/Bitcoin) | 2735 | 107 | General | 2025-10-03 07:28 UTC |
+| 20 | [120k](https://www.reddit.com/comments/1nw7xqg) | [r/Bitcoin](https://www.reddit.com/r/Bitcoin) | 2606 | 53 | General | 2025-10-03 00:05 UTC |
 
 
 ## Monthly Popular Posts
 
 | # | Title | Community | Score | Comments | Category | Posted |
 |---|-------|-----------|-------|----------|----------|--------|
-| 1 | [$10,000 of Intel bought 25 years ago is worth $10,000 today.](https://www.reddit.com/comments/1nkoh64) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 48751 | 1042 | YOLO | 2025-09-19 08:00 UTC |
-| 2 | [😅](https://www.reddit.com/comments/1nowbom) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 45860 | 385 | Meme | 2025-09-24 07:06 UTC |
-| 3 | [Time to delete the app](https://www.reddit.com/comments/1nwad5c) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 32485 | 1249 | Meme | 2025-10-03 01:35 UTC |
-| 4 | [$AAPL - Apple launches Iphone 11, again.](https://www.reddit.com/comments/1ncqf7p) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 25725 | 832 | Meme | 2025-09-10 02:12 UTC |
-| 5 | [Farmer says ‘we’re in a very dire situation’ ahead of har...](https://www.reddit.com/comments/1ndgocx) | [r/Economics](https://www.reddit.com/r/Economics) | 24789 | 1454 | News | 2025-09-10 23:04 UTC |
-| 6 | [I said give me more calls](https://www.reddit.com/comments/1nqetzl) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 23777 | 315 | Meme | 2025-09-26 02:38 UTC |
-| 7 | [$ORCL - Infinite money glitch.](https://www.reddit.com/comments/1nfny9x) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 20115 | 438 | Meme | 2025-09-13 12:11 UTC |
-| 8 | [I know exactly what’s coming…](https://www.reddit.com/comments/1njf1fq) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 16635 | 492 | Meme | 2025-09-17 22:42 UTC |
-| 9 | [Infinite money glitch](https://www.reddit.com/comments/1nntanz) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 15170 | 304 | Meme | 2025-09-23 01:45 UTC |
-| 10 | [Tesla Offers Unprecedented $1 Trillion Pay Package to Elo...](https://www.reddit.com/comments/1n91sqt) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 13896 | 2317 | News | 2025-09-05 18:41 UTC |
-| 11 | [Disney+ and Hulu face mass cancellations after Jimmy Kimm...](https://www.reddit.com/comments/1nm9pun) | [r/stocks](https://www.reddit.com/r/stocks) | 12551 | 979 | potentially misleading / unconfirmed | 2025-09-21 05:11 UTC |
-| 12 | [Subprime burger loans go crazy](https://www.reddit.com/comments/1n88x3c) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 11255 | 512 | Meme | 2025-09-04 20:35 UTC |
-| 13 | [August CPI](https://www.reddit.com/comments/1ne7muv) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 11133 | 358 | News | 2025-09-11 20:35 UTC |
-| 14 | [A once-in-a-generation economic crisis in rural America m...](https://www.reddit.com/comments/1nmstnt) | [r/Economics](https://www.reddit.com/r/Economics) | 10879 | 818 | News | 2025-09-21 22:04 UTC |
-| 15 | [oops, it is the market](https://www.reddit.com/comments/1nlzrxr) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 10816 | 178 | Meme | 2025-09-20 22:34 UTC |
-| 16 | [Trump news at a glance: more than 100,000 federal workers...](https://www.reddit.com/comments/1nt87qz) | [r/Economics](https://www.reddit.com/r/Economics) | 9510 | 268 | General | 2025-09-29 11:53 UTC |
-| 17 | [$20k raise, but only $100 more per paycheck](https://www.reddit.com/comments/1n96stx) | [r/personalfinance](https://www.reddit.com/r/personalfinance) | 8723 | 610 | Employment | 2025-09-05 22:29 UTC |
-| 18 | [Reddit stock falls for second day as references to its co...](https://www.reddit.com/comments/1nve3s6) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 8573 | 742 | News | 2025-10-02 01:10 UTC |
-| 19 | [Hundreds of struggling Arkansas farmers ask federal gover...](https://www.reddit.com/comments/1n8jcvg) | [r/Economics](https://www.reddit.com/r/Economics) | 8389 | 667 | News | 2025-09-05 03:15 UTC |
-| 20 | [U.S.&nbsp;Added Over 900,000 Fewer Jobs Than Previously K...](https://www.reddit.com/comments/1nck9ha) | [r/Economics](https://www.reddit.com/r/Economics) | 8352 | 366 | News | 2025-09-09 22:21 UTC |
+| 1 | [$10,000 of Intel bought 25 years ago is worth $10,000 today.](https://www.reddit.com/comments/1nkoh64) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 48799 | 1042 | YOLO | 2025-09-19 08:00 UTC |
+| 2 | [😅](https://www.reddit.com/comments/1nowbom) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 45898 | 385 | Meme | 2025-09-24 07:06 UTC |
+| 3 | [Time to delete the app](https://www.reddit.com/comments/1nwad5c) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 33731 | 1306 | Meme | 2025-10-03 01:35 UTC |
+| 4 | [$AAPL - Apple launches Iphone 11, again.](https://www.reddit.com/comments/1ncqf7p) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 25748 | 832 | Meme | 2025-09-10 02:12 UTC |
+| 5 | [Farmer says ‘we’re in a very dire situation’ ahead of har...](https://www.reddit.com/comments/1ndgocx) | [r/Economics](https://www.reddit.com/r/Economics) | 24798 | 1454 | News | 2025-09-10 23:04 UTC |
+| 6 | [I said give me more calls](https://www.reddit.com/comments/1nqetzl) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 23801 | 315 | Meme | 2025-09-26 02:38 UTC |
+| 7 | [$ORCL - Infinite money glitch.](https://www.reddit.com/comments/1nfny9x) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 20133 | 438 | Meme | 2025-09-13 12:11 UTC |
+| 8 | [I know exactly what’s coming…](https://www.reddit.com/comments/1njf1fq) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 16636 | 493 | Meme | 2025-09-17 22:42 UTC |
+| 9 | [Infinite money glitch](https://www.reddit.com/comments/1nntanz) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 15167 | 304 | Meme | 2025-09-23 01:45 UTC |
+| 10 | [Tesla Offers Unprecedented $1 Trillion Pay Package to Elo...](https://www.reddit.com/comments/1n91sqt) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 13899 | 2316 | News | 2025-09-05 18:41 UTC |
+| 11 | [Disney+ and Hulu face mass cancellations after Jimmy Kimm...](https://www.reddit.com/comments/1nm9pun) | [r/stocks](https://www.reddit.com/r/stocks) | 12554 | 979 | potentially misleading / unconfirmed | 2025-09-21 05:11 UTC |
+| 12 | [August CPI](https://www.reddit.com/comments/1ne7muv) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 11142 | 358 | News | 2025-09-11 20:35 UTC |
+| 13 | [A once-in-a-generation economic crisis in rural America m...](https://www.reddit.com/comments/1nmstnt) | [r/Economics](https://www.reddit.com/r/Economics) | 10886 | 817 | News | 2025-09-21 22:04 UTC |
+| 14 | [oops, it is the market](https://www.reddit.com/comments/1nlzrxr) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 10816 | 178 | Meme | 2025-09-20 22:34 UTC |
+| 15 | [Trump news at a glance: more than 100,000 federal workers...](https://www.reddit.com/comments/1nt87qz) | [r/Economics](https://www.reddit.com/r/Economics) | 9559 | 269 | General | 2025-09-29 11:53 UTC |
+| 16 | [$20k raise, but only $100 more per paycheck](https://www.reddit.com/comments/1n96stx) | [r/personalfinance](https://www.reddit.com/r/personalfinance) | 8728 | 610 | Employment | 2025-09-05 22:29 UTC |
+| 17 | [Reddit stock falls for second day as references to its co...](https://www.reddit.com/comments/1nve3s6) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 8615 | 745 | News | 2025-10-02 01:10 UTC |
+| 18 | [U.S.&nbsp;Added Over 900,000 Fewer Jobs Than Previously K...](https://www.reddit.com/comments/1nck9ha) | [r/Economics](https://www.reddit.com/r/Economics) | 8341 | 366 | News | 2025-09-09 22:21 UTC |
+| 19 | [OPEN gain porn 69k to 1 million](https://www.reddit.com/comments/1ndwms0) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 8069 | 1344 | YOLO | 2025-09-11 09:56 UTC |
+| 20 | [Tax refund 3k to 300k](https://www.reddit.com/comments/1nhwmdl) | [r/wallstreetbets](https://www.reddit.com/r/wallstreetbets) | 8007 | 587 | Gain | 2025-09-16 04:08 UTC |
 
 
 ## Top Posts by Community (Past Week)
@@ -136,113 +131,79 @@ Reddit communities display distinct focuses while sharing overarching themes:
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [Whaaaaaa?????!!!!!](https://www.reddit.com/comments/1nx3vni) | 1189 | 232 | General | 2025-10-04 00:27 UTC |
-| [I love Uptober](https://www.reddit.com/comments/1nx45jp) | 581 | 22 | General | 2025-10-04 00:37 UTC |
+| [BITCOIN ON EXCHANGES HITS LOWEST LEVEL IN 6 YEARS](https://www.reddit.com/comments/1nxp9ei) | 535 | 43 | General | 2025-10-04 17:14 UTC |
 
 
 ### r/CryptoCurrency
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [Crypto bros can be so delusional](https://www.reddit.com/comments/1nwx073) | 725 | 105 | COMEDY | 2025-10-03 19:53 UTC |
-| [Bitcoiners while US government shuts down](https://www.reddit.com/comments/1nwznvy) | 549 | 54 | MEME | 2025-10-03 21:48 UTC |
-| [Son One Day You\'ll Be A Man](https://www.reddit.com/comments/1nx54f0) | 407 | 41 | MEME | 2025-10-04 01:13 UTC |
+| [If This Is the Bull Market, Then Altcoins Are Finished](https://www.reddit.com/comments/1nxnlcb) | 499 | 477 | PERSPECTIVE | 2025-10-04 15:28 UTC |
+| [With an average purchase price of $ 66,384.56 per Bitcoin...](https://www.reddit.com/comments/1nxhs6z) | 453 | 56 | METRICS | 2025-10-04 10:04 UTC |
+| [Putin\'s senior advisor says the US intends to migrate de...](https://www.reddit.com/comments/1nxhkcy) | 276 | 65 | POLITICS | 2025-10-04 09:53 UTC |
 
 
-### r/CryptoMarkets
-
-| Title | Score | Comments | Category | Posted |
-|-------|-------|----------|----------|--------|
-| [My stomach is turning...](https://www.reddit.com/comments/1nx3ky6) | 31 | 47 | General | 2025-10-04 00:17 UTC |
-| [BTC about to blastoff？？？](https://www.reddit.com/comments/1nx49sb) | 15 | 16 | General | 2025-10-04 00:42 UTC |
-
-
-### r/Economics
+### r/CryptoTechnology
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [The US dollar is predicted to depreciate another 10 perce...](https://www.reddit.com/comments/1nwo3tf) | 6259 | 316 | Blog | 2025-10-03 11:08 UTC |
-| [The economy is just getting stronger, not weaker, and ‘we...](https://www.reddit.com/comments/1nwt8f2) | 1323 | 332 | News | 2025-10-03 16:12 UTC |
-| [Exclusive &#124; Trump Explores Bailout of at Least $10 B...](https://www.reddit.com/comments/1nwzc7o) | 900 | 223 | News | 2025-10-03 21:35 UTC |
+| [Would you trust and use a Digital Euro if the EU launches...](https://www.reddit.com/comments/1nxswth) | 7 | 14 | General | 2025-10-04 20:39 UTC |
 
 
 ### r/FinancialPlanning
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [What should I do with a $30k windfall at 25?](https://www.reddit.com/comments/1nx0twj) | 5 | 14 | General | 2025-10-03 22:33 UTC |
-
-
-### r/altcoin
-
-| Title | Score | Comments | Category | Posted |
-|-------|-------|----------|----------|--------|
-| [$VOOZ is new, but the video chat platform is not!](https://www.reddit.com/comments/1nx6wmz) | 10 | 11 | General | 2025-10-04 02:20 UTC |
+| [I’m afraid of dying and leaving my family with nothing, w...](https://www.reddit.com/comments/1ny5js1) | 11 | 23 | General | 2025-10-05 05:06 UTC |
+| [529 Plan for 2 kids](https://www.reddit.com/comments/1nxrjhx) | 11 | 23 | General | 2025-10-04 19:31 UTC |
+| [How to survive midlife layoff with 1.5M gap in retirement?](https://www.reddit.com/comments/1nxr0tn) | 10 | 39 | General | 2025-10-04 19:02 UTC |
 
 
 ### r/dividends
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [From $0 → $1.47 → reinvested and unstoppable](https://www.reddit.com/comments/1nwww7a) | 920 | 61 | Other | 2025-10-03 19:47 UTC |
-| [3 years to the goal😎](https://www.reddit.com/comments/1nx18vy) | 70 | 16 | Personal Goal | 2025-10-03 22:50 UTC |
+| [4% Rule vs Dividends](https://www.reddit.com/comments/1nxfmxa) | 55 | 96 | Discussion | 2025-10-04 08:17 UTC |
 
 
 ### r/ethereum
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [Daily General Discussion October 03, 2025](https://www.reddit.com/comments/1nwq6tx) | 138 | 117 | Discussion | 2025-10-03 13:01 UTC |
-
-
-### r/fintech
-
-| Title | Score | Comments | Category | Posted |
-|-------|-------|----------|----------|--------|
-| [Would this be useful](https://www.reddit.com/comments/1nwo18d) | 3 | 11 | General | 2025-10-03 11:04 UTC |
+| [Daily General Discussion October 04, 2025](https://www.reddit.com/comments/1nxl4ov) | 123 | 116 | Discussion | 2025-10-04 13:01 UTC |
 
 
 ### r/investing
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [What do you think will trigger the next big market downturn?](https://www.reddit.com/comments/1nwu3mp) | 312 | 561 | General | 2025-10-03 17:08 UTC |
-| [Stock Markets Keep Hitting New Highs.&nbsp;No Government,...](https://www.reddit.com/comments/1nwxjv9) | 194 | 87 | General | 2025-10-03 20:18 UTC |
-| [Anyone taking profits at these all time highs?](https://www.reddit.com/comments/1nx43xc) | 174 | 281 | General | 2025-10-04 00:36 UTC |
+| [If investing into snp500 is common advice, with back test...](https://www.reddit.com/comments/1nxpeth) | 117 | 157 | General | 2025-10-04 17:24 UTC |
+| [Why shouldn’t I just sell all my investment properties an...](https://www.reddit.com/comments/1ny5bt7) | 112 | 218 | General | 2025-10-05 04:57 UTC |
+| [I’m Up 38% in 4-5 Months and now I am looking for perspec...](https://www.reddit.com/comments/1nxxqkv) | 34 | 88 | General | 2025-10-04 23:58 UTC |
 
 
 ### r/options
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [Proud of myself](https://www.reddit.com/comments/1nwqfve) | 46 | 28 | General | 2025-10-03 13:16 UTC |
+| [Want to Liquidate Everything](https://www.reddit.com/comments/1nxftm3) | 18 | 30 | General | 2025-10-04 08:27 UTC |
 
 
 ### r/personalfinance
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [Citibank denied my credit card fraud claim of $1400.&nbsp...](https://www.reddit.com/comments/1nwloxa) | 1578 | 260 | Credit | 2025-10-03 09:09 UTC |
-| [Progressive is the WORST](https://www.reddit.com/comments/1nx7qfr) | 259 | 122 | Insurance | 2025-10-04 02:51 UTC |
-| [A “diversified portfolio” vs just investing in S&P 500 in...](https://www.reddit.com/comments/1nwpizc) | 236 | 114 | Investing | 2025-10-03 12:24 UTC |
+| [NYT: How Stocks Can Be Quietly Stolen From Your I.R.A.](https://www.reddit.com/comments/1nxlx68) | 522 | 43 | Other | 2025-10-04 13:47 UTC |
+| [Credit score is 764, never opened credit card line](https://www.reddit.com/comments/1nxh4h2) | 268 | 34 | Credit | 2025-10-04 09:31 UTC |
+| [How does a fresh 18 year old who doesn’t pay any bills sh...](https://www.reddit.com/comments/1nxuhbd) | 217 | 149 | General | 2025-10-04 21:48 UTC |
 
 
 ### r/stocks
 
 | Title | Score | Comments | Category | Posted |
 |-------|-------|----------|----------|--------|
-| [US hiring plans hit lowest since 2009 as year-to-date job...](https://www.reddit.com/comments/1nwlzsw) | 939 | 137 | Broad market news | 2025-10-03 09:24 UTC |
-| [The U.S.&nbsp;dollar fell about 11% against other currenc...](https://www.reddit.com/comments/1nxbr66) | 748 | 88 | General | 2025-10-04 05:28 UTC |
-| [Anduril and Palantir battlefield communication system has...](https://www.reddit.com/comments/1nwwqp9) | 481 | 74 | General | 2025-10-03 19:40 UTC |
-
-
-### r/wallstreetbets
-
-| Title | Score | Comments | Category | Posted |
-|-------|-------|----------|----------|--------|
-| [Today is a great day](https://www.reddit.com/comments/1nx2ldg) | 21503 | 739 | Gain | 2025-10-03 23:40 UTC |
-| [$18k->$500k in a year](https://www.reddit.com/comments/1nx3d1u) | 1857 | 215 | Gain | 2025-10-04 00:09 UTC |
-| [Some dude YOLO’d the wrong button on TD, tanked it $1, th...](https://www.reddit.com/comments/1nwzs1e) | 1058 | 100 | Discussion | 2025-10-03 21:52 UTC |
+| [Reddit (RDDT) - Everyone’s Missing What Actually Happened](https://www.reddit.com/comments/1nxidln) | 708 | 205 | Company Discussion | 2025-10-04 10:34 UTC |
+| [google is the berkshire of tech](https://www.reddit.com/comments/1nxmr8k) | 633 | 84 | Company Discussion | 2025-10-04 14:36 UTC |
 
 
 
