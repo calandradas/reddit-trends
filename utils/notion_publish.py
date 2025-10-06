@@ -169,23 +169,20 @@ class NotionPublisher:
                     "title": [{ "type": "text", "text": { "content": title } }]
                 },
                 "Date": {
-                    "type": "text",
-                    "text": {
-                        "content": date
-                    }
+                    "rich_text": [
+                        {"type": "text", "text": {"content": date}}
+                    ]
                 },
+
                 "Language": {
-                    "type": "text",
-                    "text": {
-                        "content": language
-                    }
+                    "rich_text": [
+                        {"type": "text", "text": {"content": language}}
+                    ]
                 },
                 "Industry": {
-                    "type": "text",
-                    "text": {
-                        "content": industry
-                    
-                    }
+                    "rich_text": [
+                        {"type": "text", "text": {"content": industry}}
+                    ]
                 }
             },
             "children": children
