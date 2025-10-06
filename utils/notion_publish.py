@@ -56,7 +56,7 @@ class NotionPublisher:
 
             elif element.name == "pre":
                 code = element.get_text()
-                for chunk in self.chunk_text(text=code, chunk_size=1900):
+                for chunk in self._chunk_text(text=code, chunk_size=1900):
                     blocks.append({
                         "object": "block",
                         "type": "code",
@@ -68,7 +68,7 @@ class NotionPublisher:
 
             elif element.name == "p":
                 text = element.get_text()
-                for chunk in self.chunk_text(text=text, chunk_size=1900):
+                for chunk in self._chunk_text(text=text, chunk_size=1900):
                     blocks.append({
                         "object": "block",
                         "type": "paragraph",
@@ -99,7 +99,7 @@ class NotionPublisher:
 
     def publish(self, md_content, title="Daily Note"):
         """如果标题相同则覆盖，否则新建"""
-        existing_page_id = self.find_page_by_title(title)
+        existing_page_id = self._find_page_by_title(title)
 
         if existing_page_id and self.overwrite:
             print(f"发现同名页面，删除旧页面: {title}")
@@ -117,7 +117,7 @@ class NotionPublisher:
         # 不论是否删除，都创建新页面
         print(f"创建新页面: {title}")
         url = "https://api.notion.com/v1/pages"
-        children = self.markdown_to_notion_blocks(md_content)
+        children = self._markdown_to_notion_blocks(md_content)
 
         data = {
             "parent": {"database_id": self.database_id},
