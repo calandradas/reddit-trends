@@ -339,7 +339,7 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
                 from utils.notion_publish import NotionPublisher
                 note_publisher = NotionPublisher(overwrite=True)
                 for lang, report in reports.items():
-                    note_publisher.publish(md_content=report["content"],title=report["title"],date=report["timestamp"],language=lang,industry=industry)
+                    note_publisher.publish(md_content=report["content"],title=report["title"],date=report["timestamp"].strftime('%Y-%m-%d %H:%M:%S'),language=lang,industry=industry)
                 logger.info("Published report to Notion")
             except ImportError:
                 logger.warning("Notion utils not found. Skipping Notion publish.")
