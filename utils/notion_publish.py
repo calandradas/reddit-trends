@@ -170,7 +170,7 @@ class NotionPublisher:
                 },
                 "Industry": {
                     "rich_text": [
-                        {"type": "text", "text": {"content": industry}}
+                        {"type": "text", "text": {"content": industry.upper()}}
                     ]
                 },
                 "Language": {
