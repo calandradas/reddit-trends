@@ -123,7 +123,7 @@ class NotionPublisher:
 
     def _find_page_by_title(self, title):
         """查询是否已有相同标题的页面"""
-        url = f"https://api.notion.com/v1/databases/{self.database_id}/query"
+        url = f"https://api.notion.com/v1/databases/{self.data_source_id}/query"
         query = {
             "filter": {
                 "property": "Name",
