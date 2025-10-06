@@ -180,7 +180,7 @@ class NotionPublisher:
                 },
                 "Create Date": {
                     "rich_text": [
-                        {"type": "text", "text": {"content": date}}
+                        {"type": "text", "text": {"content": date+"UTC"}}
                     ]
                 }
             },
