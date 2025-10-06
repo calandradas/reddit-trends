@@ -14,7 +14,8 @@ class NotionPublisher:
 
         self.headers = {
             "Authorization": f"Bearer {self.NOTION_API_KEY}",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Notion-Version": "2025-09-03"
         }
 
     def publish_markdown_to_notion(self, md_content, title="Daily Note"):
