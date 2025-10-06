@@ -8,12 +8,12 @@ class NotionPublisher:
     def __init__(self, overwrite=False):
         load_dotenv()
         self.api_key = os.getenv("NOTION_API_KEY")
-        self.database_id = os.getenv("NOTION_DATABASE_ID")
+        self.data_source_id = os.getenv("NOTION_DATASOURCE_ID")
         self.overwrite = overwrite
         self.notion_version = os.getenv("NOTION_VERSION", "2025-09-03")
 
-        if not self.api_key or not self.database_id:
-            raise ValueError("请设置 NOTION_API_KEY 和 NOTION_DATABASE_ID")
+        if not self.api_key or not self.data_source_id:
+            raise ValueError("请设置 NOTION_API_KEY 和 NOTION_DATASOURCE_ID")
 
         self.headers = {
             "Authorization": f"Bearer {self.api_key}",
@@ -50,7 +50,7 @@ class NotionPublisher:
                         "object": "block",
                         "type": "bulleted_list_item" if element.name == "ul" else "numbered_list_item",
                         "bulleted_list_item" if element.name == "ul" else "numbered_list_item": {
-                            "rich_text": [{"type": "text", "text": {"content": li.get_text()}}]
+                            "rich_text": self._parse_inline_formatting(li)
                         }
                     })
 
@@ -73,11 +73,53 @@ class NotionPublisher:
                         "object": "block",
                         "type": "paragraph",
                         "paragraph": {
-                            "rich_text": [{"type": "text", "text": {"content": chunk}}]
+                            "rich_text": self._parse_inline_formatting(element)
                         }
                     })
-
+            elif element.name == "img":  # [ADDED] 支持图片
+                blocks.append({
+                    "object": "block",
+                    "type": "image",
+                    "image": {
+                        "type": "external",
+                        "external": {"url": element.get("src")}
+                    }
+                })
         return blocks
+
+    def _parse_inline_formatting(self, element):
+        """[ADDED] 解析粗体、斜体、链接"""
+        rich_text = []
+        for child in element.children:
+            text = ""
+            annotations = {"bold": False, "italic": False, "underline": False, "strikethrough": False, "code": False}
+            url = None
+
+            if hasattr(child, "name") and child.name:
+                if child.name == "strong":
+                    annotations["bold"] = True
+                    text = child.get_text()
+                elif child.name == "em":
+                    annotations["italic"] = True
+                    text = child.get_text()
+                elif child.name == "a":
+                    url = child.get("href")
+                    text = child.get_text()
+                elif child.name == "code":
+                    annotations["code"] = True
+                    text = child.get_text()
+                else:
+                    text = child.get_text()
+            else:
+                text = str(child)
+
+            if text.strip():
+                rt = {"type": "text", "text": {"content": text}}
+                if url:
+                    rt["text"]["link"] = {"url": url}
+                rt["annotations"] = annotations
+                rich_text.append(rt)
+        return rich_text if rich_text else [{"type": "text", "text": {"content": element.get_text()}}]
 
     def _find_page_by_title(self, title):
         """查询是否已有相同标题的页面"""
@@ -120,7 +162,7 @@ class NotionPublisher:
         children = self._markdown_to_notion_blocks(md_content)
 
         data = {
-            "parent": {"database_id": self.database_id},
+            "parent": {"data_source_id": self.data_source_id},
             "properties": {
                 "Name": {
                     "title": [{"text": {"content": title}}]
