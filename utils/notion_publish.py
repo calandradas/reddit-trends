@@ -162,7 +162,7 @@ class NotionPublisher:
         children = self._markdown_to_notion_blocks(md_content)
 
         data = {
-            "parent": {"data_source_id": self.data_source_id},
+            "parent": {"database_id": self.data_source_id},
             "properties": {
                 "Name": {
                     "title": [{"text": {"content": title}}]
