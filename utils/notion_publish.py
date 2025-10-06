@@ -5,11 +5,11 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
 class NotionPublisher:
-    def __init__(self):
+    def __init__(self, overwrite=False):
         load_dotenv()
         self.api_key = os.getenv("NOTION_API_KEY")
         self.database_id = os.getenv("NOTION_DATABASE_ID")
-
+        self.overwrite = overwrite
         self.notion_version = os.getenv("NOTION_VERSION", "2025-09-03")
 
         if not self.api_key or not self.database_id:
@@ -120,7 +120,7 @@ class NotionPublisher:
         """如果标题相同则覆盖，否则新建"""
         existing_page_id = self.find_page_by_title(title)
 
-        if existing_page_id:
+        if existing_page_id and self.overwrite:
             print(f"发现同名页面，更新内容: {title}")
             resp = self.update_page(existing_page_id, md_content)
             if resp.status_code in [200, 201]:

@@ -337,7 +337,7 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
         if push_to_notion:
             try:
                 from utils.notion_publish import NotionPublisher
-                note_publisher = NotionPublisher()
+                note_publisher = NotionPublisher(overwrite=True)
                 for lang, report in reports.items():
                     note_publisher.publish_markdown_to_notion(report["content"],title=report["title"])
                 logger.info("Published report to Notion")
