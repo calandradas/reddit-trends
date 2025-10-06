@@ -68,15 +68,15 @@ class ReportProcessor:
         
         # Set language-specific title format
         if language == "zh":
-            title_format = REPORT_CONFIG.get('report_title_format_zh', "Reddit AI 趋势报告 - {date}")
+            title_format = REPORT_CONFIG.get('report_title_format_zh', "Reddit {industry} 趋势报告 - {date}")
         else:
-            title_format = REPORT_CONFIG.get('report_title_format', "Reddit AI Trend Report - {date}")
+            title_format = REPORT_CONFIG.get('report_title_format', "Reddit {industry} Trend Report - {date}")
         
         report = {
             "report_id": f"report_{timestamp.strftime('%Y%m%d_%H%M%S')}_{language}",
             "timestamp": timestamp,
             "language": language,
-            "title": title_format.format(date=timestamp.strftime('%Y-%m-%d %H:%M UTC')),
+            "title": title_format.format(date=timestamp.strftime('%Y-%m-%d'),industry=industry.upper()),
             "content": markdown_content,
             "post_count": len(posts),
             "post_ids": [post.get('post_id') for post in posts if post.get('post_id')],

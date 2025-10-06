@@ -85,8 +85,8 @@ LLM_CONFIG = {
 # Report generation configuration
 REPORT_CONFIG = {
     "frequency_hours": 24,  # 更新为每24小时一次
-    "report_title_format": "Reddit Trends Report - {date}",
-    "report_title_format_zh": "Reddit 趋势报告 - {date}",
+    "report_title_format": "Reddit {industry} Trends Report - {date}",
+    "report_title_format_zh": "Reddit {industry} 趋势报告 - {date}",
     "report_directory": "reports",
     "database_name": "reddit-report",
     "collections": {
