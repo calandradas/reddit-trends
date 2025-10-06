@@ -121,7 +121,7 @@ class NotionPublisher:
         existing_page_id = self.find_page_by_title(title)
 
         if existing_page_id and self.overwrite:
-            print(f"发现同名页面，更新内容: {title}")
+            print(f"发现同名页面，并且要求覆盖，则更新内容: {title}")
             resp = self.update_page(existing_page_id, md_content)
             if resp.status_code in [200, 201]:
                 print("更新成功")
