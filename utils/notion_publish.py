@@ -97,36 +97,22 @@ class NotionPublisher:
                 return results[0]["id"]  # 返回第一个匹配页面的 ID
         return None
 
-    def update_page(self, page_id, md_content):
-        """更新已有页面内容"""
-        url = f"https://api.notion.com/v1/blocks/{page_id}/children"
-        children = self.markdown_to_notion_blocks(md_content)
-
-        # 删除原内容再添加（简单方式，保证完全覆盖）
-        requests.patch(
-            f"https://api.notion.com/v1/blocks/{page_id}",
-            headers=self.headers,
-            json={"archived": False}  # 确保页面还在
-        )
-        requests.patch(
-            f"https://api.notion.com/v1/pages/{page_id}",
-            headers=self.headers,
-            json={}  # 保持元数据不变
-        )
-        resp = requests.patch(url, headers=self.headers, json={"children": children})
-        return resp
-
     def publish(self, md_content, title="Daily Note"):
         """如果标题相同则覆盖，否则新建"""
         existing_page_id = self.find_page_by_title(title)
 
         if existing_page_id and self.overwrite:
-            print(f"发现同名页面，并且要求覆盖，则更新内容: {title}")
-            resp = self.update_page(existing_page_id, md_content)
+            print(f"发现同名页面，删除旧页面: {title}")
+            resp = requests.patch(
+                f"https://api.notion.com/v1/pages/{existing_page_id}",
+                headers=self.headers,
+                json={"archived": True}
+            )
             if resp.status_code in [200, 201]:
-                print("更新成功")
+                print("旧页面已删除")
             else:
-                print("更新失败:", resp.text)
+                print("删除失败:", resp.text)
+                return  # 删除失败就不继续新建            
         else:
             print(f"新建: {title}")
             url = "https://api.notion.com/v1/pages"
