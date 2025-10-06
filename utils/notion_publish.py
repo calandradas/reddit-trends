@@ -165,7 +165,7 @@ class NotionPublisher:
             "parent": {"database_id": self.data_source_id},
             "properties": {
                 "Name": title,
-                "Date": date_time,
+                "Date_Time": date_time,
                 "Language": language,
                 "Industry": industry
             },
