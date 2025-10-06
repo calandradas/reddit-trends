@@ -786,8 +786,8 @@ class LLMClient:
             report = self.generate_text(prompt)
             
             # Add header and tables
-            full_report = f"{section_headers['report_title']}\n\n"
-            full_report += f"{section_headers['trend_analysis']}\n\n"
+            #full_report = f"{section_headers['report_title']}\n\n"
+            full_report = f"{section_headers['trend_analysis']}\n\n"
             full_report += report + "\n\n"
             full_report += f"{section_headers['trending_posts']}\n\n"
             full_report += trending_table.replace("## Trending Posts - Last 24 Hours\n\n", "") + "\n\n"
