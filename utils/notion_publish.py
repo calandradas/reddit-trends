@@ -139,7 +139,7 @@ class NotionPublisher:
                 return results[0]["id"]  # 返回第一个匹配页面的 ID
         return None
 
-    def publish(self, md_content, title="Daily Note"):
+    def publish(self, md_content, title="Daily Note", date_time=None, language="en", industry="ai"):
         """如果标题相同则覆盖，否则新建"""
         existing_page_id = self._find_page_by_title(title)
 
@@ -164,9 +164,10 @@ class NotionPublisher:
         data = {
             "parent": {"database_id": self.data_source_id},
             "properties": {
-                "Name": {
-                    "title": [{"text": {"content": title}}]
-                }
+                "Name": title,
+                "Date": date_time,
+                "Language": language,
+                "Industry": industry
             },
             "children": children
         }
