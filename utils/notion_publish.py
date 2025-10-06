@@ -22,10 +22,10 @@ class NotionPublisher:
         }
 
     @staticmethod
-    def chunk_text(text, chunk_size=1000):
+    def _chunk_text(text, chunk_size=1000):
         return [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
 
-    def markdown_to_notion_blocks(self, md_text):
+    def _markdown_to_notion_blocks(self, md_text):
         html = markdown.markdown(md_text)
         soup = BeautifulSoup(html, "html.parser")
         blocks = []
@@ -79,7 +79,7 @@ class NotionPublisher:
 
         return blocks
 
-    def find_page_by_title(self, title):
+    def _find_page_by_title(self, title):
         """查询是否已有相同标题的页面"""
         url = f"https://api.notion.com/v1/databases/{self.database_id}/query"
         query = {
@@ -113,22 +113,23 @@ class NotionPublisher:
             else:
                 print("删除失败:", resp.text)
                 return  # 删除失败就不继续新建            
-        else:
-            print(f"新建: {title}")
-            url = "https://api.notion.com/v1/pages"
-            children = self.markdown_to_notion_blocks(md_content)
 
-            data = {
-                "parent": {"database_id": self.database_id},
-                "properties": {
-                    "Name": {
-                        "title": [{"text": {"content": title}}]
-                    }
-                },
-                "children": children
-            }
-            resp = requests.post(url, headers=self.headers, json=data)
-            if resp.status_code in [200, 201]:
-                print("成功发布到 Notion")
-            else:
-                print("发布失败:", resp.text)
+        # 不论是否删除，都创建新页面
+        print(f"创建新页面: {title}")
+        url = "https://api.notion.com/v1/pages"
+        children = self.markdown_to_notion_blocks(md_content)
+
+        data = {
+            "parent": {"database_id": self.database_id},
+            "properties": {
+                "Name": {
+                    "title": [{"text": {"content": title}}]
+                }
+            },
+            "children": children
+        }
+        resp = requests.post(url, headers=self.headers, json=data)
+        if resp.status_code in [200, 201]:
+            print("成功发布到 Notion")
+        else:
+            print("发布失败:", resp.text)                
