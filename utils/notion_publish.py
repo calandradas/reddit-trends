@@ -164,10 +164,29 @@ class NotionPublisher:
         data = {
             "parent": {"database_id": self.data_source_id},
             "properties": {
-                "Name": title,
-                "Date": date,
-                "Language": language,
-                "Industry": industry
+                "Name": {
+                    "type": "title",
+                    "title": [{ "type": "text", "text": { "content": title } }]
+                },
+                "Date": {
+                    "type": "text",
+                    "text": {
+                        "content": date
+                    }
+                },
+                "Language": {
+                    "type": "text",
+                    "text": {
+                        "content": language
+                    }
+                },
+                "Industry": {
+                    "type": "text",
+                    "text": {
+                        "content": industry
+                    
+                    }
+                }
             },
             "children": children
         }
