@@ -508,6 +508,7 @@ if __name__ == "__main__":
     parser.add_argument("--skip-mongodb", action="store_true", help="Skip saving reports to MongoDB")
     parser.add_argument("--push-to-github", action="store_true", help="Enable pushing reports to GitHub")
     parser.add_argument("--push-telegrambot", action="store_true", help="Enable sending reports via Telegram bot")
+    parser.add_argument("--push-to-notion", action="store_true", help="Enable sending reports to Notion")
     parser.add_argument("--industry", default="ai", help="Generate industry-specific reports, e.g., ai, biotech, crypto")
 
     args = parser.parse_args()
@@ -515,6 +516,6 @@ if __name__ == "__main__":
     #main()
     if args.languages:
      # Run once with specified languages
-         generate_report(args.industry, args.languages, skip_mongodb=args.skip_mongodb, push_telegrambot=args.push_telegrambot, push_to_github=args.push_to_github)
+         generate_report(args.industry, args.languages, skip_mongodb=args.skip_mongodb, push_telegrambot=args.push_telegrambot, push_to_github=args.push_to_github, push_to_notion=args.push_to_notion)
     #else:
         # Schedule with default languages from config
