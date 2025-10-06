@@ -9,7 +9,7 @@
 - 对OpenAI, xAI Grok, and Google Gemini的支持。具体参考.env.example文件的配置信息。
 - 自动从Reddit AI, Crypto, Biotech相关社区生成趋势报告，支持英文和中文双语。
 - 自定义你所关心的产业社区，并生成报告。
-- 多渠道发布报告，目前包括发布到文件目录、telegram bot、github。
+- 多渠道发布报告，目前包括发布到文件目录、telegram bot、Notion page、github。
 
 通过每日报告，随时了解AI, Crypto, Biotech领域的最新发展。
 
@@ -23,7 +23,7 @@
 - **详细趋势分析**：生成深入报告，包括今日焦点、周趋势对比、月度技术演进等
 - **双语支持**：同时生成英文和中文报告
 - **有组织的文件结构**：按年/月/日存储报告，便于访问
-- **支持多渠道发布报告**：报告目前可以发布到指定文件目录、telegram bot或者github上
+- **支持多渠道发布报告**：报告目前可以发布到指定文件目录、telegram bot、 Notion page、github上
 - **Docker部署**：简易容器化部署
 - **MongoDB持久化**：存储所有数据用于历史分析
 

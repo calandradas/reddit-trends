@@ -9,7 +9,7 @@ Forked from  liyedanpdx/reddit-ai-trends, thanks for his contributions.
 - Support for OpenAI, xAI Grok, and Google Gemini. For detailed configuration information, refer to the .env.example file.
 - Automatically generate trend reports from Reddit AI, Crypto, and Biotech communities, supporting both English and Chinese.
 - Customize the industry communities you're interested in and generate reports.
-- Publish reports through multiple channels, currently including to a file directory, Telegram bot, and GitHub.
+- Publish reports through multiple channels, currently including to a file directory, Telegram bot, Notion page, and GitHub.
 
 Stay up-to-date with the latest developments in the AI, Crypto, Biotech field through daily reports.
 
@@ -23,7 +23,7 @@ Stay up-to-date with the latest developments in the AI, Crypto, Biotech field th
 - **Detailed Trend Analysis**: Generate in-depth reports including today's highlights, weekly trend comparisons, monthly technology evolution, and more
 - **Bilingual Support**: Generate reports in both English and Chinese
 - **Organized File Structure**: Store reports in year/month/day folders for easy access
-- **Multiple channels for publishing reports**: Reports can currently be published to a specified file directory, Telegram bot, or GitHub
+- **Multiple channels for publishing reports**: Reports can currently be published to a specified file directory, Telegram bot, Notion page, and GitHub
 - **Docker Deployment**: Easy containerized deployment
 - **MongoDB Persistence**: Store all data for historical analysis
 
