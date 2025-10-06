@@ -136,13 +136,13 @@ class NotionPublisher:
         if resp.status_code == 200:
             results = resp.json().get("results", [])
             if results:
+                print(f"发现重复题页面: {title}")
                 return results[0]["id"]  # 返回第一个匹配页面的 ID
         return None
 
     def publish(self, md_content, title="Daily Note", date=None, language="en", industry="ai"):
         """如果标题相同则覆盖，否则新建"""
         existing_page_id = self._find_page_by_title(title)
-
         if existing_page_id and self.overwrite:
             print(f"发现同名页面，删除旧页面: {title}")
             resp = requests.patch(
