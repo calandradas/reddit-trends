@@ -183,6 +183,7 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
                    save_to_db: bool = True,
                    save_to_file: bool = True,
                    push_to_github: bool = False,
+                   push_to_notion: bool = False,
                    push_telegrambot: bool = False) -> Dict[str, str]:
     """
     Generate a report on trending posts from Reddit AI communities.
@@ -331,6 +332,19 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
                 logger.warning("GitHub utils not found. Skipping GitHub push.")
             except Exception as e:
                 logger.error(f"Error pushing to GitHub: {e}")
+
+        # Notion publish report
+        if push_to_notion:
+            try:
+                from utils.notion_publish import NotionPublisher
+                note_publisher = NotionPublisher()
+                for lang, report in reports.items():
+                    note_publisher.publish_markdown_to_notion(report["content"])
+                logger.info("Published report to Notion")
+            except ImportError:
+                logger.warning("Notion utils not found. Skipping Notion publish.")
+            except Exception as e:
+                logger.error(f"Error publishing to Notion: {e}")
 
         # Telegram sending report
         if push_telegrambot:
