@@ -314,7 +314,8 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
 
         filename = f"latest_report_ai_zh.md "
         filepath = os.path.join("reports", filename)
-        with open(filepath, 'w', encoding='utf-8') as f:
+        print("filepath:", filepath)
+        with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
         reports = {
             #"en":{"content":"Reddit AI Trends Report - 2025-10-06", "title":"Reddit AI Trends Report - 2025-10-06", "timestamp":current_time},
