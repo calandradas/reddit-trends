@@ -400,14 +400,6 @@ def parse_markdown_to_notion_blocks(markdown):
             continue
          """
 
-        # --- 辅助函数：根据类型获取内部属性键名 ---
-        def _get_list_content_key(block_type):
-            if block_type == 'numbered_list_item':
-                return 'numbered_list_item'
-            elif block_type == 'bulleted_list_item':
-                return 'bulleted_list_item'
-            return None
-
         # --- 1. 有序列表处理 ---
         list_match = re.match(numbered_list_pattern_nested, line)
         if list_match:
@@ -431,21 +423,25 @@ def parse_markdown_to_notion_blocks(markdown):
 
             elif indent > current_indent:
                 current_block = stack[-1][-1] 
-                block_type = current_block.get('type') 
+                content_key = current_block.get('type') 
                 
-                content_key = _get_list_content_key(block_type)
-                
-                if content_key:
-                    # 栈顶是列表项，可以嵌套
+                # 核心逻辑：任何有效的 Block 都可以有 children
+                if content_key and content_key in current_block:
+                    
+                    # 1. 确保目标 Block 的内部内容字典中有 children 列表
                     if 'children' not in current_block[content_key]:
                         current_block[content_key]['children'] = []
+                    
+                    # 2. 将新的列表项添加到 children
                     current_block[content_key]['children'].append(item)
+                    
+                    # 3. 推入新的 children 列表到栈中
                     stack.append(current_block[content_key]['children'])
                     current_indent += 1
                 else:
-                    # 栈顶不是列表项 (例如：paragraph/heading)，视为无效嵌套，并将其视为同级项
-                    print(f"⚠️ 警告：尝试将有序列表项嵌套到非列表块中 ({block_type}:{line_content})。已忽略嵌套。")
-                    stack[-1].append(item) # <-- 修正：回退为同级项，而不是退出函数
+                    # 这表明栈顶 Block 是一个无效或结构错误的块。
+                    print(f"警告：栈顶 Block 结构无效 ({current_block}: {line_content})。无法嵌套。回退为同级。")
+                    stack[-1].append(item) 
             
             continue
 
@@ -472,22 +468,26 @@ def parse_markdown_to_notion_blocks(markdown):
 
             elif indent > current_indent:
                 current_block = stack[-1][-1] 
-                block_type = current_block.get('type')
+                content_key = current_block.get('type') 
                 
-                content_key = _get_list_content_key(block_type)
-                
-                if content_key:
-                    # 栈顶是列表项，可以嵌套
-                    # --- 关键修正：使用动态 content_key ---
+                # 核心逻辑：任何有效的 Block 都可以有 children
+                if content_key and content_key in current_block:
+                    
+                    # 1. 确保目标 Block 的内部内容字典中有 children 列表
                     if 'children' not in current_block[content_key]:
                         current_block[content_key]['children'] = []
+                    
+                    # 2. 将新的列表项添加到 children
                     current_block[content_key]['children'].append(item)
-                    stack.append(current_block[content_key]['children']) 
+                    
+                    # 3. 推入新的 children 列表到栈中
+                    stack.append(current_block[content_key]['children'])
                     current_indent += 1
                 else:
-                    # 栈顶不是列表项。回退为同级项。
-                    print(f"⚠️ 警告：尝试将无序列表项嵌套到非列表块中 ({block_type}:{line_content})。已忽略嵌套。")
+                    # 这表明栈顶 Block 是一个无效或结构错误的块。
+                    print(f"警告：栈顶 Block 结构无效 ({current_block}: {line_content})。无法嵌套。回退为同级。")
                     stack[-1].append(item) 
+
 
             continue
 
