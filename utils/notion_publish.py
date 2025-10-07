@@ -2,7 +2,9 @@ import asyncio
 import os
 from dotenv import load_dotenv
 from notion_client import Client
-from notionary import NotionPage,NotionDatabaseClient
+from notionary import NotionPage
+from notionary.database import NotionDatabase
+
 
 class NotionPublisher:
     def __init__(self, overwrite=False):
@@ -45,33 +47,32 @@ class NotionPublisher:
             print("删除旧页面: {title}")
             self._archive_page(p["id"])
         return len(pages)
-
-    def _create_children_from_markdown(self, md_content: str):
-        """使用 Notionary 生成 children"""
-        client = NotionDatabaseClient(token=self.api_key, database_id=self.database_id)
-        page = NotionPage(client=client)
-        page.append_markdown(md_content)
-        return page.blocks  # 生成的 block JSON 可直接用作 children
     
-    def create_page(self, title, industry, language, date_str, md_content=None):
-        children = self._create_children_from_markdown(md_content)
-        properties = {
-            "Name": {"title": [{"type": "text", "text": {"content": title}}]},
-            "Industry": {"rich_text": [{"type": "text", "text": {"content": industry}}]},
-            "Language": {"rich_text": [{"type": "text", "text": {"content": language}}]},
-            "Create Date": {"rich_text": [{"type": "text", "text": {"content": date_str + "UTC"}}]}
-        }
-
+    async def create_page(self, title, industry, language, date_str, md_content=None):
         try:
+            client = await NotionDatabase.from_database_id(token=self.api_key, database_id=self.database_id)
+            page = await client.create_blank_page()
+            await page.append_markdown(md_content)
+            await page.set_title(title)
+            await page.set_property_value_by_name("Industry", industry)
+            await page.set_property_value_by_name("Language", language)
+            await page.set_property_value_by_name("Create Date", date_str + "UTC")
+            """ properties = {
+                "Name": {"title": [{"type": "text", "text": {"content": title}}]},
+                "Industry": {"rich_text": [{"type": "text", "text": {"content": industry}}]},
+                "Language": {"rich_text": [{"type": "text", "text": {"content": language}}]},
+                "Create Date": {"rich_text": [{"type": "text", "text": {"content": date_str + "UTC"}}]}
+            } 
             resp = self.notion.pages.create(
                 parent={"database_id": self.database_id},
                 properties=properties,
                 children=children
-            )
+            )"""
             print("上传成功")
         except Exception as e:
             print(f"上传失败: {e}")
-        return resp
+            return None
+        return True
 
     def publish(self, md_content=None, title="Daily Note", date=None, language="en", industry="ai"):
         """如果标题相同则删除式覆盖，否则直接新建"""
@@ -80,8 +81,8 @@ class NotionPublisher:
             print(f"共删除 {len} 个页面")
         # 不论是否删除，都创建新页面
         print(f"创建新页面: {title}")
-        resp = self.create_page(title=title, industry=industry, language=language, date_str=date, md_content=md_content)
-        if resp.get("id"):
+        resp = asyncio.run(self.create_page(title=title, industry=industry, language=language, date_str=date, md_content=md_content))
+        if resp:
             print("成功发布到 Notion")
         else:
             print("发布失败:", resp.text)                
