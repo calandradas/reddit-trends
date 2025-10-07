@@ -312,8 +312,8 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
         #if save_to_file:
         #    update_readme_with_latest_report(report_paths)
 
-        filename = f"report_20251007_200655_ai_zh.md"
-        filepath = os.path.join(report_dir, filename)
+        filename = f"latest_report_ai_zh.md "
+        filepath = os.path.join("reports", filename)
         with open(filepath, 'w', encoding='utf-8') as f:
             content = f.read()
         reports = {
