@@ -29,7 +29,7 @@ class NotionPublisher:
             )
         except Exception as e:
             print(f"查询失败: {e}")
-            return []
+
         results = resp.get("results", [])
         if not results:
             print(f"未发现同名页面: {title}")
@@ -75,6 +75,7 @@ class NotionPublisher:
             },
             "children": children or []
         }
+        print(f"上传数据: {data}")
         try:
             upload(self.notion, data, self.database_id)
         except:
@@ -86,7 +87,8 @@ class NotionPublisher:
     def publish(self, md_content=None, title="Daily Note", date=None, language="en", industry="ai"):
         """如果标题相同则删除式覆盖，否则直接新建"""
         if self.overwrite:
-            self._delete_duplicates(title)
+            len = self._delete_duplicates(title)
+            print(f"共删除 {len} 个页面")
         # 不论是否删除，都创建新页面
         print(f"创建新页面: {title}")
         resp = self.create_page(title=title, industry=industry, language=language, date_str=date, md_content=md_content)
