@@ -48,10 +48,9 @@ class NotionPublisher:
             self._archive_page(p["id"])
         return len(pages)
     
-    async def create_page(self, title, industry, language, date_str, md_content=None):
+    def create_page(self, title, industry, language, date_str, md_content=None):
         try:
             children = parse_md(md_content) if md_content else []
-            
             properties = {
                 "Name": {"title": [{"type": "text", "text": {"content": title}}]},
                 "Industry": {"rich_text": [{"type": "text", "text": {"content": industry}}]},
@@ -76,7 +75,7 @@ class NotionPublisher:
             print(f"共删除 {len} 个页面")
         # 不论是否删除，都创建新页面
         print(f"创建新页面: {title}")
-        resp = asyncio.run(self.create_page(title=title, industry=industry, language=language, date_str=date, md_content=md_content))
+        resp = self.create_page(title=title, industry=industry, language=language, date_str=date, md_content=md_content)
         if resp:
             print("成功发布到 Notion")
         else:
