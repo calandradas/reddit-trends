@@ -417,6 +417,15 @@ def parse_markdown_to_notion_blocks(markdown):
             while indent < current_indent:
                 stack.pop()
                 current_indent -= 1
+                
+            # 在进行同级/嵌套判断之前，将 current_indent 设置为当前行的实际 indent
+            # 这样可以处理列表从非零缩进开始的情况
+            if indent > current_indent:
+                # 如果是嵌套，我们将在嵌套逻辑中增加 current_indent
+                pass
+            else: # indent == current_indent
+                # 如果是同级，我们现在应该让 current_indent = indent
+                current_indent = indent
 
             if indent == current_indent:
                 stack[-1].append(item)
@@ -462,6 +471,15 @@ def parse_markdown_to_notion_blocks(markdown):
             while indent < current_indent:
                 stack.pop()
                 current_indent -= 1
+
+            # 在进行同级/嵌套判断之前，将 current_indent 设置为当前行的实际 indent
+            # 这样可以处理列表从非零缩进开始的情况
+            if indent > current_indent:
+                # 如果是嵌套，我们将在嵌套逻辑中增加 current_indent
+                pass
+            else: # indent == current_indent
+                # 如果是同级，我们现在应该让 current_indent = indent
+                current_indent = indent
 
             if indent == current_indent:
                 stack[-1].append(item)
