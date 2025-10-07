@@ -14,5 +14,5 @@ openai>=1.109
 google-genai>=1.0.0
 python-telegram-bot==20.4 
 notion_client>=2.5.0
-notionary>=0.2.26
+notionary>=0.2
 
