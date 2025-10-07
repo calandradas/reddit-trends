@@ -19,13 +19,17 @@ class NotionPublisher:
 
     def _find_duplicates(self, title: str):
         """查询是否已有相同标题的页面"""
-        resp = self.notion.databases.query(
-            database_id=self.database_id,
-            filter={
-                "property": "Name",
-                "title": {"equals": title}
-            }
-        )
+        try:
+            resp = self.notion.databases.query(
+                database_id=self.database_id,
+                filter={
+                    "property": "Name",
+                    "title": {"equals": title}
+                }
+            )
+        except Exception as e:
+            print(f"查询失败: {e}")
+            return []
         results = resp.get("results", [])
         if not results:
             print(f"未发现同名页面: {title}")
