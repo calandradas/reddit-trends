@@ -2,7 +2,7 @@ import asyncio
 import os
 from dotenv import load_dotenv
 from notion_client import Client
-from notionary import NotionPage
+from notionary import NotionPage,NotionDatabaseClient
 
 class NotionPublisher:
     def __init__(self, overwrite=False):
@@ -46,14 +46,15 @@ class NotionPublisher:
             self._archive_page(p["id"])
         return len(pages)
 
-    def _create_children_from_markdown(self, title:str, md_content: str):
+    def _create_children_from_markdown(self, md_content: str):
         """使用 Notionary 生成 children"""
-        page = asyncio.run(NotionPage.from_page_name(title))
+        client = NotionDatabaseClient(token=self.api_key, database_id=self.database_id)
+        page = NotionPage(client=client)
         page.append_markdown(md_content)
         return page.blocks  # 生成的 block JSON 可直接用作 children
     
     def create_page(self, title, industry, language, date_str, md_content=None):
-        children = self._create_children_from_markdown(title,md_content)
+        children = self._create_children_from_markdown(md_content)
         properties = {
             "Name": {"title": [{"type": "text", "text": {"content": title}}]},
             "Industry": {"rich_text": [{"type": "text", "text": {"content": industry}}]},
