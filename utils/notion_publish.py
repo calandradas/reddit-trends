@@ -48,6 +48,14 @@ class NotionPublisher:
             self._archive_page(p["id"])
         return len(pages)
     
+    def _delete_all_pages(self):
+        resp = self.notion.databases.query(
+            database_id=self.database)
+        pages = resp.get("results", [])
+        for p in pages:
+            self._archive_page(p["id"])
+        return len(pages)
+    
     def create_page(self, title, industry, language, date_str, md_content=None):
         try:
             children = parse_md(md_content) if md_content else []
@@ -71,7 +79,8 @@ class NotionPublisher:
     def publish(self, md_content=None, title="Daily Note", date=None, language="en", industry="ai"):
         """如果标题相同则删除式覆盖，否则直接新建"""
         if self.overwrite:
-            len = self._delete_duplicates(title)
+            #len = self._delete_duplicates(title)
+            len = self._delete_all_pages()
             print(f"共删除 {len} 个页面")
         # 不论是否删除，都创建新页面
         print(f"创建新页面: {title}")
