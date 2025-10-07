@@ -51,7 +51,7 @@ class NotionPublisher:
     async def create_page(self, title, industry, language, date_str, md_content=None):
         try:
             client = await NotionDatabase.from_database_id(token=self.api_key, id=self.database_id)
-            page = await client.create_blank_page()
+            page = await client.create_blank_page(token=self.api_key)
             await page.append_markdown(md_content)
             await page.set_title(title)
             await page.set_property_value_by_name("Industry", industry)
