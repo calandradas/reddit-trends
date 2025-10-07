@@ -322,6 +322,7 @@ def parse_markdown_to_notion_blocks(markdown):
             in_table = False
             # Process the current table
             table_str = "\n".join(current_table)
+            print("table_str:"+table_str)
             # katex
             latex_table = convert_markdown_table_to_latex(table_str)
             # Create Notion equation block with LaTeX table expression
