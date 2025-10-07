@@ -444,7 +444,7 @@ def parse_markdown_to_notion_blocks(markdown):
                     current_indent += 1
                 else:
                     # 栈顶不是列表项 (例如：paragraph/heading)，视为无效嵌套，并将其视为同级项
-                    print(f"⚠️ 警告：尝试将有序列表项嵌套到非列表块中 ({block_type})。已忽略嵌套。")
+                    print(f"⚠️ 警告：尝试将有序列表项嵌套到非列表块中 ({block_type}:{line_content})。已忽略嵌套。")
                     stack[-1].append(item) # <-- 修正：回退为同级项，而不是退出函数
             
             continue
@@ -486,7 +486,7 @@ def parse_markdown_to_notion_blocks(markdown):
                     current_indent += 1
                 else:
                     # 栈顶不是列表项。回退为同级项。
-                    print(f"⚠️ 警告：尝试将无序列表项嵌套到非列表块中 ({block_type})。已忽略嵌套。")
+                    print(f"⚠️ 警告：尝试将无序列表项嵌套到非列表块中 ({block_type}:{line_content})。已忽略嵌套。")
                     stack[-1].append(item) 
 
             continue
