@@ -411,21 +411,17 @@ def parse_markdown_to_notion_blocks(markdown):
                 "type": "numbered_list_item",
                 "numbered_list_item": {
                     "rich_text": process_inline_formatting(line_content)
-                }
+                },
+                # 显式保存 indent，以便回退时查找新的 current_indent
+                'indent': indent 
             }
-            # 【修改】: 添加 indent 属性，用于回退逻辑中正确计算新的 current_indent
-            item['indent'] = indent
 
             while indent < current_indent:
                 stack.pop()
-                if len(stack) > 1 and 'indent' in stack[-1][-1]:
+                if stack and stack[-1] and 'indent' in stack[-1][-1]:
                     current_indent = stack[-1][-1]['indent']
                 else:
                     current_indent = 0
-            
-            # 【修改】: 强制同步 current_indent 为当前行实际空格数，解决同级列表项的误判
-            if indent >= current_indent:
-                current_indent = indent
 
             if indent == current_indent:
                 stack[-1].append(item)
@@ -446,7 +442,7 @@ def parse_markdown_to_notion_blocks(markdown):
                     
                     # 3. 推入新的 children 列表到栈中
                     stack.append(current_block[content_key]['children'])
-                    #current_indent += 1
+                    current_indent = indent
                 else:
                     # 这表明栈顶 Block 是一个无效或结构错误的块。
                     print(f"警告：栈顶 Block 结构无效 ({current_block}: {line_content})。无法嵌套。回退为同级。")
@@ -465,22 +461,17 @@ def parse_markdown_to_notion_blocks(markdown):
                 "type": "bulleted_list_item",
                 "bulleted_list_item": {
                     "rich_text": process_inline_formatting(line_content)
-                }
+                },
+                # 显式保存 indent，以便回退时查找新的 current_indent
+                'indent': indent 
             }
-            # 【修改】: 添加 indent 属性，用于回退逻辑中正确计算新的 current_indent
-            item['indent'] = indent
 
             while indent < current_indent:
                 stack.pop()
-                # 【修改】: 修正回退后的 current_indent 计算，应该基于新栈顶 Block 的 indent 属性
-                if len(stack) > 1 and 'indent' in stack[-1][-1]:
+                if stack and stack[-1] and 'indent' in stack[-1][-1]:
                     current_indent = stack[-1][-1]['indent']
                 else:
                     current_indent = 0
-
-            # 【修改】: 强制同步 current_indent 为当前行实际空格数，解决同级列表项的误判
-            if indent >= current_indent:
-                current_indent = indent
 
             if indent == current_indent:
                 stack[-1].append(item)
@@ -501,7 +492,7 @@ def parse_markdown_to_notion_blocks(markdown):
                     
                     # 3. 推入新的 children 列表到栈中
                     stack.append(current_block[content_key]['children'])
-                    #current_indent += 1
+                    current_indent = indent
                 else:
                     # 这表明栈顶 Block 是一个无效或结构错误的块。
                     print(f"警告：栈顶 Block 结构无效 ({current_block}: {line_content})。无法嵌套。回退为同级。")
