@@ -20,7 +20,7 @@ class NotionPublisher:
     def _find_duplicates(self, title: str):
         """查询是否已有相同标题的页面"""
         resp = self.notion.databases.query(
-            **{
+            {
                 "database_id": self.database_id,
                 "filter": {
                     "property": "Name",
