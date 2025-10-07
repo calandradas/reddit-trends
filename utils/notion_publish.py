@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 from notion_client import Client
 from notionary import NotionPage
 from notionary.database import NotionDatabase
+from notionary.database.client import NotionDatabaseClient
+
 
 class NotionPublisher:
     def __init__(self, overwrite=False):
@@ -49,8 +51,8 @@ class NotionPublisher:
     
     async def create_page(self, title, industry, language, date_str, md_content=None):
         try:
-            client = NotionDatabase(token=self.api_key, id=self.database_id)
-            client = await client.from_database_id(token=self.api_key, id=self.database_id)
+            client = await NotionDatabase.from_database_id(token=self.api_key, id=self.database_id)
+            client.client = NotionDatabaseClient(token=self)
             page = await client.create_blank_page()
             await page.append_markdown(md_content)
             await page.set_title(title)
