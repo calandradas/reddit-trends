@@ -261,7 +261,7 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
         #previous_report = mongodb_client.get_latest_report()
         
         # Generate reports in multiple languages
-        reports = report_processor.generate_multilingual_reports(
+        """ reports = report_processor.generate_multilingual_reports(
             filtered_posts, 
             None, 
             weekly_posts, 
@@ -269,17 +269,13 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
             languages,
             industry,
             save_to_file=save_to_file
-        )
-        """ reports = {
-            #"en":{"content":"Reddit AI Trends Report - 2025-10-06", "title":"Reddit AI Trends Report - 2025-10-06", "timestamp":current_time},
-            "zh":{"content":"中文内容测试", "title":"中文标题测试", "timestamp":current_time}
-        } """
-      
+        ) """
+        
         # Create directory structure - 使用参考日期
         report_dir = create_report_directory_structure(reference_date=current_time)
         
         # Save reports to files
-        report_paths = {}
+        """ report_paths = {}
         timestamp = current_time.strftime("%Y%m%d_%H%M%S")
         for lang, report in reports.items():
             # Create filename
@@ -311,11 +307,19 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
             
             report_paths[lang] = filepath
             logger.info(f"Saved {lang} report to {filepath}")
-        
+         """
         # Update README with links to latest reports
         #if save_to_file:
         #    update_readme_with_latest_report(report_paths)
-        
+
+        latest_path = os.path.join("reports", f"latest_report_{industry}_zh.md")
+        with open(latest_path, 'w', encoding='utf-8') as f:
+            content = f.read()
+        reports = {
+            #"en":{"content":"Reddit AI Trends Report - 2025-10-06", "title":"Reddit AI Trends Report - 2025-10-06", "timestamp":current_time},
+            "zh":{"content":{content}, "title":"中文标题测试", "timestamp":current_time}
+        }
+
         # Save report to MongoDB
         if save_to_db and not skip_mongodb:
             mongodb_client = MongoDBClient()
