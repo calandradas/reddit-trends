@@ -11,7 +11,7 @@ class NotionPublisher:
         self.api_key = os.getenv("NOTION_API_KEY")
         self.database_id = os.getenv("NOTION_DATABASE_ID")
         self.overwrite = overwrite
-        self.notion_version = os.getenv("NOTION_VERSION", "2025-09-03")
+        self.notion_version = os.getenv("NOTION_VERSION", "2022-06-28")
 
         if not self.api_key or not self.database_id:
             raise ValueError("请设置 NOTION_API_KEY 和 NOTION_DATABASE_ID")
