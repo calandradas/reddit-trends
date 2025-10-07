@@ -270,7 +270,10 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
             industry,
             save_to_file=save_to_file
         ) """
-        reports = [{"content":"test内容测试", "title":"title_test标题测试", "timestamp":current_time}]
+        reports = {
+            "en":{"content":"test", "title":"title_test", "timestamp":current_time},
+            "zh":{"content":"中文内容测试", "title":"中文标题测试", "timestamp":current_time}
+        }
       
         # Create directory structure - 使用参考日期
         report_dir = create_report_directory_structure(reference_date=current_time)
