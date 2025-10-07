@@ -313,11 +313,12 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
         #if save_to_file:
         #    update_readme_with_latest_report(report_paths)
 
-        filename = f"latest_report_ai_zh.md "
+        filename = f"latest_report_biotech_zh.md"
         filepath = os.path.join("reports", filename)
         print("filepath:", filepath)
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
+        
         reports = {
             #"en":{"content":"Reddit AI Trends Report - 2025-10-06", "title":"Reddit AI Trends Report - 2025-10-06", "timestamp":current_time},
             "zh":{"content":{content}, "title":"中文标题测试", "timestamp":current_time}
