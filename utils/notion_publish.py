@@ -79,8 +79,7 @@ class NotionPublisher:
     def publish(self, md_content=None, title="Daily Note", date=None, language="en", industry="ai"):
         """如果标题相同则删除式覆盖，否则直接新建"""
         if self.overwrite:
-            #len = self._delete_duplicates(title)
-            len = self._delete_all_pages()
+            len = self._delete_duplicates(title)
             print(f"共删除 {len} 个页面")
         # 不论是否删除，都创建新页面
         print(f"创建新页面: {title}")
