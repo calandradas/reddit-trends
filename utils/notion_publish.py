@@ -73,7 +73,13 @@ class NotionPublisher:
             },
             "children": children or []
         }
-        return upload(self.notion, data, self.database_id)
+        try:
+            upload(self.notion, data, self.database_id)
+        except:
+            print("上传失败")
+            return False
+        return True
+    
 
     def publish(self, md_content=None, title="Daily Note", date=None, language="en", industry="ai"):
         """如果标题相同则删除式覆盖，否则直接新建"""
@@ -82,7 +88,7 @@ class NotionPublisher:
         # 不论是否删除，都创建新页面
         print(f"创建新页面: {title}")
         resp = self.create_page(title=title, industry=industry, language=language, date_str=date, md_content=md_content)
-        if resp.status_code in [200, 201]:
+        if resp:
             print("成功发布到 Notion")
         else:
             print("发布失败:", resp.text)                
