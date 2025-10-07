@@ -1,10 +1,7 @@
 import os
-import markdown
-from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from notion_client import Client
-from md2notion.upload import convert, upload
-
+from notionary import Notionary
 class NotionPublisher:
     def __init__(self, overwrite=False):
         load_dotenv()
@@ -16,6 +13,7 @@ class NotionPublisher:
         if not self.api_key or not self.database_id:
             raise ValueError("请设置 NOTION_API_KEY 和 NOTION_DATABASE_ID")
         self.notion = Client(auth=self.api_key, notion_version=self.notion_version)
+        self.notionary = Notionary(token=self.api_key)
 
     def _find_duplicates(self, title: str):
         """查询是否已有相同标题的页面"""
@@ -47,42 +45,31 @@ class NotionPublisher:
             self._archive_page(p["id"])
         return len(pages)
 
-    def create_page(self, title: str, industry: str, language: str, date_str: str, md_content=None):
-        children = convert(md_content)
-        data = {
-            "parent": {"database_id": self.database_id},
-            "properties": {
-                "Name": {
-                    "title": [
-                        {"type": "text", "text": {"content": title}}
-                    ]
-                },
-                "Industry": {
-                    "rich_text": [
-                        {"type": "text", "text": {"content": industry.upper()}}
-                    ]
-                },
-                "Language": {
-                    "rich_text": [
-                        {"type": "text", "text": {"content": language}}
-                    ]
-                },
-                "Create Date": {
-                    "rich_text": [
-                        {"type": "text", "text": {"content": date_str + "UTC"}}
-                    ]
-                }
-            },
-            "children": children or []
+    def _markdown_to_blocks(self, md_content):
+        """Notionary 转换 Markdown → 官方 block JSON"""
+        blocks = self.notionary.markdown_to_blocks(md_content)
+        return blocks
+
+    def create_page(self, title, industry, language, date_str, md_content=None):
+        children = self._markdown_to_blocks(md_content) if md_content else []
+
+        properties = {
+            "Name": {"title": [{"type": "text", "text": {"content": title}}]},
+            "Industry": {"rich_text": [{"type": "text", "text": {"content": industry}}]},
+            "Language": {"rich_text": [{"type": "text", "text": {"content": language}}]},
+            "Create Date": {"rich_text": [{"type": "text", "text": {"content": date_str + "UTC"}}]}
         }
-        print(f"上传数据: {data}")
+
         try:
-            upload(self.notion, data, self.database_id)
-        except:
-            print("上传失败")
-            return False
-        return True
-    
+            resp = self.notion.pages.create(
+                parent={"database_id": self.database_id},
+                properties=properties,
+                children=children
+            )
+            print("上传成功")
+        except Exception as e:
+            print(f"上传失败: {e}")
+        return resp
 
     def publish(self, md_content=None, title="Daily Note", date=None, language="en", industry="ai"):
         """如果标题相同则删除式覆盖，否则直接新建"""
@@ -92,7 +79,7 @@ class NotionPublisher:
         # 不论是否删除，都创建新页面
         print(f"创建新页面: {title}")
         resp = self.create_page(title=title, industry=industry, language=language, date_str=date, md_content=md_content)
-        if resp:
+        if resp.get("id"):
             print("成功发布到 Notion")
         else:
             print("发布失败:", resp.text)                

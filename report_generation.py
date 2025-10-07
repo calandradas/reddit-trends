@@ -271,7 +271,7 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
             save_to_file=save_to_file
         ) """
         reports = {
-            "en":{"content":"Reddit AI Trends Report - 2025-10-06", "title":"title_test", "timestamp":current_time},
+            "en":{"content":"Reddit AI Trends Report - 2025-10-06", "title":"Reddit AI Trends Report - 2025-10-06", "timestamp":current_time},
             "zh":{"content":"中文内容测试", "title":"中文标题测试", "timestamp":current_time}
         }
       
