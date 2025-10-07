@@ -45,13 +45,8 @@ class NotionPublisher:
             self._archive_page(p["id"])
         return len(pages)
 
-    def _markdown_to_blocks(self, md_content):
-        """Notionary 转换 Markdown → 官方 block JSON"""
-        blocks = self.notionary.markdown_to_blocks(md_content)
-        return blocks
-
     def create_page(self, title, industry, language, date_str, md_content=None):
-        children = self._markdown_to_blocks(md_content) if md_content else []
+        children = self.notionary.markdown_to_blocks(md_content) if md_content else []
 
         properties = {
             "Name": {"title": [{"type": "text", "text": {"content": title}}]},
