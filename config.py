@@ -43,21 +43,27 @@ REDDIT_COMMUNITIES = {
         "CryptoCurrency",
         "Bitcoin",
         "ethereum",
-        "fintech",
-        "financialtechnology",
         "DeFi",
         "CryptoMarkets",
+        "Altcoin",
+        "crypto",
+        "CryptoTechnology",
+        "CryptoMoonShots",
+        "SatoshiStreetBets"
+    ],
+
+    "economy_communities": [
+        "fintech",
+        "financialtechnology",
         "personalfinance",
         "investing",
-        "Altcoin",
-        "CryptoTechnology",
-        "finance",
         "FinancialPlanning",
         "WallStreetBets",
         "stocks",
         "options",
         "Economics",
-        "dividends"
+        "dividends",
+        "finance"
     ],
 
     "geopolitical_communities": [
