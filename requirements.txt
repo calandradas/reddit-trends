@@ -13,6 +13,6 @@ requests==2.31.0
 openai>=1.109
 google-genai>=1.0.0
 python-telegram-bot==20.4 
-notion_client>=2.5.0
-notionary>=0.2
+#notion_client>=2.5.0
+#notionary>=0.2
 
