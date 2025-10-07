@@ -261,7 +261,7 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
         #previous_report = mongodb_client.get_latest_report()
         
         # Generate reports in multiple languages
-        reports = report_processor.generate_multilingual_reports(
+        """ reports = report_processor.generate_multilingual_reports(
             filtered_posts, 
             None, 
             weekly_posts, 
@@ -269,7 +269,8 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
             languages,
             industry,
             save_to_file=save_to_file
-        )
+        ) """
+        reports = [{"content":"test内容测试", "title":"title_test标题测试", "timestamp":current_time}]
       
         # Create directory structure - 使用参考日期
         report_dir = create_report_directory_structure(reference_date=current_time)

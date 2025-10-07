@@ -15,7 +15,7 @@ class NotionPublisher:
 
         if not self.api_key or not self.database_id:
             raise ValueError("请设置 NOTION_API_KEY 和 NOTION_DATABASE_ID")
-        self.notion = Client(auth=self.api_key, version=self.notion_version)
+        self.notion = Client(auth=self.api_key, notion_version=self.notion_version)
 
     def _find_duplicates(self, title: str):
         """查询是否已有相同标题的页面"""
