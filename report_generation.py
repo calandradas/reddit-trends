@@ -271,7 +271,7 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
             save_to_file=save_to_file
         ) """
         reports = {
-            "en":{"content":"test", "title":"title_test", "timestamp":current_time},
+            "en":{"content":"Reddit AI Trends Report - 2025-10-06", "title":"title_test", "timestamp":current_time},
             "zh":{"content":"中文内容测试", "title":"中文标题测试", "timestamp":current_time}
         }
       
@@ -281,7 +281,6 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
         # Save reports to files
         report_paths = {}
         timestamp = current_time.strftime("%Y%m%d_%H%M%S")
-        
         for lang, report in reports.items():
             # Create filename
             filename = f"report_{timestamp}_{industry}_{lang}.md"
