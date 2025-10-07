@@ -61,6 +61,7 @@ class NotionPublisher:
             
             print("md_content:", md_content)
             children = parse_md(md_content) if md_content else []
+            print("children:", children)
             properties = {
                 "Name": {"title": [{"type": "text", "text": {"content": title}}]},
                 "Industry": {"rich_text": [{"type": "text", "text": {"content": industry}}]},
