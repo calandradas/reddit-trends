@@ -10,7 +10,7 @@ markdown==3.5.1
 tqdm==4.66.1
 pytz==2023.3
 requests==2.31.0
-openai=1.109.1
+openai>=1.109
 google-genai>=1.0.0
 python-telegram-bot==20.4 
 notion_client>=2.5.0
