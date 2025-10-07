@@ -1,3 +1,4 @@
+import asyncio
 import os
 from dotenv import load_dotenv
 from notion_client import Client
@@ -47,7 +48,7 @@ class NotionPublisher:
 
     def _create_children_from_markdown(self, title:str, md_content: str):
         """使用 Notionary 生成 children"""
-        page = NotionPage.from_title(title)
+        page = asyncio.run(NotionPage.from_page_name(title))
         page.append_markdown(md_content)
         return page.blocks  # 生成的 block JSON 可直接用作 children
     
