@@ -413,18 +413,18 @@ def parse_markdown_to_notion_blocks(markdown):
                     "rich_text": process_inline_formatting(line_content)
                 }
             }
+            # 【修改】: 添加 indent 属性，用于回退逻辑中正确计算新的 current_indent
+            item['indent'] = indent
 
             while indent < current_indent:
                 stack.pop()
-                current_indent -= 1
-                
-            # 在进行同级/嵌套判断之前，将 current_indent 设置为当前行的实际 indent
-            # 这样可以处理列表从非零缩进开始的情况
-            if indent > current_indent:
-                # 如果是嵌套，我们将在嵌套逻辑中增加 current_indent
-                pass
-            else: # indent == current_indent
-                # 如果是同级，我们现在应该让 current_indent = indent
+                if len(stack) > 1 and 'indent' in stack[-1][-1]:
+                    current_indent = stack[-1][-1]['indent']
+                else:
+                    current_indent = 0
+            
+            # 【修改】: 强制同步 current_indent 为当前行实际空格数，解决同级列表项的误判
+            if indent >= current_indent:
                 current_indent = indent
 
             if indent == current_indent:
@@ -467,18 +467,19 @@ def parse_markdown_to_notion_blocks(markdown):
                     "rich_text": process_inline_formatting(line_content)
                 }
             }
+            # 【修改】: 添加 indent 属性，用于回退逻辑中正确计算新的 current_indent
+            item['indent'] = indent
 
             while indent < current_indent:
                 stack.pop()
-                current_indent -= 1
+                # 【修改】: 修正回退后的 current_indent 计算，应该基于新栈顶 Block 的 indent 属性
+                if len(stack) > 1 and 'indent' in stack[-1][-1]:
+                    current_indent = stack[-1][-1]['indent']
+                else:
+                    current_indent = 0
 
-            # 在进行同级/嵌套判断之前，将 current_indent 设置为当前行的实际 indent
-            # 这样可以处理列表从非零缩进开始的情况
-            if indent > current_indent:
-                # 如果是嵌套，我们将在嵌套逻辑中增加 current_indent
-                pass
-            else: # indent == current_indent
-                # 如果是同级，我们现在应该让 current_indent = indent
+            # 【修改】: 强制同步 current_indent 为当前行实际空格数，解决同级列表项的误判
+            if indent >= current_indent:
                 current_indent = indent
 
             if indent == current_indent:
