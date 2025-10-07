@@ -45,14 +45,14 @@ class NotionPublisher:
             self._archive_page(p["id"])
         return len(pages)
 
-    def _create_children_from_markdown(self, md_content: str):
+    def _create_children_from_markdown(self, title:str, md_content: str):
         """使用 Notionary 生成 children"""
-        page = NotionPage()
+        page = NotionPage.from_title(title)
         page.append_markdown(md_content)
         return page.blocks  # 生成的 block JSON 可直接用作 children
     
     def create_page(self, title, industry, language, date_str, md_content=None):
-        children = self._create_children_from_markdown(md_content)
+        children = self._create_children_from_markdown(title,md_content)
         properties = {
             "Name": {"title": [{"type": "text", "text": {"content": title}}]},
             "Industry": {"rich_text": [{"type": "text", "text": {"content": industry}}]},
