@@ -84,7 +84,7 @@ class NotionPublisher:
             print(f"共删除 {len} 个页面")
         # 不论是否删除，都创建新页面
         print(f"创建新页面: {title}")
-        #resp = self.create_page(title=title, industry=industry, language=language, date_str=date, md_content=md_content)
+        resp = self.create_page(title=title, industry=industry, language=language, date_str=date, md_content=md_content)
         if resp:
             print("成功发布到 Notion")
         else:
