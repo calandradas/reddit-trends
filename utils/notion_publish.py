@@ -58,6 +58,7 @@ class NotionPublisher:
     
     def create_page(self, title, industry, language, date_str, md_content=None):
         try:
+            print("md_content:", md_content)
             children = parse_md(md_content) if md_content else []
             properties = {
                 "Name": {"title": [{"type": "text", "text": {"content": title}}]},
