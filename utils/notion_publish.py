@@ -50,7 +50,7 @@ class NotionPublisher:
     
     def _delete_all_pages(self):
         resp = self.notion.databases.query(
-            database_id=self.database)
+            database_id=self.database_id)
         pages = resp.get("results", [])
         for p in pages:
             self._archive_page(p["id"])
