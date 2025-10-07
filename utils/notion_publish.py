@@ -1,5 +1,5 @@
-import asyncio
 import os
+import traceback
 from dotenv import load_dotenv
 from notion_client import Client
 from .md2_notion_block import parse_md
@@ -72,7 +72,13 @@ class NotionPublisher:
             )
             print("上传成功")
         except Exception as e:
-            print(f"上传失败: {e}")
+            print(f"上传失败: {type(e).__name__}: {e}")
+            full_stack_trace = traceback.format_exc()
+            # 打印完整的堆栈信息
+            print("-" * 50)
+            print("完整错误堆栈 (Stack Trace):")
+            print(full_stack_trace)
+            print("-" * 50)
             return None
         return resp
 
