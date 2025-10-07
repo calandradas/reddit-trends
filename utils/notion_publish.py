@@ -2,9 +2,8 @@ import asyncio
 import os
 from dotenv import load_dotenv
 from notion_client import Client
-from notionary import NotionPage
-from notionary.database import NotionDatabase
-from notionary.database.client import NotionDatabaseClient
+from .md2_notion_block import parse_md
+
 
 
 class NotionPublisher:
@@ -51,15 +50,9 @@ class NotionPublisher:
     
     async def create_page(self, title, industry, language, date_str, md_content=None):
         try:
-            client = await NotionDatabase.from_database_id(token=self.api_key, id=self.database_id)
-            client.client = NotionDatabaseClient(token=self)
-            page = await client.create_blank_page()
-            await page.append_markdown(md_content)
-            await page.set_title(title)
-            await page.set_property_value_by_name("Industry", industry)
-            await page.set_property_value_by_name("Language", language)
-            await page.set_property_value_by_name("Create Date", date_str + "UTC")
-            """ properties = {
+            children = parse_md(md_content) if md_content else []
+            
+            properties = {
                 "Name": {"title": [{"type": "text", "text": {"content": title}}]},
                 "Industry": {"rich_text": [{"type": "text", "text": {"content": industry}}]},
                 "Language": {"rich_text": [{"type": "text", "text": {"content": language}}]},
@@ -69,12 +62,12 @@ class NotionPublisher:
                 parent={"database_id": self.database_id},
                 properties=properties,
                 children=children
-            )"""
+            )
             print("上传成功")
         except Exception as e:
             print(f"上传失败: {e}")
             return None
-        return True
+        return resp
 
     def publish(self, md_content=None, title="Daily Note", date=None, language="en", industry="ai"):
         """如果标题相同则删除式覆盖，否则直接新建"""
