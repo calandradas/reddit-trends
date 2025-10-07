@@ -358,12 +358,36 @@ def parse_markdown_to_notion_blocks(markdown):
             if indent == current_indent:
                 # Same level of indentation, add to the current level of the stack
                 stack[-1].append(item)
+
             else: # indent > current_indent
                 # Nested item, add it as a child of the previous item
-                if 'children' not in stack[-1][-1]['numbered_list_item']:
-                    stack[-1][-1]['numbered_list_item']['children'] = []
-                stack[-1][-1]['numbered_list_item']['children'].append(item)
-                stack.append(stack[-1][-1]['numbered_list_item']['children']) # Add a new level to the stack
+                current_block = stack[-1][-1] 
+                block_type = current_block['type'] # 获取栈顶 Block 的类型
+
+                # --- 关键修正：安全地获取列表项的内部属性字典 ---
+                # 检查 Block 类型，并设置正确的属性键名
+                if block_type == 'numbered_list_item':
+                    # 如果栈顶是 有序列表项
+                    content_key = 'numbered_list_item'
+                elif block_type == 'bulleted_list_item':
+                    # 如果栈顶是 无序列表项
+                    content_key = 'bulleted_list_item'
+                else:
+                    # 如果栈顶不是列表项 (例如：一个段落)，不能嵌套列表项
+                    # 这表明 Markdown 格式可能不正确，或者解析逻辑需要回退到前一个非列表项的父级
+                    # 为了避免崩溃，这里可以选择：
+                    # 1. 视为无效嵌套，直接添加到当前层级 (stack[-1].append(item))
+                    # 2. 抛出错误 (更严格)
+                    print(f"警告：尝试将列表项嵌套到非列表块中 ({block_type})。已忽略嵌套。")
+                    stack[-1].append(item)
+                    return # 跳过后续的栈操作
+                
+                # ----------------------------------------------------
+
+                if 'children' not in current_block[content_key]:
+                    current_block[content_key]['children'] = []
+                current_block[content_key]['children'].append(item)
+                stack.append(current_block[content_key]['children']) # Add a new level to the stack
                 current_indent += 1
 
             continue
