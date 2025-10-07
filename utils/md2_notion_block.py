@@ -446,7 +446,7 @@ def parse_markdown_to_notion_blocks(markdown):
                     
                     # 3. 推入新的 children 列表到栈中
                     stack.append(current_block[content_key]['children'])
-                    current_indent += 1
+                    #current_indent += 1
                 else:
                     # 这表明栈顶 Block 是一个无效或结构错误的块。
                     print(f"警告：栈顶 Block 结构无效 ({current_block}: {line_content})。无法嵌套。回退为同级。")
@@ -501,7 +501,7 @@ def parse_markdown_to_notion_blocks(markdown):
                     
                     # 3. 推入新的 children 列表到栈中
                     stack.append(current_block[content_key]['children'])
-                    current_indent += 1
+                    #current_indent += 1
                 else:
                     # 这表明栈顶 Block 是一个无效或结构错误的块。
                     print(f"警告：栈顶 Block 结构无效 ({current_block}: {line_content})。无法嵌套。回退为同级。")
