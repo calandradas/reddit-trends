@@ -379,8 +379,8 @@ def parse_markdown_to_notion_blocks(markdown):
                     # 1. 视为无效嵌套，直接添加到当前层级 (stack[-1].append(item))
                     # 2. 抛出错误 (更严格)
                     print(f"警告：尝试将列表项嵌套到非列表块中 ({block_type})。已忽略嵌套。")
-                    stack[-1].append(item)
-                    return # 跳过后续的栈操作
+                    #stack[-1].append(item)
+                    #return # 跳过后续的栈操作
                 
                 # ----------------------------------------------------
 
