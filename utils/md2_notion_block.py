@@ -250,7 +250,81 @@ def convert_markdown_table_to_latex(text):
 
     return add_table
 
-def parse_markdown_to_notion_blocks(markdown):
+def convert_markdown_table_to_notion(md_table_string: str):
+    """
+    Converts a Markdown table string into a Notion API Table Block object, 
+    mimicking the line-by-line processing of the LaTeX function.
+    """
+    
+    # 1. 按行分割并清理 (split_column = text.split('\n'))
+    split_column = [line.strip() for line in md_table_string.strip().split('\n') if line.strip()]
+    if not split_column:
+        return None
+
+    has_header_row = False
+    
+    # 2. 识别并移除分隔线 (if re.match... pop(1))
+    # 检查第二行是否是分隔线 (|---|:---|---:|)
+    if len(split_column) > 1 and re.match(r'^\|[\s:-]+\|[\s:-]+\|', split_column[1]):
+        split_column.pop(1)
+        # 确定第一行是表头
+        has_header_row = True
+        
+    if not split_column:
+        return None
+
+    table_rows = []
+    
+    # 3. 循环处理每一行数据 (for i, row in enumerate(split_column))
+    for i, row in enumerate(split_column):
+        # 仿照：提取单元格内容 (re.findall(r'(?<=\|).*?(?=\|)', row))
+        # 使用更稳健的方法：移除首尾 '|'，然后按未转义的 '|' 分割
+        # 注意: Notion Table Cell 不区分 header/body，只在父块中标记 has_header_row
+        
+        cells = [cell.strip() for cell in re.split(r'(?<!\\)\|', row.strip('|'))]
+        
+        # 过滤空单元格，确保结构完整
+        cells = [cell if cell else '' for cell in cells]
+
+        notion_cells = []
+        # 4. 格式化单元格内容 (for j, cell in enumerate(modified_content))
+        for cell_content in cells:
+            # 使用内联格式化函数处理内容，支持链接、粗体等
+            rich_text_array = process_inline_formatting(cell_content)
+            notion_cells.append(rich_text_array)
+        
+        # 构建 Notion table_row 块 (Notion API 的行结构)
+        row_block = {
+            "object": "block",
+            "type": "table_row",
+            "table_row": {
+                "cells": notion_cells
+            }
+        }
+        table_rows.append(row_block)
+
+    # 5. 计算列数 (count_column = len(split_column[0].split('|')))
+    if not table_rows:
+         return None
+         
+    num_columns = len(table_rows[0]['table_row']['cells'])
+
+    # 6. 最终封装 Table Block (add_table = f"\\begin{array}...")
+    final_table_block = {
+        "object": "block",
+        "type": "table",
+        "table": {
+            "table_width": num_columns,
+            "has_header_row": has_header_row,
+            "has_column_header": False, # 通常不需要列头
+            "has_row_header": False,   # 通常不需要行头
+            "children": table_rows
+        }
+    }
+    
+    return final_table_block
+
+def parse_markdown_to_notion_blocks(markdown, is_latex_table=True):
     """
     Parse Markdown text and convert it into a list of Notion blocks.
 
@@ -322,83 +396,23 @@ def parse_markdown_to_notion_blocks(markdown):
             in_table = False
             # Process the current table
             table_str = "\n".join(current_table)
+            if is_latex_table:
             # katex
-            latex_table = convert_markdown_table_to_latex(table_str)
-            # Create Notion equation block with LaTeX table expression
-            equation_block = {
-                "type": "equation",
-                "equation": {
-                    "expression": latex_table
+                latex_table = convert_markdown_table_to_latex(table_str)
+                # Create Notion equation block with LaTeX table expression
+                equation_block = {
+                    "type": "equation",
+                    "equation": {
+                        "expression": latex_table
+                    }
                 }
-            }
+            else:
+                equation_block = convert_markdown_table_to_notion(table_str)
+            
             blocks.append(equation_block)
             # Reset the current table
             current_table = []
             continue
-
-        """ 
-        list_match = re.match(numbered_list_pattern_nested, line)
-        if list_match:
-            indent = len(list_match.group(1))
-            line = line[len(list_match.group(0)):]
-
-            item = {
-                "object": "block",
-                "type": "numbered_list_item",
-                "numbered_list_item": {
-                    "rich_text": process_inline_formatting(line)
-                }
-            }
-
-            while indent < current_indent:
-                # If the indentation is less than the current level, go back one level in the stack
-                stack.pop()
-                current_indent -= 1
-
-            if indent == current_indent:
-                # Same level of indentation, add to the current level of the stack
-                stack[-1].append(item)
-            else: # indent > current_indent
-                # Nested item, add it as a child of the previous item
-                if 'children' not in stack[-1][-1]['numbered_list_item']:
-                    stack[-1][-1]['numbered_list_item']['children'] = []
-                stack[-1][-1]['numbered_list_item']['children'].append(item)
-                stack.append(stack[-1][-1]['numbered_list_item']['children']) # Add a new level to the stack
-                current_indent += 1
-
-            continue
-
-        list_match = re.match(unordered_list_pattern_nested, line)
-        if list_match:
-            indent = len(list_match.group(1))
-            line = line[len(list_match.group(0)):]
-
-            item = {
-                "object": "block",
-                "type": "bulleted_list_item",
-                "bulleted_list_item": {
-                    "rich_text": process_inline_formatting(line)
-                }
-            }
-
-            while indent < current_indent:
-                # If the indentation is less than the current level, go back one level in the stack
-                stack.pop()
-                current_indent -= 1
-
-            if indent == current_indent:
-                # Same level of indentation, add to the current level of the stack
-                stack[-1].append(item)
-            else: # indent > current_indent
-                # Nested item, add it as a child of the previous item
-                if 'children' not in stack[-1][-1]['bulleted_list_item']:
-                    stack[-1][-1]['bulleted_list_item']['children'] = []
-                stack[-1][-1]['bulleted_list_item']['children'].append(item)
-                stack.append(stack[-1][-1]['bulleted_list_item']['children']) # Add a new level to the stack
-                current_indent += 1
-
-            continue
-         """
 
         # --- 1. 有序列表处理 ---
         list_match = re.match(numbered_list_pattern_nested, line)
@@ -635,14 +649,14 @@ def parse_markdown_to_notion_blocks(markdown):
             }
         })
 
-    # ❗ 最终清理步骤：在返回前清理所有顶层 'indent' 属性
+    # Final cleanup step: Remove all top-level 'indent' properties before returning
     def _clean_blocks(blocks):
-        """递归地从所有块及其子块中移除顶层 'indent' 属性。"""
+        """Recursively removes the top-level 'indent' property from all blocks and their children."""
         for block in blocks:
             if 'indent' in block:
                 del block['indent']
                 
-            # 检查是否有嵌套的 children（例如在 paragraph 或 list_item 中）
+            # Check for nested children (e.g., within paragraph or list_item content)
             block_type = block.get('type')
             if block_type and block_type in block:
                 content = block[block_type]
@@ -652,7 +666,7 @@ def parse_markdown_to_notion_blocks(markdown):
     blocks = _clean_blocks(blocks)
     return blocks
 
-def parse_md(markdown_text):
+def parse_md(markdown_text, is_latex_table=True):
     """
     Parse Markdown text and convert it into Notion blocks.
 
@@ -662,10 +676,10 @@ def parse_md(markdown_text):
     :rtype: list
     """
     # Parse the transformed Markdown to create Notion blocks
-    return parse_markdown_to_notion_blocks(markdown_text.strip())
+    return parse_markdown_to_notion_blocks(markdown_text.strip(), is_latex_table)
 
 
-def create_notion_page_from_md(markdown_text, title, parent_page_id, cover_url=''):
+def create_notion_page_from_md(markdown_text, title, parent_page_id, cover_url='', is_latex_table=True):
     """
     Create a Notion page from Markdown text.
 
@@ -709,7 +723,7 @@ def create_notion_page_from_md(markdown_text, title, parent_page_id, cover_url='
         })
 
     # Iterate through the parsed Markdown blocks and append them to the created page
-    for block in parse_md(markdown_text):
+    for block in parse_md(markdown_text, is_latex_table):
         notion.blocks.children.append(
             created_page["id"],
             children=[block]

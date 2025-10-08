@@ -60,7 +60,7 @@ class NotionPublisher:
         try:
             
             #print("md_content:", md_content)
-            children = parse_md(md_content) if md_content else []
+            children = parse_md(md_content, is_latex_table=False) if md_content else []
             print("children:", children)
             properties = {
                 "Name": {"title": [{"type": "text", "text": {"content": title}}]},
