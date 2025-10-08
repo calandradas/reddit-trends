@@ -10,19 +10,22 @@ class NotionPublisher:
     def __init__(self, overwrite=False):
         load_dotenv()
         self.api_key = os.getenv("NOTION_API_KEY")
-        self.database_id = os.getenv("NOTION_DATABASE_ID")
+        self.database_id_ai = os.getenv("NOTION_DATABASE_ID_AI")
+        self.database_id_biotech = os.getenv("NOTION_DATABASE_ID_BIOTECH")
+        self.database_id_crypto = os.getenv("NOTION_DATABASE_ID_CRYPTO")
+        
         self.overwrite = overwrite
         self.notion_version = os.getenv("NOTION_VERSION", "2022-06-28")
 
-        if not self.api_key or not self.database_id:
-            raise ValueError("请设置 NOTION_API_KEY 和 NOTION_DATABASE_ID")
+        if not self.api_key or not self.database_id_ai or not self.database_id_biotech or not self.database_id_crypto:
+            raise ValueError("请设置 NOTION_API_KEY 和 NOTION_DATABASE_ID_AI 或者 NOTION_DATABASE_ID_BIOTECH 或者 NOTION_DATABASE_ID_CRYPTO 环境变量")
         self.notion = Client(auth=self.api_key, notion_version=self.notion_version)
 
-    def _find_duplicates(self, title: str):
+    def _find_duplicates(self, title: str, database_id: str):
         """查询是否已有相同标题的页面"""
         try:
             resp = self.notion.databases.query(
-                database_id=self.database_id,
+                database_id=database_id,
                 filter={
                     "property": "Name",
                     "title": {"equals": title}
@@ -41,22 +44,22 @@ class NotionPublisher:
     def _archive_page(self, page_id: str):
         return self.notion.pages.update(page_id=page_id, archived=True)
 
-    def _delete_duplicates(self, title: str):
-        pages = self._find_duplicates(title)
+    def _delete_duplicates(self, title: str, database_id: str):
+        pages = self._find_duplicates(title, database_id)
         for p in pages:
             print("删除旧页面: {title}")
             self._archive_page(p["id"])
         return len(pages)
     
-    def _delete_all_pages(self):
+    def _delete_all_pages(self,database_id):
         resp = self.notion.databases.query(
-            database_id=self.database_id)
+            database_id=database_id)
         pages = resp.get("results", [])
         for p in pages:
             self._archive_page(p["id"])
         return len(pages)
     
-    def create_page(self, title, industry, language, date_str, md_content=None):
+    def create_page(self, title, database_id, industry, language, date_str, md_content=None):
         try:
             
             #print("md_content:", md_content)
@@ -68,8 +71,9 @@ class NotionPublisher:
                 "Language": {"rich_text": [{"type": "text", "text": {"content": language}}]},
                 "Create Date": {"rich_text": [{"type": "text", "text": {"content": date_str + "UTC"}}]}
             } 
+
             resp = self.notion.pages.create(
-                parent={"database_id": self.database_id},
+                parent={"database_id": database_id},
                 properties=properties,
                 children=children
             )
@@ -87,12 +91,21 @@ class NotionPublisher:
 
     def publish(self, md_content=None, title="Daily Note", date=None, language="en", industry="ai"):
         """如果标题相同则删除式覆盖，否则直接新建"""
+        match industry:
+                case "ai":
+                    database_id = self.database_id_ai
+                case "biotech":
+                    database_id = self.database_id_biotech
+                case "crypto":
+                    database_id = self.database_id_crypto
+                case _:
+                    database_id = self.database_id_ai
         if self.overwrite:
-            len = self._delete_duplicates(title)
+            len = self._delete_duplicates(title, database_id)
             print(f"共删除 {len} 个页面")
         # 不论是否删除，都创建新页面
         print(f"创建新页面: {title}")
-        resp = self.create_page(title=title, industry=industry, language=language, date_str=date, md_content=md_content)
+        resp = self.create_page(title=title, database_id=database_id, industry=industry, language=language, date_str=date, md_content=md_content)
         if resp:
             print("成功发布到 Notion")
         else:
