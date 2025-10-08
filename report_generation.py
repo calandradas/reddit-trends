@@ -275,7 +275,8 @@ def generate_report(industry: str = "ai", languages: List[str] = None, skip_mong
         report_dir = create_report_directory_structure(reference_date=current_time)
         
         # Save reports to files
-        r""" eport_paths = {}
+        report_paths = {}
+        """ 
         timestamp = current_time.strftime("%Y%m%d_%H%M%S")
         for lang, report in reports.items():
             # Create filename
