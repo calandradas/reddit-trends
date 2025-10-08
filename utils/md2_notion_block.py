@@ -308,6 +308,28 @@ def convert_markdown_table_to_notion(md_table_string: str):
          return None
          
     num_columns = len(table_rows[0]['table_row']['cells'])
+    
+    # 定义一个空的 Notion 单元格结构（用于填充）
+    # 注意：这需要与您在第 4 步 process_inline_formatting 中返回的结构保持一致
+    EMPTY_NOTION_CELL = [{"type": "text", "text": {"content": ""}}]
+
+    # 遍历所有行，确保它们的单元格数量与 num_columns 匹配
+    for row_block in table_rows:
+        cells = row_block['table_row']['cells']
+        current_cell_count = len(cells)
+        
+        # 如果当前行的单元格数量不足，则进行填充
+        if current_cell_count < num_columns:
+            padding_needed = num_columns - current_cell_count
+            
+            # 填充所需的空单元格
+            for _ in range(padding_needed):
+                cells.append(EMPTY_NOTION_CELL)
+                
+        # 【可选】如果某行单元格数量过多，则截断
+        # elif current_cell_count > num_columns:
+        #     row_block['table_row']['cells'] = cells[:num_columns]
+        #     # 记录警告信息：有行数据被截断
 
     # 6. 最终封装 Table Block (add_table = f"\\begin{array}...")
     final_table_block = {
