@@ -213,7 +213,8 @@ class LLMClient:
             
             # Enhanced title processing to prevent Markdown formatting issues
             # 1. Replace pipe characters that would break table formatting
-            title = title.replace('|', '&#124;')
+            # = title.replace('|', '&#124;')
+            title = title.replace('|', '\\|')
             
             # 2. Escape all brackets to prevent Markdown link interpretation
             title = title.replace('[', '\\[').replace(']', '\\]')
@@ -292,7 +293,8 @@ class LLMClient:
             
             # Enhanced title processing to prevent Markdown formatting issues
             # 1. Replace pipe characters that would break table formatting
-            title = title.replace('|', '&#124;')
+            #title = title.replace('|', '&#124;')
+            title = title.replace('|', '\\|')
             
             # 2. Escape all brackets to prevent Markdown link interpretation
             title = title.replace('[', '\\[').replace(']', '\\]')
@@ -373,7 +375,8 @@ class LLMClient:
             
             # Enhanced title processing to prevent Markdown formatting issues
             # 1. Replace pipe characters that would break table formatting
-            title = title.replace('|', '&#124;')
+            #title = title.replace('|', '&#124;')
+            title = title.replace('|', '\\|')
             
             # 2. Escape all brackets to prevent Markdown link interpretation
             title = title.replace('[', '\\[').replace(']', '\\]')
@@ -576,7 +579,8 @@ class LLMClient:
                 
                 # Enhanced title processing to prevent Markdown formatting issues
                 # 1. Replace pipe characters that would break table formatting
-                title = title.replace('|', '&#124;')
+                #title = title.replace('|', '&#124;')
+                title = title.replace('|', '\\|')
                 
                 # 2. Escape all brackets to prevent Markdown link interpretation
                 title = title.replace('[', '\\[').replace(']', '\\]')
