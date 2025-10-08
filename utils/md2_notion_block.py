@@ -625,13 +625,17 @@ def parse_markdown_to_notion_blocks(markdown, is_latex_table=True):
     # If there's an unfinished table at the end of the lines, process it
     if in_table:
         table_str = "\n".join(current_table)
-        latex_table = convert_markdown_table_to_latex(table_str)
-        equation_block = {
-            "type": "equation",
-            "equation": {
-                "expression": latex_table
+        if is_latex_table:
+        # katex
+            latex_table = convert_markdown_table_to_latex(table_str)
+            equation_block = {
+                "type": "equation",
+                "equation": {
+                    "expression": latex_table
+                }
             }
-        }
+        else:
+            equation_block = convert_markdown_table_to_notion(table_str)
         blocks.append(equation_block)
 
     # Add any remaining indented lines as a code block
