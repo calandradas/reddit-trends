@@ -315,9 +315,6 @@ def convert_markdown_table_to_notion(md_table_string: str):
         "type": "table",
         "table": {
             "table_width": num_columns,
-            "has_header_row": has_header_row,
-            "has_column_header": False, # 通常不需要列头
-            "has_row_header": False,   # 通常不需要行头
             "children": table_rows
         }
     }
