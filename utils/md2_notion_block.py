@@ -636,13 +636,20 @@ def parse_markdown_to_notion_blocks(markdown):
         })
 
     # ❗ 最终清理步骤：在返回前清理所有顶层 'indent' 属性
-    for block in blocks:
-        # 递归清理嵌套的 children
-        # （这里需要实现递归清理，请参考前一个回复中的 clean_blocks 函数）
-
-        # 清理顶层
-        if 'indent' in block:
-            del block['indent']
+    def _clean_blocks(blocks):
+        """递归地从所有块及其子块中移除顶层 'indent' 属性。"""
+        for block in blocks:
+            if 'indent' in block:
+                del block['indent']
+                
+            # 检查是否有嵌套的 children（例如在 paragraph 或 list_item 中）
+            block_type = block.get('type')
+            if block_type and block_type in block:
+                content = block[block_type]
+                if 'children' in content and isinstance(content['children'], list):
+                    _clean_blocks(content['children'])
+        return blocks
+    blocks = _clean_blocks(blocks)
     return blocks
 
 def parse_md(markdown_text):
