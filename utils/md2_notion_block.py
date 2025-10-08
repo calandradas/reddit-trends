@@ -404,13 +404,13 @@ def parse_markdown_to_notion_blocks(markdown):
         list_match = re.match(numbered_list_pattern_nested, line)
         if list_match:
             indent = len(list_match.group(1))
-            line_content = line[len(list_match.group(0)):]
+            line = line[len(list_match.group(0)):]
 
             item = {
                 "object": "block",
                 "type": "numbered_list_item",
                 "numbered_list_item": {
-                    "rich_text": process_inline_formatting(line_content)
+                    "rich_text": process_inline_formatting(line)
                 },
                 # 显式保存 indent，以便回退时查找新的 current_indent
                 'indent': indent 
@@ -445,7 +445,7 @@ def parse_markdown_to_notion_blocks(markdown):
                     current_indent = indent
                 else:
                     # 这表明栈顶 Block 是一个无效或结构错误的块。
-                    print(f"警告：栈顶 Block 结构无效 ({current_block}: {line_content})。无法嵌套。回退为同级。")
+                    print(f"警告：栈顶 Block 结构无效 ({current_block}: {line})。无法嵌套。回退为同级。")
                     stack[-1].append(item) 
             
             continue
@@ -454,13 +454,13 @@ def parse_markdown_to_notion_blocks(markdown):
         list_match = re.match(unordered_list_pattern_nested, line)
         if list_match:
             indent = len(list_match.group(1))
-            line_content = line[len(list_match.group(0)):]
+            line = line[len(list_match.group(0)):]
 
             item = {
                 "object": "block",
                 "type": "bulleted_list_item",
                 "bulleted_list_item": {
-                    "rich_text": process_inline_formatting(line_content)
+                    "rich_text": process_inline_formatting(line)
                 },
                 # 显式保存 indent，以便回退时查找新的 current_indent
                 'indent': indent 
@@ -495,7 +495,7 @@ def parse_markdown_to_notion_blocks(markdown):
                     current_indent = indent
                 else:
                     # 这表明栈顶 Block 是一个无效或结构错误的块。
-                    print(f"警告：栈顶 Block 结构无效 ({current_block}: {line_content})。无法嵌套。回退为同级。")
+                    print(f"警告：栈顶 Block 结构无效 ({current_block}: {line})。无法嵌套。回退为同级。")
                     stack[-1].append(item) 
 
 
